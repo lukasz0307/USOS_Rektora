@@ -31,13 +31,18 @@
             panelNaglowka = new Panel();
             Naglowek = new Label();
             panelLogowania = new Panel();
-            panel1 = new Panel();
+            buttonWroc = new Button();
+            buttonDalej = new Button();
             buttonprzypomnij = new Button();
+            textBoxMail = new TextBox();
+            labelmail = new Label();
             buttonLogin = new Button();
             labelHaslo = new Label();
             textBoxHaslo = new TextBox();
             labelLogin = new Label();
             textBoxLogin = new TextBox();
+            labelWeryfikacja = new Label();
+            textBoxWeryfikacja = new TextBox();
             panelNaglowka.SuspendLayout();
             panelLogowania.SuspendLayout();
             SuspendLayout();
@@ -66,8 +71,13 @@
             // 
             // panelLogowania
             // 
-            panelLogowania.Controls.Add(panel1);
+            panelLogowania.Controls.Add(textBoxWeryfikacja);
+            panelLogowania.Controls.Add(labelWeryfikacja);
+            panelLogowania.Controls.Add(buttonWroc);
+            panelLogowania.Controls.Add(buttonDalej);
             panelLogowania.Controls.Add(buttonprzypomnij);
+            panelLogowania.Controls.Add(textBoxMail);
+            panelLogowania.Controls.Add(labelmail);
             panelLogowania.Controls.Add(buttonLogin);
             panelLogowania.Controls.Add(labelHaslo);
             panelLogowania.Controls.Add(textBoxHaslo);
@@ -80,12 +90,30 @@
             panelLogowania.Size = new Size(1034, 378);
             panelLogowania.TabIndex = 1;
             // 
-            // panel1
+            // buttonWroc
             // 
-            panel1.Location = new Point(150, 88);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 120);
-            panel1.TabIndex = 2;
+            buttonWroc.Anchor = AnchorStyles.None;
+            buttonWroc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonWroc.Location = new Point(585, 335);
+            buttonWroc.Name = "buttonWroc";
+            buttonWroc.Size = new Size(85, 31);
+            buttonWroc.TabIndex = 7;
+            buttonWroc.Text = "Wróć";
+            buttonWroc.UseVisualStyleBackColor = true;
+            buttonWroc.Visible = false;
+            buttonWroc.Click += buttonWroc_Click;
+            // 
+            // buttonDalej
+            // 
+            buttonDalej.Anchor = AnchorStyles.None;
+            buttonDalej.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonDalej.Location = new Point(396, 335);
+            buttonDalej.Name = "buttonDalej";
+            buttonDalej.Size = new Size(85, 31);
+            buttonDalej.TabIndex = 7;
+            buttonDalej.Text = "Dalej";
+            buttonDalej.UseVisualStyleBackColor = true;
+            buttonDalej.Visible = false;
             // 
             // buttonprzypomnij
             // 
@@ -93,9 +121,31 @@
             buttonprzypomnij.Name = "buttonprzypomnij";
             buttonprzypomnij.Size = new Size(147, 23);
             buttonprzypomnij.TabIndex = 5;
-            buttonprzypomnij.Text = "PRZYPOMNIJ HASŁO";
+            buttonprzypomnij.Text = "ZMIEŃ HASŁO";
             buttonprzypomnij.UseVisualStyleBackColor = true;
             buttonprzypomnij.Click += buttonprzypomnij_Click;
+            // 
+            // textBoxMail
+            // 
+            textBoxMail.Anchor = AnchorStyles.None;
+            textBoxMail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxMail.Location = new Point(396, 121);
+            textBoxMail.Name = "textBoxMail";
+            textBoxMail.Size = new Size(274, 35);
+            textBoxMail.TabIndex = 0;
+            textBoxMail.Visible = false;
+            // 
+            // labelmail
+            // 
+            labelmail.Anchor = AnchorStyles.None;
+            labelmail.AutoSize = true;
+            labelmail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelmail.Location = new Point(465, 88);
+            labelmail.Name = "labelmail";
+            labelmail.Size = new Size(135, 30);
+            labelmail.TabIndex = 1;
+            labelmail.Text = "Adres e-mail:";
+            labelmail.Visible = false;
             // 
             // buttonLogin
             // 
@@ -148,6 +198,26 @@
             textBoxLogin.Size = new Size(274, 36);
             textBoxLogin.TabIndex = 0;
             // 
+            // labelWeryfikacja
+            // 
+            labelWeryfikacja.AutoSize = true;
+            labelWeryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelWeryfikacja.Location = new Point(315, 212);
+            labelWeryfikacja.Name = "labelWeryfikacja";
+            labelWeryfikacja.Size = new Size(467, 30);
+            labelWeryfikacja.TabIndex = 1;
+            labelWeryfikacja.Text = "Wpisz znaki , które widzisz na ponższym obrazku";
+            labelWeryfikacja.Visible = false;
+            // 
+            // textBoxWeryfikacja
+            // 
+            textBoxWeryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxWeryfikacja.Location = new Point(396, 245);
+            textBoxWeryfikacja.Name = "textBoxWeryfikacja";
+            textBoxWeryfikacja.Size = new Size(274, 35);
+            textBoxWeryfikacja.TabIndex = 8;
+            textBoxWeryfikacja.Visible = false;
+            // 
             // Logowanie
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -179,6 +249,11 @@
         private TextBox textBoxHaslo;
         private Button buttonLogin;
         private Button buttonprzypomnij;
-        private Panel panel1;
+        private Label labelmail;
+        private TextBox textBoxMail;
+        private Button buttonWroc;
+        private Button buttonDalej;
+        private Label labelWeryfikacja;
+        private TextBox textBoxWeryfikacja;
     }
 }

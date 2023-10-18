@@ -26,7 +26,36 @@ namespace USOS_Rektora
 
         private void buttonprzypomnij_Click(object sender, EventArgs e)
         {
-            panelLogowania.Visible = false;
+            textBoxLogin.Visible = false;
+            textBoxHaslo.Visible = false;
+            labelHaslo.Visible = false;
+            labelLogin.Visible = false;
+            buttonprzypomnij.Visible = false;
+            buttonLogin.Visible = false;
+
+            labelmail.Visible = true;
+            labelWeryfikacja.Visible = true;
+            textBoxMail.Visible = true;
+            textBoxWeryfikacja.Visible = true;
+            buttonDalej.Visible = true;
+            buttonWroc.Visible = true;
+        }
+
+        private void buttonWroc_Click(object sender, EventArgs e)
+        {
+            textBoxLogin.Visible = true;
+            textBoxHaslo.Visible = true;
+            labelHaslo.Visible = true;
+            labelLogin.Visible = true;
+            buttonprzypomnij.Visible = true;
+            buttonLogin.Visible = true;
+
+            labelmail.Visible = false;
+            labelWeryfikacja.Visible = false;
+            textBoxMail.Visible = false;
+            textBoxWeryfikacja.Visible = false;
+            buttonDalej.Visible = false;
+            buttonWroc.Visible = false;
         }
     }
 }
