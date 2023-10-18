@@ -1,10 +1,15 @@
 namespace USOS_Rektora
 {
-    public partial class Form1 : Form
+    public partial class Logowanie : Form
     {
-        public Form1()
+        public Logowanie()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
