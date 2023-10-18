@@ -31,11 +31,13 @@
             panelNaglowka = new Panel();
             Naglowek = new Label();
             panelLogowania = new Panel();
-            label1 = new Label();
-            textBox1 = new TextBox();
+            buttonprzypomnij = new Button();
+            buttonLogin = new Button();
+            labelHaslo = new Label();
+            textBoxHaslo = new TextBox();
             labelLogin = new Label();
             textBoxLogin = new TextBox();
-            buttonLogin = new Button();
+            panel1 = new Panel();
             panelNaglowka.SuspendLayout();
             panelLogowania.SuspendLayout();
             SuspendLayout();
@@ -64,9 +66,11 @@
             // 
             // panelLogowania
             // 
+            panelLogowania.Controls.Add(panel1);
+            panelLogowania.Controls.Add(buttonprzypomnij);
             panelLogowania.Controls.Add(buttonLogin);
-            panelLogowania.Controls.Add(label1);
-            panelLogowania.Controls.Add(textBox1);
+            panelLogowania.Controls.Add(labelHaslo);
+            panelLogowania.Controls.Add(textBoxHaslo);
             panelLogowania.Controls.Add(labelLogin);
             panelLogowania.Controls.Add(textBoxLogin);
             panelLogowania.Dock = DockStyle.Fill;
@@ -76,25 +80,45 @@
             panelLogowania.Size = new Size(1034, 378);
             panelLogowania.TabIndex = 1;
             // 
-            // label1
+            // buttonprzypomnij
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(501, 212);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 30);
-            label1.TabIndex = 3;
-            label1.Text = "Hasło";
+            buttonprzypomnij.Location = new Point(523, 314);
+            buttonprzypomnij.Name = "buttonprzypomnij";
+            buttonprzypomnij.Size = new Size(147, 23);
+            buttonprzypomnij.TabIndex = 5;
+            buttonprzypomnij.Text = "PRZYPOMNIJ HASŁO";
+            buttonprzypomnij.UseVisualStyleBackColor = true;
+            buttonprzypomnij.Click += buttonprzypomnij_Click;
             // 
-            // textBox1
+            // buttonLogin
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(396, 245);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(274, 35);
-            textBox1.TabIndex = 2;
+            buttonLogin.Location = new Point(396, 314);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(121, 23);
+            buttonLogin.TabIndex = 4;
+            buttonLogin.Text = "ZALOGUJ SIĘ";
+            buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.Click += buttonLogin_Click;
+            // 
+            // labelHaslo
+            // 
+            labelHaslo.Anchor = AnchorStyles.None;
+            labelHaslo.AutoSize = true;
+            labelHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelHaslo.Location = new Point(501, 212);
+            labelHaslo.Name = "labelHaslo";
+            labelHaslo.Size = new Size(66, 30);
+            labelHaslo.TabIndex = 3;
+            labelHaslo.Text = "Hasło";
+            // 
+            // textBoxHaslo
+            // 
+            textBoxHaslo.Anchor = AnchorStyles.None;
+            textBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxHaslo.Location = new Point(396, 245);
+            textBoxHaslo.Name = "textBoxHaslo";
+            textBoxHaslo.Size = new Size(274, 35);
+            textBoxHaslo.TabIndex = 2;
             // 
             // labelLogin
             // 
@@ -117,14 +141,12 @@
             textBoxLogin.Size = new Size(274, 36);
             textBoxLogin.TabIndex = 0;
             // 
-            // buttonLogin
+            // panel1
             // 
-            buttonLogin.Location = new Point(396, 314);
-            buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(121, 23);
-            buttonLogin.TabIndex = 4;
-            buttonLogin.Text = "ZALOGUJ SIĘ";
-            buttonLogin.UseVisualStyleBackColor = true;
+            panel1.Location = new Point(150, 88);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 2;
             // 
             // Logowanie
             // 
@@ -153,8 +175,10 @@
         private Panel panelLogowania;
         private TextBox textBoxLogin;
         private Label labelLogin;
-        private Label label1;
-        private TextBox textBox1;
+        private Label labelHaslo;
+        private TextBox textBoxHaslo;
         private Button buttonLogin;
+        private Button buttonprzypomnij;
+        private Panel panel1;
     }
 }
