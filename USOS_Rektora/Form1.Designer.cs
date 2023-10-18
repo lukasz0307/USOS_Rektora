@@ -31,13 +31,13 @@
             panelNaglowka = new Panel();
             Naglowek = new Label();
             panelLogowania = new Panel();
+            panel1 = new Panel();
             buttonprzypomnij = new Button();
             buttonLogin = new Button();
             labelHaslo = new Label();
             textBoxHaslo = new TextBox();
             labelLogin = new Label();
             textBoxLogin = new TextBox();
-            panel1 = new Panel();
             panelNaglowka.SuspendLayout();
             panelLogowania.SuspendLayout();
             SuspendLayout();
@@ -79,6 +79,13 @@
             panelLogowania.Name = "panelLogowania";
             panelLogowania.Size = new Size(1034, 378);
             panelLogowania.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(150, 88);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 120);
+            panel1.TabIndex = 2;
             // 
             // buttonprzypomnij
             // 
@@ -140,13 +147,6 @@
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(274, 36);
             textBoxLogin.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(150, 88);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 100);
-            panel1.TabIndex = 2;
             // 
             // Logowanie
             // 
