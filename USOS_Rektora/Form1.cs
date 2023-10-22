@@ -16,6 +16,8 @@ namespace USOS_Rektora
 
         }
 
+
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             this.Hide();

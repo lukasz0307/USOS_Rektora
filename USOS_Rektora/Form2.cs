@@ -16,5 +16,19 @@ namespace USOS_Rektora
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// funkcja przycisku wyswietlajaca userConstrol wydziałów
+        /// </summary>
+        private void buttonWydzialy_Click(object sender, EventArgs e)
+        {
+            if (!panelPodFormularzy.Controls.Contains(UserControlWydzialy.Instance))
+            {
+                panelPodFormularzy.Controls.Add(UserControlWydzialy.Instance);
+                UserControlWydzialy.Instance.Dock = DockStyle.Fill;
+                UserControlWydzialy.Instance.BringToFront();
+            }
+            else
+                UserControlWydzialy.Instance.BringToFront();
+        }
     }
 }
