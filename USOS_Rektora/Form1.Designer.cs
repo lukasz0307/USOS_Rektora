@@ -202,10 +202,10 @@
             tabPage2.Controls.Add(textBoxWeryfikacja);
             tabPage2.Controls.Add(pictureBoxWeryfikacja);
             tabPage2.Controls.Add(labelWeryfikacja);
-            tabPage2.Location = new Point(4, 14);
+            tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1026, 371);
+            tabPage2.Size = new Size(1026, 361);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
