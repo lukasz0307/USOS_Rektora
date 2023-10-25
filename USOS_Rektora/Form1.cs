@@ -4,8 +4,13 @@ namespace USOS_Rektora
 {
     public partial class Logowanie : Form
     {
-        
+
         int losowyIndeks;
+
+        public Form2 glownyForm;
+        public Form logowanieForm;
+
+
         public Logowanie()
         {
             InitializeComponent();
@@ -15,14 +20,24 @@ namespace USOS_Rektora
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!panelLogowania.Controls.Contains(UserControlLogowanie.Instance))
-            {
-                panelLogowania.Controls.Add(UserControlLogowanie.Instance);
-                UserControlLogowanie.Instance.Dock = DockStyle.Fill;
-                UserControlLogowanie.Instance.BringToFront();
-            }
-            else
-                UserControlLogowanie.Instance.BringToFront();
+
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            glownyForm = new Form2();
+            glownyForm.Show();
+        }
+
+        private void buttonprzypomnij_Click(object sender, EventArgs e)
+        {
+            tabControlKontener.SelectedIndex = 1;
+        }
+
+        private void buttonWroc_Click(object sender, EventArgs e)
+        {
+            tabControlKontener.SelectedIndex = 0;
         }
     }
 
