@@ -4,7 +4,7 @@ namespace USOS_Rektora
 {
     public partial class Logowanie : Form
     {
-        
+
         int losowyIndeks;
         public Logowanie()
         {
@@ -15,14 +15,19 @@ namespace USOS_Rektora
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!panelLogowania.Controls.Contains(UserControlLogowanie.Instance))
+            if (!panelMain.Controls.Contains(UserControlLogowanie.Instance))
             {
-                panelLogowania.Controls.Add(UserControlLogowanie.Instance);
+                panelMain.Controls.Add(UserControlLogowanie.Instance);
                 UserControlLogowanie.Instance.Dock = DockStyle.Fill;
                 UserControlLogowanie.Instance.BringToFront();
             }
             else
                 UserControlLogowanie.Instance.BringToFront();
+        }
+
+        private void panelNaglowka_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             panelNawigacja = new Panel();
+            pictureBox1 = new PictureBox();
             buttonKadra = new Button();
             buttonWydzialy = new Button();
-            panelPodFormularzy = new Panel();
             panelBanera = new Panel();
             labelTytulu = new Label();
-            pictureBox1 = new PictureBox();
             panelNawigacja.SuspendLayout();
-            panelBanera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelBanera.SuspendLayout();
             SuspendLayout();
             // 
             // panelNawigacja
@@ -51,6 +50,18 @@
             panelNawigacja.Name = "panelNawigacja";
             panelNawigacja.Size = new Size(250, 653);
             panelNawigacja.TabIndex = 0;
+            panelNawigacja.Paint += panelNawigacja_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackColor = SystemColors.ControlLightLight;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(250, 122);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // buttonKadra
             // 
@@ -75,14 +86,6 @@
             buttonWydzialy.UseVisualStyleBackColor = true;
             buttonWydzialy.Click += buttonWydzialy_Click;
             // 
-            // panelPodFormularzy
-            // 
-            panelPodFormularzy.Dock = DockStyle.Fill;
-            panelPodFormularzy.Location = new Point(250, 0);
-            panelPodFormularzy.Name = "panelPodFormularzy";
-            panelPodFormularzy.Size = new Size(932, 653);
-            panelPodFormularzy.TabIndex = 1;
-            // 
             // panelBanera
             // 
             panelBanera.BackColor = SystemColors.HotTrack;
@@ -92,6 +95,7 @@
             panelBanera.Name = "panelBanera";
             panelBanera.Size = new Size(932, 122);
             panelBanera.TabIndex = 2;
+            panelBanera.Paint += panelBanera_Paint;
             // 
             // labelTytulu
             // 
@@ -99,21 +103,12 @@
             labelTytulu.AutoSize = true;
             labelTytulu.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTytulu.ForeColor = SystemColors.Control;
-            labelTytulu.Location = new Point(413, 34);
+            labelTytulu.Location = new Point(393, 34);
             labelTytulu.Name = "labelTytulu";
             labelTytulu.Size = new Size(160, 62);
             labelTytulu.TabIndex = 0;
             labelTytulu.Text = "Home";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.BackColor = SystemColors.ControlLightLight;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 122);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            labelTytulu.Click += labelTytulu_Click;
             // 
             // Form2
             // 
@@ -121,14 +116,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1182, 653);
             Controls.Add(panelBanera);
-            Controls.Add(panelPodFormularzy);
             Controls.Add(panelNawigacja);
             Name = "Form2";
             Text = "Form2";
             panelNawigacja.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBanera.ResumeLayout(false);
             panelBanera.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -137,7 +131,6 @@
         private Panel panelNawigacja;
         private Button buttonKadra;
         private Button buttonWydzialy;
-        private Panel panelPodFormularzy;
         private Panel panelBanera;
         private Label labelTytulu;
         private PictureBox pictureBox1;

@@ -21,7 +21,7 @@ namespace USOS_Rektora
         /// </summary>
         private void buttonWydzialy_Click(object sender, EventArgs e)
         {
-            if (!panelPodFormularzy.Controls.Contains(UserControlWydzialy.Instance))
+/*            if (!panelPodFormularzy.Controls.Contains(UserControlWydzialy.Instance))
             {
                 panelPodFormularzy.Controls.Add(UserControlWydzialy.Instance);
                 UserControlWydzialy.Instance.Dock = DockStyle.Fill;
@@ -29,8 +29,26 @@ namespace USOS_Rektora
             }
             else
                 UserControlWydzialy.Instance.BringToFront();
-            labelTytulu.Text = buttonWydzialy.Text;
+            labelTytulu.Text = buttonWydzialy.Text;*/
         }
-        
+
+        private void labelTytulu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelBanera_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelNawigacja_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }

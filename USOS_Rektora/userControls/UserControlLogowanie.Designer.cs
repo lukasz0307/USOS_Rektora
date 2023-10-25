@@ -34,6 +34,7 @@
             buttonprzypomnij = new Button();
             textBoxHaslo = new TextBox();
             buttonLogin = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             SuspendLayout();
             // 
             // labelLogin
@@ -55,6 +56,7 @@
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(313, 43);
             textBoxLogin.TabIndex = 6;
+            textBoxLogin.TextChanged += textBoxLogin_TextChanged;
             // 
             // labelHaslo
             // 
@@ -125,5 +127,6 @@
         private Button buttonprzypomnij;
         private TextBox textBoxHaslo;
         private Button buttonLogin;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

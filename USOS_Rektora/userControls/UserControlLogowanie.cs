@@ -18,6 +18,7 @@ namespace USOS_Rektora.userControls
         private static UserControlLogowanie _instance;
         public Form2 glownyForm;
         public Form logowanieForm;
+        public object panelMain { get; set; }
         public static UserControlLogowanie Instance
         {
             get
@@ -27,6 +28,7 @@ namespace USOS_Rektora.userControls
                 return _instance;
             }
         }
+
         public UserControlLogowanie()
         {
             InitializeComponent();
@@ -34,16 +36,29 @@ namespace USOS_Rektora.userControls
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            glownyForm = new Form2();
-            glownyForm.Show();
-
+            //this.Hide();
+            //glownyForm = new Form2();
+            //glownyForm.Show();
+/*            if (!panelMain.Controls.Contains(UserControlLogowanie.Instance))
+            {
+                logowanieForm.Controls.Add(UserControlLogowanie.Instance);
+                UserControlLogowanie.Instance.Dock = DockStyle.Fill;
+                UserControlLogowanie.Instance.BringToFront();
+            }
+            else
+                UserControlLogowanie.Instance.BringToFront();
+*/
 
         }
 
         private void buttonprzypomnij_Click(object sender, EventArgs e)
         {
-            
-    }
+
+        }
+
+        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
