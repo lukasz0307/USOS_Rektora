@@ -19,7 +19,10 @@ namespace USOS_Rektora
         /// <summary>
         /// funkcja przycisku wyswietlajaca userConstrol wydziałów
         /// </summary>
-        private void buttonWydzialy_Click(object sender, EventArgs e)
+
+
+
+        private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
             if (!panelPodFormularzy.Controls.Contains(UserControlWydzialy.Instance))
             {
@@ -29,8 +32,8 @@ namespace USOS_Rektora
             }
             else
                 UserControlWydzialy.Instance.BringToFront();
-            labelTytulu.Text = buttonWydzialy.Text;
+            labelTytulu.Text = iconButtonWydzialy.Text;
+
         }
-        
     }
 }
