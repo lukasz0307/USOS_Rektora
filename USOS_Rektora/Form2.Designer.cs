@@ -28,14 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panelNawigacja = new Panel();
+            iconButtonKadra = new FontAwesome.Sharp.IconButton();
             iconButtonWydzialy = new FontAwesome.Sharp.IconButton();
+            contextMenuStripWydzialy = new ContextMenuStrip(components);
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            nawigacyjnyToolStripMenuItem = new ToolStripMenuItem();
+            elToolStripMenuItem = new ToolStripMenuItem();
+            mechanicznyToolStripMenuItem = new ToolStripMenuItem();
+            zarządzaniaINaukOJakościToolStripMenuItem = new ToolStripMenuItem();
+            działArmatorskiToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             panelPodFormularzy = new Panel();
             panelBanera = new Panel();
             labelTytulu = new Label();
-            iconButtonKadra = new FontAwesome.Sharp.IconButton();
+            iconButtonWyloguj = new FontAwesome.Sharp.IconButton();
             panelNawigacja.SuspendLayout();
+            contextMenuStripWydzialy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBanera.SuspendLayout();
             SuspendLayout();
@@ -43,6 +53,7 @@
             // panelNawigacja
             // 
             panelNawigacja.BackColor = SystemColors.Highlight;
+            panelNawigacja.Controls.Add(iconButtonWyloguj);
             panelNawigacja.Controls.Add(iconButtonKadra);
             panelNawigacja.Controls.Add(iconButtonWydzialy);
             panelNawigacja.Controls.Add(pictureBox1);
@@ -53,9 +64,28 @@
             panelNawigacja.Size = new Size(219, 490);
             panelNawigacja.TabIndex = 0;
             // 
+            // iconButtonKadra
+            // 
+            iconButtonKadra.Anchor = AnchorStyles.None;
+            iconButtonKadra.FlatAppearance.BorderSize = 0;
+            iconButtonKadra.FlatStyle = FlatStyle.Flat;
+            iconButtonKadra.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButtonKadra.ForeColor = SystemColors.ControlLightLight;
+            iconButtonKadra.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            iconButtonKadra.IconColor = Color.White;
+            iconButtonKadra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonKadra.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButtonKadra.Location = new Point(0, 153);
+            iconButtonKadra.Name = "iconButtonKadra";
+            iconButtonKadra.Size = new Size(219, 50);
+            iconButtonKadra.TabIndex = 1;
+            iconButtonKadra.Text = "Kadra";
+            iconButtonKadra.UseVisualStyleBackColor = true;
+            // 
             // iconButtonWydzialy
             // 
             iconButtonWydzialy.Anchor = AnchorStyles.None;
+            iconButtonWydzialy.ContextMenuStrip = contextMenuStripWydzialy;
             iconButtonWydzialy.FlatAppearance.BorderSize = 0;
             iconButtonWydzialy.FlatStyle = FlatStyle.Flat;
             iconButtonWydzialy.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -66,11 +96,54 @@
             iconButtonWydzialy.ImageAlign = ContentAlignment.MiddleLeft;
             iconButtonWydzialy.Location = new Point(0, 97);
             iconButtonWydzialy.Name = "iconButtonWydzialy";
-            iconButtonWydzialy.Size = new Size(219, 38);
+            iconButtonWydzialy.Size = new Size(219, 50);
             iconButtonWydzialy.TabIndex = 0;
             iconButtonWydzialy.Text = "Wydziały";
             iconButtonWydzialy.UseVisualStyleBackColor = true;
             iconButtonWydzialy.Click += iconButtonWydzialy_Click;
+            // 
+            // contextMenuStripWydzialy
+            // 
+            contextMenuStripWydzialy.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1 });
+            contextMenuStripWydzialy.Name = "contextMenuStripWydzialy";
+            contextMenuStripWydzialy.Size = new Size(118, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { nawigacyjnyToolStripMenuItem, elToolStripMenuItem, mechanicznyToolStripMenuItem, zarządzaniaINaukOJakościToolStripMenuItem, działArmatorskiToolStripMenuItem });
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(117, 22);
+            toolStripMenuItem1.Text = "Kierunki";
+            // 
+            // nawigacyjnyToolStripMenuItem
+            // 
+            nawigacyjnyToolStripMenuItem.Name = "nawigacyjnyToolStripMenuItem";
+            nawigacyjnyToolStripMenuItem.Size = new Size(220, 22);
+            nawigacyjnyToolStripMenuItem.Text = "Nawigacyjny";
+            // 
+            // elToolStripMenuItem
+            // 
+            elToolStripMenuItem.Name = "elToolStripMenuItem";
+            elToolStripMenuItem.Size = new Size(220, 22);
+            elToolStripMenuItem.Text = "Elektryczny";
+            // 
+            // mechanicznyToolStripMenuItem
+            // 
+            mechanicznyToolStripMenuItem.Name = "mechanicznyToolStripMenuItem";
+            mechanicznyToolStripMenuItem.Size = new Size(220, 22);
+            mechanicznyToolStripMenuItem.Text = "Mechaniczny";
+            // 
+            // zarządzaniaINaukOJakościToolStripMenuItem
+            // 
+            zarządzaniaINaukOJakościToolStripMenuItem.Name = "zarządzaniaINaukOJakościToolStripMenuItem";
+            zarządzaniaINaukOJakościToolStripMenuItem.Size = new Size(220, 22);
+            zarządzaniaINaukOJakościToolStripMenuItem.Text = "Zarządzania i nauk o jakości";
+            // 
+            // działArmatorskiToolStripMenuItem
+            // 
+            działArmatorskiToolStripMenuItem.Name = "działArmatorskiToolStripMenuItem";
+            działArmatorskiToolStripMenuItem.Size = new Size(220, 22);
+            działArmatorskiToolStripMenuItem.Text = "Dział armatorski";
             // 
             // pictureBox1
             // 
@@ -115,23 +188,24 @@
             labelTytulu.TabIndex = 0;
             labelTytulu.Text = "Home";
             // 
-            // iconButtonKadra
+            // iconButtonWyloguj
             // 
-            iconButtonKadra.Anchor = AnchorStyles.None;
-            iconButtonKadra.FlatAppearance.BorderSize = 0;
-            iconButtonKadra.FlatStyle = FlatStyle.Flat;
-            iconButtonKadra.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButtonKadra.ForeColor = SystemColors.ControlLightLight;
-            iconButtonKadra.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            iconButtonKadra.IconColor = Color.White;
-            iconButtonKadra.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonKadra.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonKadra.Location = new Point(0, 152);
-            iconButtonKadra.Name = "iconButtonKadra";
-            iconButtonKadra.Size = new Size(219, 38);
-            iconButtonKadra.TabIndex = 1;
-            iconButtonKadra.Text = "Kadra";
-            iconButtonKadra.UseVisualStyleBackColor = true;
+            iconButtonWyloguj.Anchor = AnchorStyles.None;
+            iconButtonWyloguj.FlatAppearance.BorderSize = 0;
+            iconButtonWyloguj.FlatStyle = FlatStyle.Flat;
+            iconButtonWyloguj.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButtonWyloguj.ForeColor = SystemColors.ControlLightLight;
+            iconButtonWyloguj.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            iconButtonWyloguj.IconColor = Color.White;
+            iconButtonWyloguj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonWyloguj.ImageAlign = ContentAlignment.MiddleRight;
+            iconButtonWyloguj.Location = new Point(0, 437);
+            iconButtonWyloguj.Name = "iconButtonWyloguj";
+            iconButtonWyloguj.Size = new Size(219, 50);
+            iconButtonWyloguj.TabIndex = 2;
+            iconButtonWyloguj.Text = "Wyloguj";
+            iconButtonWyloguj.UseVisualStyleBackColor = true;
+            iconButtonWyloguj.Click += iconButtonWyloguj_Click;
             // 
             // Form2
             // 
@@ -145,6 +219,7 @@
             Name = "Form2";
             Text = "Form2";
             panelNawigacja.ResumeLayout(false);
+            contextMenuStripWydzialy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBanera.ResumeLayout(false);
             panelBanera.PerformLayout();
@@ -160,5 +235,13 @@
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton iconButtonWydzialy;
         private FontAwesome.Sharp.IconButton iconButtonKadra;
+        private ContextMenuStrip contextMenuStripWydzialy;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem nawigacyjnyToolStripMenuItem;
+        private ToolStripMenuItem elToolStripMenuItem;
+        private ToolStripMenuItem mechanicznyToolStripMenuItem;
+        private ToolStripMenuItem zarządzaniaINaukOJakościToolStripMenuItem;
+        private ToolStripMenuItem działArmatorskiToolStripMenuItem;
+        private FontAwesome.Sharp.IconButton iconButtonWyloguj;
     }
 }

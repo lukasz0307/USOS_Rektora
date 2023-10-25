@@ -12,6 +12,7 @@ namespace USOS_Rektora
 {
     public partial class Form2 : Form
     {
+        public Form logowanieForm;
         public Form2()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace USOS_Rektora
 
         private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
+            /*
             if (!panelPodFormularzy.Controls.Contains(UserControlWydzialy.Instance))
             {
                 panelPodFormularzy.Controls.Add(UserControlWydzialy.Instance);
@@ -33,7 +35,15 @@ namespace USOS_Rektora
             else
                 UserControlWydzialy.Instance.BringToFront();
             labelTytulu.Text = iconButtonWydzialy.Text;
+            */
 
+        }
+
+        private void iconButtonWyloguj_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            logowanieForm = new Form();
+            logowanieForm.Show();
         }
     }
 }
