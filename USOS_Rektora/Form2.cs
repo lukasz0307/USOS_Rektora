@@ -29,6 +29,8 @@ namespace USOS_Rektora
             }
             else
                 UserControlWydzialy.Instance.BringToFront();
+            labelTytulu.Text = buttonWydzialy.Text;
         }
+        
     }
 }
