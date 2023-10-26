@@ -51,16 +51,21 @@
             zarządzaniaINaukOJakościToolStripMenuItem = new ToolStripMenuItem();
             działArmatorskiToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
-            panelPodFormularzy = new Panel();
             panelBanera = new Panel();
             labelTytulu = new Label();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            panelBar = new Panel();
+            iconButtonMin = new FontAwesome.Sharp.IconButton();
+            iconButtonMaks = new FontAwesome.Sharp.IconButton();
+            iconButtonZamknij = new FontAwesome.Sharp.IconButton();
+            panelUserControl = new Panel();
             panelNawigacja.SuspendLayout();
             menuUczniowie.SuspendLayout();
             menuKadra.SuspendLayout();
             menuWydzialy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBanera.SuspendLayout();
+            panelBar.SuspendLayout();
             SuspendLayout();
             // 
             // panelNawigacja
@@ -74,14 +79,14 @@
             panelNawigacja.Controls.Add(iconButtonWydzialy);
             panelNawigacja.Controls.Add(pictureBox1);
             panelNawigacja.Dock = DockStyle.Left;
-            panelNawigacja.Location = new Point(0, 0);
+            panelNawigacja.Location = new Point(0, 35);
             panelNawigacja.Name = "panelNawigacja";
-            panelNawigacja.Size = new Size(250, 653);
+            panelNawigacja.Size = new Size(250, 618);
             panelNawigacja.TabIndex = 0;
             // 
             // iconButtonogloszenia
             // 
-            iconButtonogloszenia.Anchor = AnchorStyles.None;
+            iconButtonogloszenia.Dock = DockStyle.Top;
             iconButtonogloszenia.FlatAppearance.BorderSize = 0;
             iconButtonogloszenia.FlatStyle = FlatStyle.Flat;
             iconButtonogloszenia.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -90,17 +95,17 @@
             iconButtonogloszenia.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonogloszenia.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButtonogloszenia.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonogloszenia.Location = new Point(-3, 394);
+            iconButtonogloszenia.Location = new Point(0, 363);
             iconButtonogloszenia.Margin = new Padding(0);
             iconButtonogloszenia.Name = "iconButtonogloszenia";
-            iconButtonogloszenia.Size = new Size(250, 67);
+            iconButtonogloszenia.Size = new Size(250, 60);
             iconButtonogloszenia.TabIndex = 5;
             iconButtonogloszenia.Text = "Ogłoszenia";
             iconButtonogloszenia.UseVisualStyleBackColor = true;
             // 
             // iconButtonKalendarz
             // 
-            iconButtonKalendarz.Anchor = AnchorStyles.None;
+            iconButtonKalendarz.Dock = DockStyle.Top;
             iconButtonKalendarz.FlatAppearance.BorderSize = 0;
             iconButtonKalendarz.FlatStyle = FlatStyle.Flat;
             iconButtonKalendarz.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -109,19 +114,19 @@
             iconButtonKalendarz.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonKalendarz.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonKalendarz.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonKalendarz.Location = new Point(0, 327);
+            iconButtonKalendarz.Location = new Point(0, 303);
             iconButtonKalendarz.Margin = new Padding(0);
             iconButtonKalendarz.Name = "iconButtonKalendarz";
-            iconButtonKalendarz.Size = new Size(250, 67);
+            iconButtonKalendarz.Size = new Size(250, 60);
             iconButtonKalendarz.TabIndex = 4;
             iconButtonKalendarz.Text = "Kalendarz";
             iconButtonKalendarz.UseVisualStyleBackColor = true;
             // 
             // iconButtonUczniowie
             // 
-            iconButtonUczniowie.Anchor = AnchorStyles.None;
             iconButtonUczniowie.BackColor = Color.FromArgb(64, 64, 64);
             iconButtonUczniowie.ContextMenuStrip = menuUczniowie;
+            iconButtonUczniowie.Dock = DockStyle.Top;
             iconButtonUczniowie.FlatAppearance.BorderSize = 0;
             iconButtonUczniowie.FlatStyle = FlatStyle.Flat;
             iconButtonUczniowie.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -130,10 +135,10 @@
             iconButtonUczniowie.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonUczniowie.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonUczniowie.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonUczniowie.Location = new Point(-3, 260);
+            iconButtonUczniowie.Location = new Point(0, 243);
             iconButtonUczniowie.Margin = new Padding(0);
             iconButtonUczniowie.Name = "iconButtonUczniowie";
-            iconButtonUczniowie.Size = new Size(250, 67);
+            iconButtonUczniowie.Size = new Size(250, 60);
             iconButtonUczniowie.TabIndex = 3;
             iconButtonUczniowie.Text = "Uczniowie";
             iconButtonUczniowie.UseVisualStyleBackColor = false;
@@ -180,10 +185,10 @@
             iconButtonWyloguj.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonWyloguj.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonWyloguj.ImageAlign = ContentAlignment.MiddleRight;
-            iconButtonWyloguj.Location = new Point(0, 586);
+            iconButtonWyloguj.Location = new Point(0, 562);
             iconButtonWyloguj.Margin = new Padding(3, 4, 3, 4);
             iconButtonWyloguj.Name = "iconButtonWyloguj";
-            iconButtonWyloguj.Size = new Size(250, 67);
+            iconButtonWyloguj.Size = new Size(250, 56);
             iconButtonWyloguj.TabIndex = 2;
             iconButtonWyloguj.Text = "Wyloguj";
             iconButtonWyloguj.UseVisualStyleBackColor = true;
@@ -191,8 +196,8 @@
             // 
             // iconButtonKadra
             // 
-            iconButtonKadra.Anchor = AnchorStyles.None;
             iconButtonKadra.ContextMenuStrip = menuKadra;
+            iconButtonKadra.Dock = DockStyle.Top;
             iconButtonKadra.FlatAppearance.BorderSize = 0;
             iconButtonKadra.FlatStyle = FlatStyle.Flat;
             iconButtonKadra.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -201,10 +206,10 @@
             iconButtonKadra.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonKadra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonKadra.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonKadra.Location = new Point(0, 193);
+            iconButtonKadra.Location = new Point(0, 183);
             iconButtonKadra.Margin = new Padding(0);
             iconButtonKadra.Name = "iconButtonKadra";
-            iconButtonKadra.Size = new Size(250, 67);
+            iconButtonKadra.Size = new Size(250, 60);
             iconButtonKadra.TabIndex = 1;
             iconButtonKadra.Text = "Kadra";
             iconButtonKadra.UseVisualStyleBackColor = true;
@@ -235,8 +240,8 @@
             // 
             // iconButtonWydzialy
             // 
-            iconButtonWydzialy.Anchor = AnchorStyles.None;
             iconButtonWydzialy.ContextMenuStrip = menuWydzialy;
+            iconButtonWydzialy.Dock = DockStyle.Top;
             iconButtonWydzialy.FlatAppearance.BorderSize = 0;
             iconButtonWydzialy.FlatStyle = FlatStyle.Flat;
             iconButtonWydzialy.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
@@ -245,10 +250,10 @@
             iconButtonWydzialy.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonWydzialy.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonWydzialy.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonWydzialy.Location = new Point(0, 126);
+            iconButtonWydzialy.Location = new Point(0, 123);
             iconButtonWydzialy.Margin = new Padding(0);
             iconButtonWydzialy.Name = "iconButtonWydzialy";
-            iconButtonWydzialy.Size = new Size(250, 67);
+            iconButtonWydzialy.Size = new Size(250, 60);
             iconButtonWydzialy.TabIndex = 0;
             iconButtonWydzialy.Text = "Wydziały";
             iconButtonWydzialy.UseVisualStyleBackColor = true;
@@ -261,7 +266,7 @@
             menuWydzialy.ImageScalingSize = new Size(20, 20);
             menuWydzialy.Items.AddRange(new ToolStripItem[] { MenuItemKierunki });
             menuWydzialy.Name = "contextMenuStripWydzialy";
-            menuWydzialy.Size = new Size(211, 68);
+            menuWydzialy.Size = new Size(171, 40);
             // 
             // MenuItemKierunki
             // 
@@ -269,7 +274,7 @@
             MenuItemKierunki.DropDownItems.AddRange(new ToolStripItem[] { menuItemNawigacyjny, menuItemElektryczny, mechanicznyToolStripMenuItem, zarządzaniaINaukOJakościToolStripMenuItem, działArmatorskiToolStripMenuItem });
             MenuItemKierunki.ForeColor = Color.FromArgb(224, 224, 224);
             MenuItemKierunki.Name = "MenuItemKierunki";
-            MenuItemKierunki.Size = new Size(210, 36);
+            MenuItemKierunki.Size = new Size(170, 36);
             MenuItemKierunki.Text = "Kierunki";
             // 
             // menuItemNawigacyjny
@@ -322,20 +327,13 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // panelPodFormularzy
-            // 
-            panelPodFormularzy.Dock = DockStyle.Fill;
-            panelPodFormularzy.Location = new Point(250, 0);
-            panelPodFormularzy.Name = "panelPodFormularzy";
-            panelPodFormularzy.Size = new Size(932, 653);
-            panelPodFormularzy.TabIndex = 1;
-            // 
             // panelBanera
             // 
             panelBanera.BackColor = Color.Navy;
             panelBanera.Controls.Add(labelTytulu);
             panelBanera.Dock = DockStyle.Top;
-            panelBanera.Location = new Point(250, 0);
+            panelBanera.Location = new Point(250, 35);
+            panelBanera.Margin = new Padding(0);
             panelBanera.Name = "panelBanera";
             panelBanera.Size = new Size(932, 123);
             panelBanera.TabIndex = 2;
@@ -346,7 +344,7 @@
             labelTytulu.AutoSize = true;
             labelTytulu.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTytulu.ForeColor = SystemColors.Control;
-            labelTytulu.Location = new Point(412, 35);
+            labelTytulu.Location = new Point(386, 30);
             labelTytulu.Name = "labelTytulu";
             labelTytulu.Size = new Size(160, 62);
             labelTytulu.TabIndex = 0;
@@ -363,16 +361,93 @@
             iconMenuItem1.Size = new Size(385, 36);
             iconMenuItem1.Text = "iconMenuItem1";
             // 
+            // panelBar
+            // 
+            panelBar.BackColor = Color.FromArgb(64, 64, 64);
+            panelBar.Controls.Add(iconButtonMin);
+            panelBar.Controls.Add(iconButtonMaks);
+            panelBar.Controls.Add(iconButtonZamknij);
+            panelBar.Dock = DockStyle.Top;
+            panelBar.Location = new Point(0, 0);
+            panelBar.Margin = new Padding(0);
+            panelBar.Name = "panelBar";
+            panelBar.Size = new Size(1182, 35);
+            panelBar.TabIndex = 4;
+            panelBar.MouseDown += panelBar_MouseDown;
+            // 
+            // iconButtonMin
+            // 
+            iconButtonMin.BackColor = Color.FromArgb(64, 64, 64);
+            iconButtonMin.Dock = DockStyle.Right;
+            iconButtonMin.FlatAppearance.BorderSize = 0;
+            iconButtonMin.FlatStyle = FlatStyle.Flat;
+            iconButtonMin.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            iconButtonMin.IconColor = Color.FromArgb(224, 224, 224);
+            iconButtonMin.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButtonMin.IconSize = 30;
+            iconButtonMin.ImageAlign = ContentAlignment.BottomCenter;
+            iconButtonMin.Location = new Point(1002, 0);
+            iconButtonMin.Name = "iconButtonMin";
+            iconButtonMin.Size = new Size(60, 35);
+            iconButtonMin.TabIndex = 2;
+            iconButtonMin.UseVisualStyleBackColor = false;
+            iconButtonMin.Click += iconButtonMin_Click;
+            // 
+            // iconButtonMaks
+            // 
+            iconButtonMaks.BackColor = Color.FromArgb(64, 64, 64);
+            iconButtonMaks.Dock = DockStyle.Right;
+            iconButtonMaks.FlatAppearance.BorderSize = 0;
+            iconButtonMaks.FlatStyle = FlatStyle.Flat;
+            iconButtonMaks.IconChar = FontAwesome.Sharp.IconChar.Square;
+            iconButtonMaks.IconColor = Color.FromArgb(224, 224, 224);
+            iconButtonMaks.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonMaks.IconSize = 30;
+            iconButtonMaks.ImageAlign = ContentAlignment.TopCenter;
+            iconButtonMaks.Location = new Point(1062, 0);
+            iconButtonMaks.Name = "iconButtonMaks";
+            iconButtonMaks.Size = new Size(60, 35);
+            iconButtonMaks.TabIndex = 1;
+            iconButtonMaks.UseVisualStyleBackColor = false;
+            iconButtonMaks.Click += iconButtonMaks_Click;
+            // 
+            // iconButtonZamknij
+            // 
+            iconButtonZamknij.BackColor = Color.FromArgb(64, 64, 64);
+            iconButtonZamknij.Dock = DockStyle.Right;
+            iconButtonZamknij.FlatAppearance.BorderSize = 0;
+            iconButtonZamknij.FlatStyle = FlatStyle.Flat;
+            iconButtonZamknij.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            iconButtonZamknij.IconColor = Color.FromArgb(224, 224, 224);
+            iconButtonZamknij.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButtonZamknij.IconSize = 30;
+            iconButtonZamknij.ImageAlign = ContentAlignment.TopCenter;
+            iconButtonZamknij.Location = new Point(1122, 0);
+            iconButtonZamknij.Name = "iconButtonZamknij";
+            iconButtonZamknij.Size = new Size(60, 35);
+            iconButtonZamknij.TabIndex = 0;
+            iconButtonZamknij.UseVisualStyleBackColor = false;
+            iconButtonZamknij.Click += iconButtonZamknij_Click;
+            // 
+            // panelUserControl
+            // 
+            panelUserControl.Dock = DockStyle.Fill;
+            panelUserControl.Location = new Point(250, 158);
+            panelUserControl.Name = "panelUserControl";
+            panelUserControl.Size = new Size(932, 495);
+            panelUserControl.TabIndex = 5;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1182, 653);
+            ControlBox = false;
+            Controls.Add(panelUserControl);
             Controls.Add(panelBanera);
-            Controls.Add(panelPodFormularzy);
             Controls.Add(panelNawigacja);
+            Controls.Add(panelBar);
             Name = "Form2";
-            Text = "Form2";
             panelNawigacja.ResumeLayout(false);
             menuUczniowie.ResumeLayout(false);
             menuKadra.ResumeLayout(false);
@@ -380,13 +455,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBanera.ResumeLayout(false);
             panelBanera.PerformLayout();
+            panelBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panelNawigacja;
-        private Panel panelPodFormularzy;
         private Panel panelBanera;
         private Label labelTytulu;
         private PictureBox pictureBox1;
@@ -411,5 +486,10 @@
         private ToolStripMenuItem frekwencjaToolStripMenuItem;
         private ToolStripMenuItem płatnościToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private Panel panelBar;
+        private FontAwesome.Sharp.IconButton iconButtonMin;
+        private FontAwesome.Sharp.IconButton iconButtonMaks;
+        private FontAwesome.Sharp.IconButton iconButtonZamknij;
+        private Panel panelUserControl;
     }
 }
