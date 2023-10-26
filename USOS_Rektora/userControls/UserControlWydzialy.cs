@@ -12,8 +12,8 @@ namespace USOS_Rektora
 {
     public partial class UserControlWydzialy : UserControl
     {   /// <summary>
-    /// wyswietlanie pod strony
-    /// </summary>
+        /// wyswietlanie pod strony
+        /// </summary>
         private static UserControlWydzialy _instance;
         public static UserControlWydzialy Instance
         {
