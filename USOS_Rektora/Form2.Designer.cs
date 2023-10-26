@@ -329,7 +329,7 @@
             // 
             // panelBanera
             // 
-            panelBanera.BackColor = Color.Navy;
+            panelBanera.BackColor = Color.FromArgb(0, 0, 64);
             panelBanera.Controls.Add(labelTytulu);
             panelBanera.Dock = DockStyle.Top;
             panelBanera.Location = new Point(250, 35);
