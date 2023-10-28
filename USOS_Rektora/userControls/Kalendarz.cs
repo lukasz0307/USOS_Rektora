@@ -8,23 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace USOS_Rektora
+namespace USOS_Rektora.userControls
 {
-    public partial class UserControlWydzialy : UserControl
-    {   /// <summary>
-        /// wyswietlanie pod strony
-        /// </summary>
-        private static UserControlWydzialy _instance;
-        public static UserControlWydzialy Instance
+    public partial class Kalendarz : UserControl
+    {
+        private static Kalendarz _instance;
+        public static Kalendarz Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new UserControlWydzialy();
+                    _instance = new Kalendarz();
                 return _instance;
             }
         }
-        public UserControlWydzialy()
+        public Kalendarz()
         {
             InitializeComponent();
         }
