@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using USOS_Rektora.userControls;
 
 namespace USOS_Rektora
 {
@@ -19,11 +20,24 @@ namespace USOS_Rektora
             InitializeComponent();
         }
 
+        private void zmianaTekstu(Button przycisk)
+        {
+            labelTytulu.Text = przycisk.Text;
+        }
+
+        private void pozycjonowanieContextMenuStrip(Button przycisk, ContextMenuStrip menu)
+        {
+            menu.Show(przycisk, new Point(przycisk.Width, 0));
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
+
 
         private void iconButtonWyloguj_Click(object sender, EventArgs e)
         {
@@ -34,19 +48,39 @@ namespace USOS_Rektora
 
         private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
-            menuWydzialy.Show(Cursor.Position);
+            pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
+            zmianaTekstu(iconButtonWydzialy);
         }
 
         private void iconButtonKadra_Click(object sender, EventArgs e)
         {
-            menuKadra.Show(Cursor.Position);
+            pozycjonowanieContextMenuStrip(iconButtonKadra, menuKadra);
+            zmianaTekstu(iconButtonKadra);
         }
 
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
         {
-            menuUczniowie.Show(Cursor.Position);
+            pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
+            zmianaTekstu(iconButtonUczniowie);
         }
 
+        private void iconButtonKalendarz_Click(object sender, EventArgs e)
+        {
+            zmianaTekstu(iconButtonKalendarz);
+            if (!panelUserControl.Controls.Contains(Kalendarz.Instance))
+            {
+                panelUserControl.Controls.Add(Kalendarz.Instance);
+                Kalendarz.Instance.Dock = DockStyle.Fill;
+                Kalendarz.Instance.BringToFront();
+            }
+            else
+                Kalendarz.Instance.BringToFront();
+        }
+
+        private void iconButtonogloszenia_Click(object sender, EventArgs e)
+        {
+            zmianaTekstu(iconButtonOgloszenia);
+        }
 
 
         private void iconButtonMaks_Click(object sender, EventArgs e)
@@ -74,5 +108,6 @@ namespace USOS_Rektora
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }

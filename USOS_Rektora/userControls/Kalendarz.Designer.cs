@@ -1,6 +1,6 @@
-﻿namespace USOS_Rektora
+﻿namespace USOS_Rektora.userControls
 {
-    partial class UserControlWydzialy
+    partial class Kalendarz
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -28,17 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             SuspendLayout();
             // 
-            // UserControlWydzialy
+            // label1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            label1.AutoSize = true;
+            label1.Location = new Point(368, 123);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
+            // 
+            // Kalendarz
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Name = "UserControlWydzialy";
-            Size = new Size(914, 471);
+            Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Kalendarz";
+            Size = new Size(797, 362);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }
