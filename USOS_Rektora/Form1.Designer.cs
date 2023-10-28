@@ -38,28 +38,36 @@
             panelLogowania = new Panel();
             tabControlKontener = new TabControl();
             tabPage1 = new TabPage();
+            panel2 = new Panel();
+            labelHaslo = new Label();
+            panel1 = new Panel();
+            labelLogin = new Label();
             textBoxLogin = new TextBox();
             buttonprzypomnij = new Button();
             textBoxHaslo = new TextBox();
             buttonLogin = new Button();
             tabPage2 = new TabPage();
+            panel3 = new Panel();
+            labelMail = new Label();
             buttonWroc = new Button();
             buttonDalej = new Button();
-            labelmail = new Label();
             textBoxMail = new TextBox();
             textBoxWeryfikacja = new TextBox();
             pictureBoxWeryfikacja = new PictureBox();
-            labelWeryfikacja = new Label();
-            labelHaslo = new Label();
-            labelLogin = new Label();
+            panel4 = new Panel();
+            labelweryfikacja = new Label();
             panelNaglowka.SuspendLayout();
             panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panelLogowania.SuspendLayout();
             tabControlKontener.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             tabPage2.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).BeginInit();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panelNaglowka
@@ -195,24 +203,66 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Silver;
-            tabPage1.Controls.Add(labelLogin);
+            tabPage1.Controls.Add(panel2);
+            tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(textBoxLogin);
-            tabPage1.Controls.Add(labelHaslo);
             tabPage1.Controls.Add(buttonprzypomnij);
             tabPage1.Controls.Add(textBoxHaslo);
             tabPage1.Controls.Add(buttonLogin);
             tabPage1.Location = new Point(4, 14);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 3, 3, 3);
+            tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1026, 345);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.Controls.Add(labelHaslo);
+            panel2.Location = new Point(0, 155);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1026, 35);
+            panel2.TabIndex = 19;
+            // 
+            // labelHaslo
+            // 
+            labelHaslo.Dock = DockStyle.Fill;
+            labelHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelHaslo.Location = new Point(0, 0);
+            labelHaslo.Margin = new Padding(0);
+            labelHaslo.Name = "labelHaslo";
+            labelHaslo.Size = new Size(1026, 35);
+            labelHaslo.TabIndex = 13;
+            labelHaslo.Text = "Hasło";
+            labelHaslo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.Controls.Add(labelLogin);
+            panel1.Location = new Point(0, 69);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1026, 35);
+            panel1.TabIndex = 18;
+            // 
+            // labelLogin
+            // 
+            labelLogin.Dock = DockStyle.Fill;
+            labelLogin.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLogin.Location = new Point(0, 0);
+            labelLogin.Margin = new Padding(0);
+            labelLogin.Name = "labelLogin";
+            labelLogin.Size = new Size(1026, 35);
+            labelLogin.TabIndex = 13;
+            labelLogin.Text = "Login";
+            labelLogin.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBoxLogin
             // 
             textBoxLogin.Anchor = AnchorStyles.None;
             textBoxLogin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(371, 106);
+            textBoxLogin.Location = new Point(376, 109);
             textBoxLogin.Margin = new Padding(3, 2, 3, 2);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(274, 36);
@@ -233,7 +283,7 @@
             // 
             textBoxHaslo.Anchor = AnchorStyles.None;
             textBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxHaslo.Location = new Point(371, 190);
+            textBoxHaslo.Location = new Point(376, 190);
             textBoxHaslo.Name = "textBoxHaslo";
             textBoxHaslo.Size = new Size(274, 35);
             textBoxHaslo.TabIndex = 14;
@@ -251,60 +301,70 @@
             // 
             // tabPage2
             // 
-            tabPage2.BackColor = Color.White;
+            tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(panel4);
+            tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(buttonWroc);
             tabPage2.Controls.Add(buttonDalej);
-            tabPage2.Controls.Add(labelmail);
             tabPage2.Controls.Add(textBoxMail);
             tabPage2.Controls.Add(textBoxWeryfikacja);
             tabPage2.Controls.Add(pictureBoxWeryfikacja);
-            tabPage2.Controls.Add(labelWeryfikacja);
             tabPage2.Location = new Point(4, 14);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(1026, 345);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.None;
+            panel3.Controls.Add(labelMail);
+            panel3.Location = new Point(0, 60);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1026, 35);
+            panel3.TabIndex = 19;
+            // 
+            // labelMail
+            // 
+            labelMail.Dock = DockStyle.Fill;
+            labelMail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelMail.Location = new Point(0, 0);
+            labelMail.Margin = new Padding(0);
+            labelMail.Name = "labelMail";
+            labelMail.Size = new Size(1026, 35);
+            labelMail.TabIndex = 13;
+            labelMail.Text = "Podaj adres e-mail";
+            labelMail.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // buttonWroc
             // 
             buttonWroc.Anchor = AnchorStyles.None;
-            buttonWroc.Location = new Point(587, 252);
+            buttonWroc.Location = new Point(566, 252);
             buttonWroc.Margin = new Padding(3, 2, 3, 2);
             buttonWroc.Name = "buttonWroc";
             buttonWroc.Size = new Size(84, 27);
             buttonWroc.TabIndex = 17;
-            buttonWroc.Text = "Wróć";
+            buttonWroc.Text = "WRÓĆ";
             buttonWroc.UseVisualStyleBackColor = true;
             buttonWroc.Click += buttonWroc_Click;
             // 
             // buttonDalej
             // 
             buttonDalej.Anchor = AnchorStyles.None;
-            buttonDalej.Location = new Point(397, 252);
+            buttonDalej.Location = new Point(376, 252);
             buttonDalej.Margin = new Padding(3, 2, 3, 2);
             buttonDalej.Name = "buttonDalej";
             buttonDalej.Size = new Size(97, 27);
             buttonDalej.TabIndex = 16;
-            buttonDalej.Text = "Dalej";
+            buttonDalej.Text = "DALEJ";
             buttonDalej.UseVisualStyleBackColor = true;
-            // 
-            // labelmail
-            // 
-            labelmail.Anchor = AnchorStyles.None;
-            labelmail.AutoSize = true;
-            labelmail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelmail.Location = new Point(458, 70);
-            labelmail.Name = "labelmail";
-            labelmail.Size = new Size(135, 30);
-            labelmail.TabIndex = 12;
-            labelmail.Text = "Adres e-mail:";
             // 
             // textBoxMail
             // 
             textBoxMail.Anchor = AnchorStyles.None;
             textBoxMail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxMail.Location = new Point(397, 101);
+            textBoxMail.Location = new Point(376, 101);
             textBoxMail.Name = "textBoxMail";
             textBoxMail.Size = new Size(274, 35);
             textBoxMail.TabIndex = 11;
@@ -313,7 +373,7 @@
             // 
             textBoxWeryfikacja.Anchor = AnchorStyles.None;
             textBoxWeryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxWeryfikacja.Location = new Point(397, 206);
+            textBoxWeryfikacja.Location = new Point(376, 203);
             textBoxWeryfikacja.Name = "textBoxWeryfikacja";
             textBoxWeryfikacja.Size = new Size(274, 35);
             textBoxWeryfikacja.TabIndex = 15;
@@ -324,42 +384,30 @@
             pictureBoxWeryfikacja.Location = new Point(235, 206);
             pictureBoxWeryfikacja.Margin = new Padding(3, 2, 3, 2);
             pictureBoxWeryfikacja.Name = "pictureBoxWeryfikacja";
-            pictureBoxWeryfikacja.Size = new Size(122, 32);
+            pictureBoxWeryfikacja.Size = new Size(122, 35);
             pictureBoxWeryfikacja.TabIndex = 14;
             pictureBoxWeryfikacja.TabStop = false;
             // 
-            // labelWeryfikacja
+            // panel4
             // 
-            labelWeryfikacja.Anchor = AnchorStyles.None;
-            labelWeryfikacja.AutoSize = true;
-            labelWeryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelWeryfikacja.Location = new Point(295, 156);
-            labelWeryfikacja.Name = "labelWeryfikacja";
-            labelWeryfikacja.Size = new Size(420, 30);
-            labelWeryfikacja.TabIndex = 13;
-            labelWeryfikacja.Text = "Wpisz znaki , które widzisz na obrazku obok";
+            panel4.Anchor = AnchorStyles.None;
+            panel4.Controls.Add(labelweryfikacja);
+            panel4.Location = new Point(0, 155);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1026, 35);
+            panel4.TabIndex = 20;
             // 
-            // labelHaslo
+            // labelweryfikacja
             // 
-            labelHaslo.Anchor = AnchorStyles.None;
-            labelHaslo.AutoSize = true;
-            labelHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelHaslo.Location = new Point(475, 157);
-            labelHaslo.Name = "labelHaslo";
-            labelHaslo.Size = new Size(66, 30);
-            labelHaslo.TabIndex = 15;
-            labelHaslo.Text = "Hasło";
-            // 
-            // labelLogin
-            // 
-            labelLogin.Anchor = AnchorStyles.None;
-            labelLogin.AutoSize = true;
-            labelLogin.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLogin.Location = new Point(477, 74);
-            labelLogin.Name = "labelLogin";
-            labelLogin.Size = new Size(64, 30);
-            labelLogin.TabIndex = 13;
-            labelLogin.Text = "Login";
+            labelweryfikacja.Dock = DockStyle.Fill;
+            labelweryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelweryfikacja.Location = new Point(0, 0);
+            labelweryfikacja.Margin = new Padding(0);
+            labelweryfikacja.Name = "labelweryfikacja";
+            labelweryfikacja.Size = new Size(1026, 35);
+            labelweryfikacja.TabIndex = 13;
+            labelweryfikacja.Text = "Przepisz tekst, który widzisz na obrazku obok";
+            labelweryfikacja.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Logowanie
             // 
@@ -380,9 +428,13 @@
             tabControlKontener.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).EndInit();
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -401,16 +453,20 @@
         private Button buttonLogin;
         private Button buttonWroc;
         private Button buttonDalej;
-        private Label labelmail;
         private TextBox textBoxMail;
         private TextBox textBoxWeryfikacja;
         private PictureBox pictureBoxWeryfikacja;
-        private Label labelWeryfikacja;
         private Panel panelBar;
         private FontAwesome.Sharp.IconButton iconButtonZamknij;
         private FontAwesome.Sharp.IconButton iconButtonMin;
         private FontAwesome.Sharp.IconButton iconButtonMaks;
         private Label labelLogin;
+        private Panel panel1;
+        private Panel panel2;
         private Label labelHaslo;
+        private Panel panel3;
+        private Label labelMail;
+        private Panel panel4;
+        private Label labelweryfikacja;
     }
 }

@@ -368,15 +368,15 @@
             // 
             // labelTytulu
             // 
-            labelTytulu.Anchor = AnchorStyles.None;
-            labelTytulu.AutoSize = true;
+            labelTytulu.Dock = DockStyle.Fill;
             labelTytulu.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelTytulu.ForeColor = SystemColors.Control;
-            labelTytulu.Location = new Point(325, 21);
+            labelTytulu.Location = new Point(0, 0);
             labelTytulu.Name = "labelTytulu";
-            labelTytulu.Size = new Size(130, 51);
+            labelTytulu.Size = new Size(784, 92);
             labelTytulu.TabIndex = 0;
             labelTytulu.Text = "Home";
+            labelTytulu.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // iconMenuItem1
             // 
@@ -512,7 +512,6 @@
             menuWydzialy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBanera.ResumeLayout(false);
-            panelBanera.PerformLayout();
             panelBar.ResumeLayout(false);
             tableLayoutPanel.ResumeLayout(false);
             panelglowny.ResumeLayout(false);

@@ -19,17 +19,20 @@ namespace USOS_Rektora
         {
             InitializeComponent();
         }
-
+        //Funkcja zmieniająca tekst banera adekwatnie do odpalonego przycisku w menu
         private void zmianaTekstu(Button przycisk)
         {
             labelTytulu.Text = przycisk.Text;
         }
 
+        //Funkcja pozycjonujaca elementy context menu strip by były tuż po prawej stronie przycisków z menu
         private void pozycjonowanieContextMenuStrip(Button przycisk, ContextMenuStrip menu)
         {
             menu.Show(przycisk, new Point(przycisk.Width, 0));
         }
 
+
+        //Importy slużące do przeciągania aplikacji łapiąc myszką za pasek u góry
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -38,14 +41,14 @@ namespace USOS_Rektora
 
 
 
-
+        //Obsługa przycisku służącego do powrótu do formularza logowania
         private void iconButtonWyloguj_Click(object sender, EventArgs e)
         {
             this.Hide();
             logowanieForm = new Logowanie();
             logowanieForm.Show();
         }
-
+        //Obsługa przycisków należących do menu
         private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
             pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
@@ -67,6 +70,8 @@ namespace USOS_Rektora
         private void iconButtonKalendarz_Click(object sender, EventArgs e)
         {
             zmianaTekstu(iconButtonKalendarz);
+
+            //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
             if (!panelUserControl.Controls.Contains(Kalendarz.Instance))
             {
                 panelUserControl.Controls.Add(Kalendarz.Instance);
@@ -82,7 +87,7 @@ namespace USOS_Rektora
             zmianaTekstu(iconButtonOgloszenia);
         }
 
-
+        //obsluga przycisku służącego do maksymalizacji okna aplikacji
         private void iconButtonMaks_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -91,11 +96,13 @@ namespace USOS_Rektora
                 this.WindowState = FormWindowState.Normal;
         }
 
+        //obsluga przycisku służącego do minimalizacji okna aplikacji
         private void iconButtonMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //obsluga przycisku służącego do zamknięcia okna aplikacji
         private void iconButtonZamknij_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -103,6 +110,7 @@ namespace USOS_Rektora
             logowanieForm.Close();
         }
 
+        //funkcja służąca do przeciągania okienka aplikacji za pasek u góry
         private void panelBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
