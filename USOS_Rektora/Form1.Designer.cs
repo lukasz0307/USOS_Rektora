@@ -47,6 +47,8 @@
             textBoxHaslo = new TextBox();
             buttonLogin = new Button();
             tabPage2 = new TabPage();
+            panel4 = new Panel();
+            labelweryfikacja = new Label();
             panel3 = new Panel();
             labelMail = new Label();
             buttonWroc = new Button();
@@ -54,8 +56,6 @@
             textBoxMail = new TextBox();
             textBoxWeryfikacja = new TextBox();
             pictureBoxWeryfikacja = new PictureBox();
-            panel4 = new Panel();
-            labelweryfikacja = new Label();
             panelNaglowka.SuspendLayout();
             panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
@@ -65,9 +65,9 @@
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             tabPage2.SuspendLayout();
+            panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).BeginInit();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panelNaglowka
@@ -156,24 +156,26 @@
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Location = new Point(0, 26);
+            pictureBoxLogo.BackColor = Color.White;
+            pictureBoxLogo.Location = new Point(36, 36);
             pictureBoxLogo.Margin = new Padding(0);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(201, 100);
+            pictureBoxLogo.Size = new Size(201, 91);
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
             // 
             // Naglowek
             // 
-            Naglowek.Anchor = AnchorStyles.None;
-            Naglowek.AutoSize = true;
+            Naglowek.Dock = DockStyle.Fill;
             Naglowek.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             Naglowek.ForeColor = SystemColors.ControlLightLight;
-            Naglowek.Location = new Point(457, 49);
+            Naglowek.Location = new Point(0, 0);
             Naglowek.Name = "Naglowek";
-            Naglowek.Size = new Size(119, 50);
+            Naglowek.Padding = new Padding(0, 30, 0, 0);
+            Naglowek.Size = new Size(1034, 127);
             Naglowek.TabIndex = 0;
             Naglowek.Text = "USOS";
+            Naglowek.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelLogowania
             // 
@@ -316,6 +318,27 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.None;
+            panel4.Controls.Add(labelweryfikacja);
+            panel4.Location = new Point(0, 155);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1026, 35);
+            panel4.TabIndex = 20;
+            // 
+            // labelweryfikacja
+            // 
+            labelweryfikacja.Dock = DockStyle.Fill;
+            labelweryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelweryfikacja.Location = new Point(0, 0);
+            labelweryfikacja.Margin = new Padding(0);
+            labelweryfikacja.Name = "labelweryfikacja";
+            labelweryfikacja.Size = new Size(1026, 35);
+            labelweryfikacja.TabIndex = 13;
+            labelweryfikacja.Text = "Przepisz tekst, który widzisz na obrazku obok";
+            labelweryfikacja.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.None;
@@ -388,27 +411,6 @@
             pictureBoxWeryfikacja.TabIndex = 14;
             pictureBoxWeryfikacja.TabStop = false;
             // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.None;
-            panel4.Controls.Add(labelweryfikacja);
-            panel4.Location = new Point(0, 155);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1026, 35);
-            panel4.TabIndex = 20;
-            // 
-            // labelweryfikacja
-            // 
-            labelweryfikacja.Dock = DockStyle.Fill;
-            labelweryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelweryfikacja.Location = new Point(0, 0);
-            labelweryfikacja.Margin = new Padding(0);
-            labelweryfikacja.Name = "labelweryfikacja";
-            labelweryfikacja.Size = new Size(1026, 35);
-            labelweryfikacja.TabIndex = 13;
-            labelweryfikacja.Text = "Przepisz tekst, który widzisz na obrazku obok";
-            labelweryfikacja.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Logowanie
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -421,7 +423,6 @@
             Name = "Logowanie";
             StartPosition = FormStartPosition.Manual;
             panelNaglowka.ResumeLayout(false);
-            panelNaglowka.PerformLayout();
             panelBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panelLogowania.ResumeLayout(false);
@@ -432,9 +433,9 @@
             panel1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).EndInit();
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
