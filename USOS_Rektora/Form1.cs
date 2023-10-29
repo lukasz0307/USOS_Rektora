@@ -24,9 +24,32 @@ namespace USOS_Rektora
         //Obs³uga przycisku który zamyka formularz logowania a otwiera formularz g³ówny
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            /* obs³uga b³edów na póŸniej
+            if (textBoxLogin.Text == "" || textBoxHaslo.Text == "")
+            {
+                textBoxLogin.ForeColor = Color.Red;
+                textBoxHaslo.ForeColor = Color.Red;
+            }
+            else
+            {
+                this.Hide();
+                glownyForm = new Form2();
+                glownyForm.Show();
+            }
+            */
             this.Hide();
             glownyForm = new Form2();
             glownyForm.Show();
+        }
+
+        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+            textBoxLogin.ForeColor = Color.Black;
+        }
+
+        private void textBoxHaslo_TextChanged(object sender, EventArgs e)
+        {
+            textBoxHaslo.ForeColor = Color.Black;
         }
 
         //Zmienianie zak³adek tab control
@@ -69,7 +92,20 @@ namespace USOS_Rektora
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        //Obs³uga checkboxa odpowiadaj¹cego za pokazanie/ukrycie has³a
+        private void checkBoxHaslo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHaslo.Checked)
+            {
+                textBoxHaslo.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxHaslo.UseSystemPasswordChar = true;
+            }
+        }
 
+        
     }
 
 

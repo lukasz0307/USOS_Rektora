@@ -38,6 +38,7 @@
             panelLogowania = new Panel();
             tabControlKontener = new TabControl();
             tabPage1 = new TabPage();
+            checkBoxHaslo = new CheckBox();
             panel2 = new Panel();
             labelHaslo = new Label();
             panel1 = new Panel();
@@ -47,6 +48,8 @@
             textBoxHaslo = new TextBox();
             buttonLogin = new Button();
             tabPage2 = new TabPage();
+            panel4 = new Panel();
+            labelweryfikacja = new Label();
             panel3 = new Panel();
             labelMail = new Label();
             buttonWroc = new Button();
@@ -54,8 +57,6 @@
             textBoxMail = new TextBox();
             textBoxWeryfikacja = new TextBox();
             pictureBoxWeryfikacja = new PictureBox();
-            panel4 = new Panel();
-            labelweryfikacja = new Label();
             panelNaglowka.SuspendLayout();
             panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
@@ -65,9 +66,9 @@
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             tabPage2.SuspendLayout();
+            panel4.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).BeginInit();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panelNaglowka
@@ -203,6 +204,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Silver;
+            tabPage1.Controls.Add(checkBoxHaslo);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(textBoxLogin);
@@ -215,6 +217,20 @@
             tabPage1.Size = new Size(1026, 345);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
+            // 
+            // checkBoxHaslo
+            // 
+            checkBoxHaslo.Anchor = AnchorStyles.None;
+            checkBoxHaslo.AutoSize = true;
+            checkBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxHaslo.ForeColor = Color.White;
+            checkBoxHaslo.Location = new Point(669, 190);
+            checkBoxHaslo.Name = "checkBoxHaslo";
+            checkBoxHaslo.Size = new Size(141, 34);
+            checkBoxHaslo.TabIndex = 20;
+            checkBoxHaslo.Text = "Pokaż haslo";
+            checkBoxHaslo.UseVisualStyleBackColor = true;
+            checkBoxHaslo.CheckedChanged += checkBoxHaslo_CheckedChanged;
             // 
             // panel2
             // 
@@ -229,6 +245,7 @@
             // 
             labelHaslo.Dock = DockStyle.Fill;
             labelHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelHaslo.ForeColor = Color.White;
             labelHaslo.Location = new Point(0, 0);
             labelHaslo.Margin = new Padding(0);
             labelHaslo.Name = "labelHaslo";
@@ -250,6 +267,7 @@
             // 
             labelLogin.Dock = DockStyle.Fill;
             labelLogin.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelLogin.ForeColor = Color.White;
             labelLogin.Location = new Point(0, 0);
             labelLogin.Margin = new Padding(0);
             labelLogin.Name = "labelLogin";
@@ -261,19 +279,21 @@
             // textBoxLogin
             // 
             textBoxLogin.Anchor = AnchorStyles.None;
+            textBoxLogin.BackColor = Color.Silver;
             textBoxLogin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxLogin.Location = new Point(376, 109);
             textBoxLogin.Margin = new Padding(3, 2, 3, 2);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(274, 36);
             textBoxLogin.TabIndex = 12;
+            textBoxLogin.TextChanged += textBoxLogin_TextChanged;
             // 
             // buttonprzypomnij
             // 
             buttonprzypomnij.Anchor = AnchorStyles.None;
-            buttonprzypomnij.Location = new Point(497, 246);
+            buttonprzypomnij.Location = new Point(502, 235);
             buttonprzypomnij.Name = "buttonprzypomnij";
-            buttonprzypomnij.Size = new Size(190, 23);
+            buttonprzypomnij.Size = new Size(190, 40);
             buttonprzypomnij.TabIndex = 17;
             buttonprzypomnij.Text = "ZMIEŃ/PRZYPOMNIJ HASŁO";
             buttonprzypomnij.UseVisualStyleBackColor = true;
@@ -282,18 +302,22 @@
             // textBoxHaslo
             // 
             textBoxHaslo.Anchor = AnchorStyles.None;
+            textBoxHaslo.BackColor = Color.Silver;
             textBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxHaslo.Location = new Point(376, 190);
             textBoxHaslo.Name = "textBoxHaslo";
             textBoxHaslo.Size = new Size(274, 35);
             textBoxHaslo.TabIndex = 14;
+            textBoxHaslo.UseSystemPasswordChar = true;
+            textBoxHaslo.TextChanged += textBoxHaslo_TextChanged;
             // 
             // buttonLogin
             // 
             buttonLogin.Anchor = AnchorStyles.None;
-            buttonLogin.Location = new Point(339, 246);
+            buttonLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonLogin.Location = new Point(337, 235);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(121, 23);
+            buttonLogin.Size = new Size(121, 40);
             buttonLogin.TabIndex = 16;
             buttonLogin.Text = "ZALOGUJ SIĘ";
             buttonLogin.UseVisualStyleBackColor = true;
@@ -316,6 +340,28 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.None;
+            panel4.Controls.Add(labelweryfikacja);
+            panel4.Location = new Point(0, 155);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1026, 35);
+            panel4.TabIndex = 20;
+            // 
+            // labelweryfikacja
+            // 
+            labelweryfikacja.Dock = DockStyle.Fill;
+            labelweryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelweryfikacja.ForeColor = Color.White;
+            labelweryfikacja.Location = new Point(0, 0);
+            labelweryfikacja.Margin = new Padding(0);
+            labelweryfikacja.Name = "labelweryfikacja";
+            labelweryfikacja.Size = new Size(1026, 35);
+            labelweryfikacja.TabIndex = 13;
+            labelweryfikacja.Text = "Przepisz tekst, który widzisz na obrazku obok";
+            labelweryfikacja.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel3
             // 
             panel3.Anchor = AnchorStyles.None;
@@ -329,6 +375,7 @@
             // 
             labelMail.Dock = DockStyle.Fill;
             labelMail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelMail.ForeColor = Color.White;
             labelMail.Location = new Point(0, 0);
             labelMail.Margin = new Padding(0);
             labelMail.Name = "labelMail";
@@ -343,7 +390,7 @@
             buttonWroc.Location = new Point(566, 252);
             buttonWroc.Margin = new Padding(3, 2, 3, 2);
             buttonWroc.Name = "buttonWroc";
-            buttonWroc.Size = new Size(84, 27);
+            buttonWroc.Size = new Size(84, 40);
             buttonWroc.TabIndex = 17;
             buttonWroc.Text = "WRÓĆ";
             buttonWroc.UseVisualStyleBackColor = true;
@@ -355,7 +402,7 @@
             buttonDalej.Location = new Point(376, 252);
             buttonDalej.Margin = new Padding(3, 2, 3, 2);
             buttonDalej.Name = "buttonDalej";
-            buttonDalej.Size = new Size(97, 27);
+            buttonDalej.Size = new Size(97, 40);
             buttonDalej.TabIndex = 16;
             buttonDalej.Text = "DALEJ";
             buttonDalej.UseVisualStyleBackColor = true;
@@ -363,6 +410,7 @@
             // textBoxMail
             // 
             textBoxMail.Anchor = AnchorStyles.None;
+            textBoxMail.BackColor = Color.Silver;
             textBoxMail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxMail.Location = new Point(376, 101);
             textBoxMail.Name = "textBoxMail";
@@ -372,6 +420,7 @@
             // textBoxWeryfikacja
             // 
             textBoxWeryfikacja.Anchor = AnchorStyles.None;
+            textBoxWeryfikacja.BackColor = Color.Silver;
             textBoxWeryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             textBoxWeryfikacja.Location = new Point(376, 203);
             textBoxWeryfikacja.Name = "textBoxWeryfikacja";
@@ -387,27 +436,6 @@
             pictureBoxWeryfikacja.Size = new Size(122, 35);
             pictureBoxWeryfikacja.TabIndex = 14;
             pictureBoxWeryfikacja.TabStop = false;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.None;
-            panel4.Controls.Add(labelweryfikacja);
-            panel4.Location = new Point(0, 155);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1026, 35);
-            panel4.TabIndex = 20;
-            // 
-            // labelweryfikacja
-            // 
-            labelweryfikacja.Dock = DockStyle.Fill;
-            labelweryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            labelweryfikacja.Location = new Point(0, 0);
-            labelweryfikacja.Margin = new Padding(0);
-            labelweryfikacja.Name = "labelweryfikacja";
-            labelweryfikacja.Size = new Size(1026, 35);
-            labelweryfikacja.TabIndex = 13;
-            labelweryfikacja.Text = "Przepisz tekst, który widzisz na obrazku obok";
-            labelweryfikacja.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Logowanie
             // 
@@ -432,9 +460,9 @@
             panel1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).EndInit();
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -468,5 +496,6 @@
         private Label labelMail;
         private Panel panel4;
         private Label labelweryfikacja;
+        private CheckBox checkBoxHaslo;
     }
 }
