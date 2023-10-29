@@ -433,7 +433,7 @@
             pictureBoxWeryfikacja.Location = new Point(235, 206);
             pictureBoxWeryfikacja.Margin = new Padding(3, 2, 3, 2);
             pictureBoxWeryfikacja.Name = "pictureBoxWeryfikacja";
-            pictureBoxWeryfikacja.Size = new Size(122, 35);
+            pictureBoxWeryfikacja.Size = new Size(122, 32);
             pictureBoxWeryfikacja.TabIndex = 14;
             pictureBoxWeryfikacja.TabStop = false;
             // 
