@@ -25,6 +25,7 @@ namespace USOS_Rektora
             labelTytulu.Text = przycisk.Text;
         }
 
+
         //Funkcja pozycjonujaca elementy context menu strip by były tuż po prawej stronie przycisków z menu
         private void pozycjonowanieContextMenuStrip(Button przycisk, ContextMenuStrip menu)
         {
@@ -84,6 +85,17 @@ namespace USOS_Rektora
 
         private void iconButtonogloszenia_Click(object sender, EventArgs e)
         {
+            //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
+            if (!panelUserControl.Controls.Contains(Ogloszenia.Instance))
+            {
+                panelUserControl.Controls.Add(Ogloszenia.Instance);
+                Ogloszenia.Instance.Dock = DockStyle.Fill;
+                Ogloszenia.Instance.BringToFront();
+            }
+            else
+                Kalendarz.Instance.BringToFront();
+
+
             zmianaTekstu(iconButtonOgloszenia);
         }
 

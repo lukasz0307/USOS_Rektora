@@ -46,6 +46,10 @@
             iconButtonWydzialy = new FontAwesome.Sharp.IconButton();
             menuWydzialy = new ContextMenuStrip(components);
             MenuItemKierunki = new ToolStripMenuItem();
+            elektrycznyToolStripMenuItem = new ToolStripMenuItem();
+            mechanicznyToolStripMenuItem1 = new ToolStripMenuItem();
+            zarządzaniaINaukOJakościToolStripMenuItem1 = new ToolStripMenuItem();
+            działArmatorskiToolStripMenuItem1 = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             panelBanera = new Panel();
             labelTytulu = new Label();
@@ -57,10 +61,6 @@
             panelUserControl = new Panel();
             tableLayoutPanel = new TableLayoutPanel();
             panelglowny = new Panel();
-            elektrycznyToolStripMenuItem = new ToolStripMenuItem();
-            mechanicznyToolStripMenuItem1 = new ToolStripMenuItem();
-            zarządzaniaINaukOJakościToolStripMenuItem1 = new ToolStripMenuItem();
-            działArmatorskiToolStripMenuItem1 = new ToolStripMenuItem();
             panelMenu.SuspendLayout();
             menuUczniowie.SuspendLayout();
             menuKadra.SuspendLayout();
@@ -86,7 +86,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(286, 605);
+            panelMenu.Size = new Size(250, 454);
             panelMenu.TabIndex = 0;
             // 
             // iconButtonOgloszenia
@@ -100,10 +100,10 @@
             iconButtonOgloszenia.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonOgloszenia.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButtonOgloszenia.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonOgloszenia.Location = new Point(0, 363);
+            iconButtonOgloszenia.Location = new Point(0, 272);
             iconButtonOgloszenia.Margin = new Padding(0);
             iconButtonOgloszenia.Name = "iconButtonOgloszenia";
-            iconButtonOgloszenia.Size = new Size(286, 60);
+            iconButtonOgloszenia.Size = new Size(250, 45);
             iconButtonOgloszenia.TabIndex = 5;
             iconButtonOgloszenia.Text = "Ogłoszenia";
             iconButtonOgloszenia.UseVisualStyleBackColor = true;
@@ -120,10 +120,10 @@
             iconButtonKalendarz.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonKalendarz.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonKalendarz.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonKalendarz.Location = new Point(0, 303);
+            iconButtonKalendarz.Location = new Point(0, 227);
             iconButtonKalendarz.Margin = new Padding(0);
             iconButtonKalendarz.Name = "iconButtonKalendarz";
-            iconButtonKalendarz.Size = new Size(286, 60);
+            iconButtonKalendarz.Size = new Size(250, 45);
             iconButtonKalendarz.TabIndex = 4;
             iconButtonKalendarz.Text = "Kalendarz";
             iconButtonKalendarz.UseVisualStyleBackColor = true;
@@ -142,10 +142,10 @@
             iconButtonUczniowie.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonUczniowie.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonUczniowie.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonUczniowie.Location = new Point(0, 243);
+            iconButtonUczniowie.Location = new Point(0, 182);
             iconButtonUczniowie.Margin = new Padding(0);
             iconButtonUczniowie.Name = "iconButtonUczniowie";
-            iconButtonUczniowie.Size = new Size(286, 60);
+            iconButtonUczniowie.Size = new Size(250, 45);
             iconButtonUczniowie.TabIndex = 3;
             iconButtonUczniowie.Text = "Uczniowie";
             iconButtonUczniowie.UseVisualStyleBackColor = false;
@@ -158,14 +158,14 @@
             menuUczniowie.ImageScalingSize = new Size(20, 20);
             menuUczniowie.Items.AddRange(new ToolStripItem[] { listaToolStripMenuItem, ocenyToolStripMenuItem, frekwencjaToolStripMenuItem, płatnościToolStripMenuItem });
             menuUczniowie.Name = "menuUczniowie";
-            menuUczniowie.Size = new Size(244, 212);
+            menuUczniowie.Size = new Size(207, 172);
             // 
             // listaToolStripMenuItem
             // 
             listaToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             listaToolStripMenuItem.Name = "listaToolStripMenuItem";
             listaToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            listaToolStripMenuItem.Size = new Size(243, 52);
+            listaToolStripMenuItem.Size = new Size(206, 42);
             listaToolStripMenuItem.Text = "Lista";
             // 
             // ocenyToolStripMenuItem
@@ -173,7 +173,7 @@
             ocenyToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             ocenyToolStripMenuItem.Name = "ocenyToolStripMenuItem";
             ocenyToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            ocenyToolStripMenuItem.Size = new Size(243, 52);
+            ocenyToolStripMenuItem.Size = new Size(206, 42);
             ocenyToolStripMenuItem.Text = "Oceny";
             // 
             // frekwencjaToolStripMenuItem
@@ -181,7 +181,7 @@
             frekwencjaToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             frekwencjaToolStripMenuItem.Name = "frekwencjaToolStripMenuItem";
             frekwencjaToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            frekwencjaToolStripMenuItem.Size = new Size(243, 52);
+            frekwencjaToolStripMenuItem.Size = new Size(206, 42);
             frekwencjaToolStripMenuItem.Text = "Frekwencja";
             // 
             // płatnościToolStripMenuItem
@@ -189,7 +189,7 @@
             płatnościToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             płatnościToolStripMenuItem.Name = "płatnościToolStripMenuItem";
             płatnościToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            płatnościToolStripMenuItem.Size = new Size(243, 52);
+            płatnościToolStripMenuItem.Size = new Size(206, 42);
             płatnościToolStripMenuItem.Text = "Płatności";
             // 
             // iconButtonWyloguj
@@ -203,10 +203,9 @@
             iconButtonWyloguj.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonWyloguj.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonWyloguj.ImageAlign = ContentAlignment.MiddleRight;
-            iconButtonWyloguj.Location = new Point(0, 545);
-            iconButtonWyloguj.Margin = new Padding(3, 4, 3, 4);
+            iconButtonWyloguj.Location = new Point(0, 409);
             iconButtonWyloguj.Name = "iconButtonWyloguj";
-            iconButtonWyloguj.Size = new Size(286, 60);
+            iconButtonWyloguj.Size = new Size(250, 45);
             iconButtonWyloguj.TabIndex = 2;
             iconButtonWyloguj.Text = "Wyloguj";
             iconButtonWyloguj.UseVisualStyleBackColor = true;
@@ -224,10 +223,10 @@
             iconButtonKadra.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonKadra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonKadra.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonKadra.Location = new Point(0, 183);
+            iconButtonKadra.Location = new Point(0, 137);
             iconButtonKadra.Margin = new Padding(0);
             iconButtonKadra.Name = "iconButtonKadra";
-            iconButtonKadra.Size = new Size(286, 60);
+            iconButtonKadra.Size = new Size(250, 45);
             iconButtonKadra.TabIndex = 1;
             iconButtonKadra.Text = "Kadra";
             iconButtonKadra.UseVisualStyleBackColor = true;
@@ -240,14 +239,14 @@
             menuKadra.ImageScalingSize = new Size(20, 20);
             menuKadra.Items.AddRange(new ToolStripItem[] { kontaktToolStripMenuItem, kontaktToolStripMenuItem1 });
             menuKadra.Name = "menuKadra";
-            menuKadra.Size = new Size(198, 108);
+            menuKadra.Size = new Size(170, 88);
             // 
             // kontaktToolStripMenuItem
             // 
             kontaktToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
             kontaktToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            kontaktToolStripMenuItem.Size = new Size(197, 52);
+            kontaktToolStripMenuItem.Size = new Size(169, 42);
             kontaktToolStripMenuItem.Text = "Lista";
             // 
             // kontaktToolStripMenuItem1
@@ -255,7 +254,7 @@
             kontaktToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
             kontaktToolStripMenuItem1.Name = "kontaktToolStripMenuItem1";
             kontaktToolStripMenuItem1.Padding = new Padding(0, 4, 0, 4);
-            kontaktToolStripMenuItem1.Size = new Size(197, 52);
+            kontaktToolStripMenuItem1.Size = new Size(169, 42);
             kontaktToolStripMenuItem1.Text = "Kontakt";
             // 
             // iconButtonWydzialy
@@ -270,10 +269,10 @@
             iconButtonWydzialy.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonWydzialy.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonWydzialy.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonWydzialy.Location = new Point(0, 123);
+            iconButtonWydzialy.Location = new Point(0, 92);
             iconButtonWydzialy.Margin = new Padding(0);
             iconButtonWydzialy.Name = "iconButtonWydzialy";
-            iconButtonWydzialy.Size = new Size(286, 60);
+            iconButtonWydzialy.Size = new Size(250, 45);
             iconButtonWydzialy.TabIndex = 0;
             iconButtonWydzialy.Text = "Wydziały";
             iconButtonWydzialy.UseVisualStyleBackColor = true;
@@ -286,7 +285,7 @@
             menuWydzialy.ImageScalingSize = new Size(20, 20);
             menuWydzialy.Items.AddRange(new ToolStripItem[] { MenuItemKierunki, elektrycznyToolStripMenuItem, mechanicznyToolStripMenuItem1, zarządzaniaINaukOJakościToolStripMenuItem1, działArmatorskiToolStripMenuItem1 });
             menuWydzialy.Name = "contextMenuStripWydzialy";
-            menuWydzialy.Size = new Size(464, 268);
+            menuWydzialy.Size = new Size(386, 190);
             // 
             // MenuItemKierunki
             // 
@@ -295,16 +294,45 @@
             MenuItemKierunki.ForeColor = Color.FromArgb(224, 224, 224);
             MenuItemKierunki.Name = "MenuItemKierunki";
             MenuItemKierunki.Padding = new Padding(0, 4, 0, 4);
-            MenuItemKierunki.Size = new Size(463, 52);
+            MenuItemKierunki.Size = new Size(385, 42);
             MenuItemKierunki.Text = "Nawigacyjny";
+            // 
+            // elektrycznyToolStripMenuItem
+            // 
+            elektrycznyToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
+            elektrycznyToolStripMenuItem.Name = "elektrycznyToolStripMenuItem";
+            elektrycznyToolStripMenuItem.Size = new Size(385, 36);
+            elektrycznyToolStripMenuItem.Text = "Elektryczny";
+            // 
+            // mechanicznyToolStripMenuItem1
+            // 
+            mechanicznyToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
+            mechanicznyToolStripMenuItem1.Name = "mechanicznyToolStripMenuItem1";
+            mechanicznyToolStripMenuItem1.Size = new Size(385, 36);
+            mechanicznyToolStripMenuItem1.Text = "Mechaniczny";
+            // 
+            // zarządzaniaINaukOJakościToolStripMenuItem1
+            // 
+            zarządzaniaINaukOJakościToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
+            zarządzaniaINaukOJakościToolStripMenuItem1.Name = "zarządzaniaINaukOJakościToolStripMenuItem1";
+            zarządzaniaINaukOJakościToolStripMenuItem1.Size = new Size(385, 36);
+            zarządzaniaINaukOJakościToolStripMenuItem1.Text = "Zarządzania i nauk o jakości";
+            // 
+            // działArmatorskiToolStripMenuItem1
+            // 
+            działArmatorskiToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
+            działArmatorskiToolStripMenuItem1.Name = "działArmatorskiToolStripMenuItem1";
+            działArmatorskiToolStripMenuItem1.Size = new Size(385, 36);
+            działArmatorskiToolStripMenuItem1.Text = "Dział armatorski";
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.FromArgb(64, 64, 64);
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(286, 123);
+            pictureBox1.Size = new Size(250, 92);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -316,7 +344,7 @@
             panelBanera.Location = new Point(0, 0);
             panelBanera.Margin = new Padding(0);
             panelBanera.Name = "panelBanera";
-            panelBanera.Size = new Size(896, 123);
+            panelBanera.Size = new Size(784, 92);
             panelBanera.TabIndex = 2;
             // 
             // labelTytulu
@@ -326,7 +354,7 @@
             labelTytulu.ForeColor = SystemColors.Control;
             labelTytulu.Location = new Point(0, 0);
             labelTytulu.Name = "labelTytulu";
-            labelTytulu.Size = new Size(896, 123);
+            labelTytulu.Size = new Size(784, 92);
             labelTytulu.TabIndex = 0;
             labelTytulu.Text = "Home";
             labelTytulu.TextAlign = ContentAlignment.MiddleCenter;
@@ -352,7 +380,7 @@
             panelBar.Location = new Point(0, 0);
             panelBar.Margin = new Padding(0);
             panelBar.Name = "panelBar";
-            panelBar.Size = new Size(1182, 48);
+            panelBar.Size = new Size(1034, 36);
             panelBar.TabIndex = 4;
             panelBar.MouseDown += panelBar_MouseDown;
             // 
@@ -367,9 +395,11 @@
             iconButtonMin.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButtonMin.IconSize = 30;
             iconButtonMin.ImageAlign = ContentAlignment.BottomCenter;
-            iconButtonMin.Location = new Point(1005, 0);
+            iconButtonMin.Location = new Point(878, 0);
+            iconButtonMin.Margin = new Padding(3, 2, 3, 2);
             iconButtonMin.Name = "iconButtonMin";
-            iconButtonMin.Size = new Size(59, 48);
+            iconButtonMin.Padding = new Padding(0, 0, 0, 6);
+            iconButtonMin.Size = new Size(52, 36);
             iconButtonMin.TabIndex = 2;
             iconButtonMin.UseVisualStyleBackColor = false;
             iconButtonMin.Click += iconButtonMin_Click;
@@ -385,9 +415,10 @@
             iconButtonMaks.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButtonMaks.IconSize = 30;
             iconButtonMaks.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonMaks.Location = new Point(1064, 0);
+            iconButtonMaks.Location = new Point(930, 0);
+            iconButtonMaks.Margin = new Padding(3, 2, 3, 2);
             iconButtonMaks.Name = "iconButtonMaks";
-            iconButtonMaks.Size = new Size(59, 48);
+            iconButtonMaks.Size = new Size(52, 36);
             iconButtonMaks.TabIndex = 1;
             iconButtonMaks.UseVisualStyleBackColor = false;
             iconButtonMaks.Click += iconButtonMaks_Click;
@@ -403,9 +434,10 @@
             iconButtonZamknij.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButtonZamknij.IconSize = 30;
             iconButtonZamknij.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonZamknij.Location = new Point(1123, 0);
+            iconButtonZamknij.Location = new Point(982, 0);
+            iconButtonZamknij.Margin = new Padding(3, 2, 3, 2);
             iconButtonZamknij.Name = "iconButtonZamknij";
-            iconButtonZamknij.Size = new Size(59, 48);
+            iconButtonZamknij.Size = new Size(52, 36);
             iconButtonZamknij.TabIndex = 0;
             iconButtonZamknij.UseVisualStyleBackColor = false;
             iconButtonZamknij.Click += iconButtonZamknij_Click;
@@ -413,26 +445,26 @@
             // panelUserControl
             // 
             panelUserControl.Dock = DockStyle.Fill;
-            panelUserControl.Location = new Point(0, 123);
+            panelUserControl.Location = new Point(0, 92);
             panelUserControl.Margin = new Padding(0);
             panelUserControl.Name = "panelUserControl";
-            panelUserControl.Size = new Size(896, 482);
+            panelUserControl.Size = new Size(784, 362);
             panelUserControl.TabIndex = 5;
             // 
             // tableLayoutPanel
             // 
             tableLayoutPanel.ColumnCount = 2;
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 286F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
             tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel.Controls.Add(panelMenu, 0, 0);
             tableLayoutPanel.Controls.Add(panelglowny, 1, 0);
             tableLayoutPanel.Dock = DockStyle.Fill;
-            tableLayoutPanel.Location = new Point(0, 48);
+            tableLayoutPanel.Location = new Point(0, 36);
             tableLayoutPanel.Margin = new Padding(0);
             tableLayoutPanel.Name = "tableLayoutPanel";
             tableLayoutPanel.RowCount = 1;
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel.Size = new Size(1182, 605);
+            tableLayoutPanel.Size = new Size(1034, 454);
             tableLayoutPanel.TabIndex = 0;
             // 
             // panelglowny
@@ -440,48 +472,21 @@
             panelglowny.Controls.Add(panelUserControl);
             panelglowny.Controls.Add(panelBanera);
             panelglowny.Dock = DockStyle.Fill;
-            panelglowny.Location = new Point(286, 0);
+            panelglowny.Location = new Point(250, 0);
             panelglowny.Margin = new Padding(0);
             panelglowny.Name = "panelglowny";
-            panelglowny.Size = new Size(896, 605);
+            panelglowny.Size = new Size(784, 454);
             panelglowny.TabIndex = 1;
-            // 
-            // elektrycznyToolStripMenuItem
-            // 
-            elektrycznyToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
-            elektrycznyToolStripMenuItem.Name = "elektrycznyToolStripMenuItem";
-            elektrycznyToolStripMenuItem.Size = new Size(463, 46);
-            elektrycznyToolStripMenuItem.Text = "Elektryczny";
-            // 
-            // mechanicznyToolStripMenuItem1
-            // 
-            mechanicznyToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
-            mechanicznyToolStripMenuItem1.Name = "mechanicznyToolStripMenuItem1";
-            mechanicznyToolStripMenuItem1.Size = new Size(463, 46);
-            mechanicznyToolStripMenuItem1.Text = "Mechaniczny";
-            // 
-            // zarządzaniaINaukOJakościToolStripMenuItem1
-            // 
-            zarządzaniaINaukOJakościToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
-            zarządzaniaINaukOJakościToolStripMenuItem1.Name = "zarządzaniaINaukOJakościToolStripMenuItem1";
-            zarządzaniaINaukOJakościToolStripMenuItem1.Size = new Size(463, 46);
-            zarządzaniaINaukOJakościToolStripMenuItem1.Text = "Zarządzania i nauk o jakości";
-            // 
-            // działArmatorskiToolStripMenuItem1
-            // 
-            działArmatorskiToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
-            działArmatorskiToolStripMenuItem1.Name = "działArmatorskiToolStripMenuItem1";
-            działArmatorskiToolStripMenuItem1.Size = new Size(463, 46);
-            działArmatorskiToolStripMenuItem1.Text = "Dział armatorski";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1182, 653);
+            ClientSize = new Size(1034, 490);
             ControlBox = false;
             Controls.Add(tableLayoutPanel);
             Controls.Add(panelBar);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form2";
             panelMenu.ResumeLayout(false);
             menuUczniowie.ResumeLayout(false);

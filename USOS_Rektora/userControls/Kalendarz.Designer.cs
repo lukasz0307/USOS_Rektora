@@ -34,20 +34,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(368, 123);
+            label1.Location = new Point(421, 164);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(50, 20);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
             // Kalendarz
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Kalendarz";
-            Size = new Size(797, 362);
+            Size = new Size(911, 483);
             ResumeLayout(false);
             PerformLayout();
         }

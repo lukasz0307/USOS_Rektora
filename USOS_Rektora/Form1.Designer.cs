@@ -112,6 +112,7 @@
             iconButtonMin.Location = new Point(878, 0);
             iconButtonMin.Margin = new Padding(3, 2, 3, 2);
             iconButtonMin.Name = "iconButtonMin";
+            iconButtonMin.Padding = new Padding(0, 0, 0, 6);
             iconButtonMin.Size = new Size(52, 36);
             iconButtonMin.TabIndex = 2;
             iconButtonMin.UseVisualStyleBackColor = false;
@@ -213,7 +214,7 @@
             tabPage1.Controls.Add(buttonLogin);
             tabPage1.Location = new Point(4, 14);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
+            tabPage1.Padding = new Padding(3, 3, 3, 3);
             tabPage1.Size = new Size(1026, 345);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
@@ -335,7 +336,7 @@
             tabPage2.Controls.Add(pictureBoxWeryfikacja);
             tabPage2.Location = new Point(4, 14);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
+            tabPage2.Padding = new Padding(3, 3, 3, 3);
             tabPage2.Size = new Size(1026, 345);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
