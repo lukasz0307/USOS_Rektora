@@ -99,6 +99,20 @@ namespace USOS_Rektora
             zmianaTekstu(iconButtonOgloszenia);
         }
 
+        private void iconButtonPlany_Click(object sender, EventArgs e)
+        {
+            zmianaTekstu(iconButtonPlany);
+
+            if (!panelUserControl.Controls.Contains(PlanyLekcji.Instance))
+            {
+                panelUserControl.Controls.Add(PlanyLekcji.Instance);
+                PlanyLekcji.Instance.Dock = DockStyle.Fill;
+                PlanyLekcji.Instance.BringToFront();
+            }
+            else
+                Kalendarz.Instance.BringToFront();
+        }
+
         //obsluga przycisku służącego do maksymalizacji okna aplikacji
         private void iconButtonMaks_Click(object sender, EventArgs e)
         {
@@ -129,5 +143,6 @@ namespace USOS_Rektora
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+       
     }
 }

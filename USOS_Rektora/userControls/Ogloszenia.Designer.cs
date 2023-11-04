@@ -46,7 +46,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Name = "Ogloszenia";
-            Size = new Size(797, 362);
+            Size = new Size(784, 362);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -61,6 +61,7 @@
             panelUserControl = new Panel();
             tableLayoutPanel = new TableLayoutPanel();
             panelglowny = new Panel();
+            iconButtonPlany = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             menuUczniowie.SuspendLayout();
             menuKadra.SuspendLayout();
@@ -75,6 +76,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(64, 64, 64);
+            panelMenu.Controls.Add(iconButtonPlany);
             panelMenu.Controls.Add(iconButtonOgloszenia);
             panelMenu.Controls.Add(iconButtonKalendarz);
             panelMenu.Controls.Add(iconButtonUczniowie);
@@ -478,6 +480,26 @@
             panelglowny.Size = new Size(784, 454);
             panelglowny.TabIndex = 1;
             // 
+            // iconButtonPlany
+            // 
+            iconButtonPlany.Dock = DockStyle.Top;
+            iconButtonPlany.FlatAppearance.BorderSize = 0;
+            iconButtonPlany.FlatStyle = FlatStyle.Flat;
+            iconButtonPlany.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButtonPlany.ForeColor = Color.FromArgb(224, 224, 224);
+            iconButtonPlany.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            iconButtonPlany.IconColor = Color.FromArgb(224, 224, 224);
+            iconButtonPlany.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButtonPlany.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButtonPlany.Location = new Point(0, 317);
+            iconButtonPlany.Margin = new Padding(0);
+            iconButtonPlany.Name = "iconButtonPlany";
+            iconButtonPlany.Size = new Size(250, 45);
+            iconButtonPlany.TabIndex = 6;
+            iconButtonPlany.Text = "Plany lekcji";
+            iconButtonPlany.UseVisualStyleBackColor = true;
+            iconButtonPlany.Click += iconButtonPlany_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -534,5 +556,6 @@
         private ToolStripMenuItem mechanicznyToolStripMenuItem1;
         private ToolStripMenuItem zarządzaniaINaukOJakościToolStripMenuItem1;
         private ToolStripMenuItem działArmatorskiToolStripMenuItem1;
+        private FontAwesome.Sharp.IconButton iconButtonPlany;
     }
 }
