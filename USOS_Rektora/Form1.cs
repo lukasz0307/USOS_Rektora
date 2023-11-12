@@ -63,12 +63,12 @@ namespace USOS_Rektora
 
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
         {
-            textBoxLogin.ForeColor = Color.Black;
+            textLogin.ForeColor = Color.Black;
         }
 
         private void textBoxHaslo_TextChanged(object sender, EventArgs e)
         {
-            textBoxHaslo.ForeColor = Color.Black;
+            textPass.ForeColor = Color.Black;
         }
 
         //Zmienianie zak³adek tab control
@@ -116,11 +116,11 @@ namespace USOS_Rektora
         {
             if (checkBoxHaslo.Checked)
             {
-                textBoxHaslo.UseSystemPasswordChar = false;
+                textPass.UseSystemPasswordChar = false;
             }
             else
             {
-                textBoxHaslo.UseSystemPasswordChar = true;
+                textPass.UseSystemPasswordChar = true;
             }
         }
 
@@ -131,7 +131,7 @@ namespace USOS_Rektora
             generowanieCaptchy();
         }
 
-        
+
     }
 
 

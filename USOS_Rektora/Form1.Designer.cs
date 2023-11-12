@@ -43,9 +43,9 @@
             labelHaslo = new Label();
             panel1 = new Panel();
             labelLogin = new Label();
-            textBoxLogin = new TextBox();
+            textLogin = new TextBox();
             buttonprzypomnij = new Button();
-            textBoxHaslo = new TextBox();
+            textPass = new TextBox();
             buttonLogin = new Button();
             tabPage2 = new TabPage();
             buttonLosuj = new Button();
@@ -203,9 +203,9 @@
             tabPage1.Controls.Add(checkBoxHaslo);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(textBoxLogin);
+            tabPage1.Controls.Add(textLogin);
             tabPage1.Controls.Add(buttonprzypomnij);
-            tabPage1.Controls.Add(textBoxHaslo);
+            tabPage1.Controls.Add(textPass);
             tabPage1.Controls.Add(buttonLogin);
             tabPage1.Location = new Point(4, 14);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
@@ -276,16 +276,16 @@
             labelLogin.Text = "Login";
             labelLogin.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBoxLogin
+            // textLogin
             // 
-            textBoxLogin.Anchor = AnchorStyles.None;
-            textBoxLogin.BackColor = Color.Silver;
-            textBoxLogin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(430, 145);
-            textBoxLogin.Name = "textBoxLogin";
-            textBoxLogin.Size = new Size(313, 43);
-            textBoxLogin.TabIndex = 12;
-            textBoxLogin.TextChanged += textBoxLogin_TextChanged;
+            textLogin.Anchor = AnchorStyles.None;
+            textLogin.BackColor = Color.Silver;
+            textLogin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textLogin.Location = new Point(430, 145);
+            textLogin.Name = "textLogin";
+            textLogin.Size = new Size(313, 43);
+            textLogin.TabIndex = 12;
+            textLogin.TextChanged += textBoxLogin_TextChanged;
             // 
             // buttonprzypomnij
             // 
@@ -299,18 +299,18 @@
             buttonprzypomnij.UseVisualStyleBackColor = true;
             buttonprzypomnij.Click += buttonprzypomnij_Click;
             // 
-            // textBoxHaslo
+            // textPass
             // 
-            textBoxHaslo.Anchor = AnchorStyles.None;
-            textBoxHaslo.BackColor = Color.Silver;
-            textBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxHaslo.Location = new Point(430, 253);
-            textBoxHaslo.Margin = new Padding(3, 4, 3, 4);
-            textBoxHaslo.Name = "textBoxHaslo";
-            textBoxHaslo.Size = new Size(313, 42);
-            textBoxHaslo.TabIndex = 14;
-            textBoxHaslo.UseSystemPasswordChar = true;
-            textBoxHaslo.TextChanged += textBoxHaslo_TextChanged;
+            textPass.Anchor = AnchorStyles.None;
+            textPass.BackColor = Color.Silver;
+            textPass.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textPass.Location = new Point(430, 253);
+            textPass.Margin = new Padding(3, 4, 3, 4);
+            textPass.Name = "textPass";
+            textPass.Size = new Size(313, 42);
+            textPass.TabIndex = 14;
+            textPass.UseSystemPasswordChar = true;
+            textPass.TextChanged += textBoxHaslo_TextChanged;
             // 
             // buttonLogin
             // 
@@ -493,9 +493,9 @@
         private TabControl tabControlKontener;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private TextBox textBoxLogin;
+        private TextBox textLogin;
         private Button buttonprzypomnij;
-        private TextBox textBoxHaslo;
+        private TextBox textPass;
         private Button buttonLogin;
         private Button buttonWroc;
         private Button buttonDalej;
