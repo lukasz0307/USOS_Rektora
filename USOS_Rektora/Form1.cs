@@ -26,7 +26,7 @@ namespace USOS_Rektora
         //Obs³uga przycisku który zamyka formularz logowania a otwiera formularz g³ówny
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if(textLogin.Text.Trim() == "" && textPass.Text.Trim() == "")
+            if (textLogin.Text.Trim() == "" && textPass.Text.Trim() == "")
             {
                 MessageBox.Show("Uzupe³nij dane", "Logowanie nie powiod³o siê");
             }
@@ -36,13 +36,13 @@ namespace USOS_Rektora
                 SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
                 conn.Open();
                 SQLiteCommand cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.AddWithValue("@user",textLogin.Text);
-                cmd.Parameters.AddWithValue("@pass",textPass.Text);
+                cmd.Parameters.AddWithValue("@user", textLogin.Text);
+                cmd.Parameters.AddWithValue("@pass", textPass.Text);
                 SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                if(dt.Rows.Count > 0 )
+                if (dt.Rows.Count > 0)
                 {
                     this.Hide();
                     glownyForm = new Form2();
@@ -69,9 +69,9 @@ namespace USOS_Rektora
             }
             */
             //Debug
-        /*    this.Hide();
-            glownyForm = new Form2();
-            glownyForm.Show();*/
+            /*    this.Hide();
+                glownyForm = new Form2();
+                glownyForm.Show();*/
         }
 
         private void textBoxLogin_TextChanged(object sender, EventArgs e)

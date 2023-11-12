@@ -56,7 +56,8 @@
             buttonDalej = new Button();
             textBoxMail = new TextBox();
             textBoxWeryfikacja = new TextBox();
-            pictureBoxWeryfikacja = new PictureBox();
+            label1 = new Label();
+            button1 = new Button();
             panelNaglowka.SuspendLayout();
             panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
@@ -68,7 +69,6 @@
             tabPage2.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).BeginInit();
             SuspendLayout();
             // 
             // panelNaglowka
@@ -328,13 +328,14 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(button1);
+            tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(buttonWroc);
             tabPage2.Controls.Add(buttonDalej);
             tabPage2.Controls.Add(textBoxMail);
             tabPage2.Controls.Add(textBoxWeryfikacja);
-            tabPage2.Controls.Add(pictureBoxWeryfikacja);
             tabPage2.Location = new Point(4, 14);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
@@ -432,14 +433,25 @@
             textBoxWeryfikacja.Size = new Size(313, 42);
             textBoxWeryfikacja.TabIndex = 15;
             // 
-            // pictureBoxWeryfikacja
+            // label1
             // 
-            pictureBoxWeryfikacja.Anchor = AnchorStyles.None;
-            pictureBoxWeryfikacja.Location = new Point(269, 275);
-            pictureBoxWeryfikacja.Name = "pictureBoxWeryfikacja";
-            pictureBoxWeryfikacja.Size = new Size(139, 43);
-            pictureBoxWeryfikacja.TabIndex = 14;
-            pictureBoxWeryfikacja.TabStop = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("SimSun-ExtB", 13.8F, FontStyle.Bold | FontStyle.Italic | FontStyle.Strikeout, GraphicsUnit.Point);
+            label1.Location = new Point(304, 278);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 23);
+            label1.TabIndex = 21;
+            label1.Text = "label1";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(197, 274);
+            button1.Name = "button1";
+            button1.Size = new Size(101, 35);
+            button1.TabIndex = 22;
+            button1.Text = "losuj nowy";
+            button1.UseVisualStyleBackColor = true;
             // 
             // Logowanie
             // 
@@ -465,7 +477,6 @@
             tabPage2.PerformLayout();
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBoxWeryfikacja).EndInit();
             ResumeLayout(false);
         }
 
@@ -486,7 +497,6 @@
         private Button buttonDalej;
         private TextBox textBoxMail;
         private TextBox textBoxWeryfikacja;
-        private PictureBox pictureBoxWeryfikacja;
         private Panel panelBar;
         private FontAwesome.Sharp.IconButton iconButtonZamknij;
         private FontAwesome.Sharp.IconButton iconButtonMin;
@@ -500,5 +510,7 @@
         private Panel panel4;
         private Label labelweryfikacja;
         private CheckBox checkBoxHaslo;
+        private Label label1;
+        private Button button1;
     }
 }
