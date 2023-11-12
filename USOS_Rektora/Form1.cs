@@ -14,12 +14,19 @@ namespace USOS_Rektora
             InitializeComponent();
         }
 
+        //Generowanie tekstu captchy po za³adowaniu formularza
+        private void Logowanie_Load(object sender, EventArgs e)
+        {
+            generowanieCaptchy();
+        }
+
         //Importy slu¿¹ce do przeci¹gania aplikacji ³api¹c myszk¹ za pasek u góry
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
 
         //Obs³uga przycisku który zamyka formularz logowania a otwiera formularz g³ówny
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -40,6 +47,18 @@ namespace USOS_Rektora
             this.Hide();
             glownyForm = new Form2();
             glownyForm.Show();
+        }
+
+        private void generowanieCaptchy()
+        {
+            Random random = new Random();
+            string captchaString = "";
+            int dlugosc = random.Next(4, 10);
+            for (int i = 0; i < dlugosc; i++)
+            {
+                captchaString += char.ConvertFromUtf32(random.Next(97, 122));
+            }
+            captcha.Text = captchaString;
         }
 
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
@@ -106,6 +125,13 @@ namespace USOS_Rektora
         }
 
 
+        //generowanie captchy po kliknieciu przycisku
+        private void buttonLosuj_Click(object sender, EventArgs e)
+        {
+            generowanieCaptchy();
+        }
+
+        
     }
 
 
