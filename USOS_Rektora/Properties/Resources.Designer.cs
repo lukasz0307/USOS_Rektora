@@ -59,5 +59,15 @@ namespace USOS_Rektora.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap planLekcji1 {
+            get {
+                object obj = ResourceManager.GetObject("planLekcji1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
