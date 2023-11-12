@@ -53,7 +53,7 @@ namespace USOS_Rektora
         {
             Random random = new Random();
             string captchaString = "";
-            int dlugosc = random.Next(4, 10);
+            int dlugosc = random.Next(6, 10);
             for (int i = 0; i < dlugosc; i++)
             {
                 captchaString += char.ConvertFromUtf32(random.Next(97, 122));
