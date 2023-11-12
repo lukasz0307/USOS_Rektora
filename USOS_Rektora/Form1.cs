@@ -1,6 +1,8 @@
 
 
 using System.Runtime.InteropServices;
+using System.Data.SQLite;
+using System.Data;
 
 namespace USOS_Rektora
 {
@@ -24,6 +26,35 @@ namespace USOS_Rektora
         //Obs³uga przycisku który zamyka formularz logowania a otwiera formularz g³ówny
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            if(textLogin.Text.Trim() == "" && textPass.Text.Trim() == "")
+            {
+                MessageBox.Show("Uzupe³nij dane", "Logowanie nie powiod³o siê");
+            }
+            else
+            {
+                string query = "SELECT * FROM users WHERE username= @user AND password = @pass";
+                SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
+                conn.Open();
+                SQLiteCommand cmd = new SQLiteCommand(query, conn);
+                cmd.Parameters.AddWithValue("@user",textLogin.Text);
+                cmd.Parameters.AddWithValue("@pass",textPass.Text);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if(dt.Rows.Count > 0 )
+                {
+                    this.Hide();
+                    glownyForm = new Form2();
+                    glownyForm.Show();
+                    MessageBox.Show("Zalogowany", "Logowanie udane");
+                }
+                else
+                {
+                    MessageBox.Show("Login lub has³o siê nie zgadzaj¹", "Logowanie nie powiod³o siê");
+                }
+            }
+
             /* obs³uga b³edów na póŸniej
             if (textBoxLogin.Text == "" || textBoxHaslo.Text == "")
             {
@@ -37,19 +68,20 @@ namespace USOS_Rektora
                 glownyForm.Show();
             }
             */
-            this.Hide();
+            //Debug
+        /*    this.Hide();
             glownyForm = new Form2();
-            glownyForm.Show();
+            glownyForm.Show();*/
         }
 
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
         {
-            textBoxLogin.ForeColor = Color.Black;
+            textLogin.ForeColor = Color.Black;
         }
 
         private void textBoxHaslo_TextChanged(object sender, EventArgs e)
         {
-            textBoxHaslo.ForeColor = Color.Black;
+            textPass.ForeColor = Color.Black;
         }
 
         //Zmienianie zak³adek tab control
@@ -97,11 +129,11 @@ namespace USOS_Rektora
         {
             if (checkBoxHaslo.Checked)
             {
-                textBoxHaslo.UseSystemPasswordChar = false;
+                textPass.UseSystemPasswordChar = false;
             }
             else
             {
-                textBoxHaslo.UseSystemPasswordChar = true;
+                textPass.UseSystemPasswordChar = true;
             }
         }
 
