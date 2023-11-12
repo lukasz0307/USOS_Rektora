@@ -84,10 +84,11 @@ namespace USOS_Rektora.userControls
 
         private void buttonPobierz_Click(object sender, EventArgs e)
         {
+            /*
             if (comboBoxKierunek.SelectedItem != null && comboBoxStopien.SelectedItem != null && comboBoxTryb.SelectedItem != null && comboBoxWydzial.SelectedItem != null)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
-                Image plan = Resources.planLekcji;//wyrzuca blad ale dziala (dziwne)
+                Image plan = Resources.plan;
                 saveFileDialog.Filter = "Images|*.jpg";
                 ImageFormat format = ImageFormat.Jpeg;
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -100,6 +101,7 @@ namespace USOS_Rektora.userControls
             {
                 MessageBox.Show("Wypelnij wszystkie pola");
             }
+            */
         }
 
         private void comboBoxWydzial_SelectedIndexChanged(object sender, EventArgs e)
