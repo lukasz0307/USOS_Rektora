@@ -48,6 +48,8 @@
             textPass = new TextBox();
             buttonLogin = new Button();
             tabPage2 = new TabPage();
+            button1 = new Button();
+            captcha = new Label();
             panel4 = new Panel();
             labelweryfikacja = new Label();
             panel3 = new Panel();
@@ -56,8 +58,6 @@
             buttonDalej = new Button();
             textBoxMail = new TextBox();
             textBoxWeryfikacja = new TextBox();
-            label1 = new Label();
-            button1 = new Button();
             panelNaglowka.SuspendLayout();
             panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
@@ -329,7 +329,7 @@
             // 
             tabPage2.BackColor = Color.Silver;
             tabPage2.Controls.Add(button1);
-            tabPage2.Controls.Add(label1);
+            tabPage2.Controls.Add(captcha);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(buttonWroc);
@@ -343,6 +343,27 @@
             tabPage2.Size = new Size(1174, 466);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(197, 274);
+            button1.Name = "button1";
+            button1.Size = new Size(101, 35);
+            button1.TabIndex = 22;
+            button1.Text = "losuj nowy";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // captcha
+            // 
+            captcha.AutoSize = true;
+            captcha.Font = new Font("SimSun-ExtB", 13.8F, FontStyle.Bold | FontStyle.Italic | FontStyle.Strikeout, GraphicsUnit.Point);
+            captcha.Location = new Point(304, 278);
+            captcha.Name = "captcha";
+            captcha.Size = new Size(88, 23);
+            captcha.TabIndex = 21;
+            captcha.Text = "label1";
             // 
             // panel4
             // 
@@ -433,26 +454,6 @@
             textBoxWeryfikacja.Size = new Size(313, 42);
             textBoxWeryfikacja.TabIndex = 15;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("SimSun-ExtB", 13.8F, FontStyle.Bold | FontStyle.Italic | FontStyle.Strikeout, GraphicsUnit.Point);
-            label1.Location = new Point(304, 278);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 23);
-            label1.TabIndex = 21;
-            label1.Text = "label1";
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(197, 274);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 35);
-            button1.TabIndex = 22;
-            button1.Text = "losuj nowy";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // Logowanie
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -463,6 +464,7 @@
             Controls.Add(panelLogowania);
             Name = "Logowanie";
             StartPosition = FormStartPosition.Manual;
+            Load += Logowanie_Load;
             panelNaglowka.ResumeLayout(false);
             panelNaglowka.PerformLayout();
             panelBar.ResumeLayout(false);
@@ -510,7 +512,7 @@
         private Panel panel4;
         private Label labelweryfikacja;
         private CheckBox checkBoxHaslo;
-        private Label label1;
+        private Label captcha;
         private Button button1;
     }
 }

@@ -74,6 +74,18 @@ namespace USOS_Rektora
                 glownyForm.Show();*/
         }
 
+        private void generowanieCaptchy()
+        {
+            Random random = new Random();
+            string captchaString = "";
+            int dlugosc = random.Next(6, 10);
+            for (int i = 0; i < dlugosc; i++)
+            {
+                captchaString += char.ConvertFromUtf32(random.Next(97, 122));
+            }
+            captcha.Text = captchaString;
+        }
+
         private void textBoxLogin_TextChanged(object sender, EventArgs e)
         {
             textLogin.ForeColor = Color.Black;
@@ -137,7 +149,15 @@ namespace USOS_Rektora
             }
         }
 
+        private void Logowanie_Load(object sender, EventArgs e)
+        {
+            generowanieCaptchy();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            generowanieCaptchy();
+        }
     }
 
 
