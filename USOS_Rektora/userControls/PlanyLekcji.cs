@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using USOS_Rektora.Properties;
 
 namespace USOS_Rektora.userControls
 {
@@ -82,7 +84,22 @@ namespace USOS_Rektora.userControls
 
         private void buttonPobierz_Click(object sender, EventArgs e)
         {
+            if (comboBoxKierunek.SelectedItem != null && comboBoxStopien.SelectedItem != null && comboBoxTryb.SelectedItem != null && comboBoxWydzial.SelectedItem != null)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                Image plan = Resources.planLekcji;//wyrzuca blad ale dziala (dziwne)
+                saveFileDialog.Filter = "Images|*.jpg";
+                ImageFormat format = ImageFormat.Jpeg;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
 
+                    plan.Save(saveFileDialog.FileName, format);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wypelnij wszystkie pola");
+            }
         }
 
         private void comboBoxWydzial_SelectedIndexChanged(object sender, EventArgs e)
