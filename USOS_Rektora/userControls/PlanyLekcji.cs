@@ -86,15 +86,23 @@ namespace USOS_Rektora.userControls
 
         private void buttonPobierz_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            Image plan = Resources.planLekcji1;
-            saveFileDialog.Filter = "Images|*.jpg";
-            ImageFormat format = ImageFormat.Jpeg;
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+
+            if (comboBoxKierunek.SelectedItem != null && comboBoxStopien.SelectedItem != null && comboBoxTryb.SelectedItem != null && comboBoxWydzial.SelectedItem != null)
             {
-                plan.Save(saveFileDialog.FileName, format);
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                Image plan = Resources.planLekcji1;
+                saveFileDialog.Filter = "Images|*.jpg";
+                ImageFormat format = ImageFormat.Jpeg;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    plan.Save(saveFileDialog.FileName, format);
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Wypelnij wszystkie pola");
+            }
 
         }
 
@@ -108,9 +116,6 @@ namespace USOS_Rektora.userControls
             wyswKierunkow();
         }
 
-        private void buttonPokaz_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
