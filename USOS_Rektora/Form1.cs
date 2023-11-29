@@ -26,6 +26,7 @@ namespace USOS_Rektora
         //Obs³uga przycisku który zamyka formularz logowania a otwiera formularz g³ówny
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            /*
             if (textLogin.Text.Trim() == "" && textPass.Text.Trim() == "")
             {
                 MessageBox.Show("Uzupe³nij dane", "Logowanie nie powiod³o siê");
@@ -54,24 +55,10 @@ namespace USOS_Rektora
                     MessageBox.Show("Login lub has³o siê nie zgadzaj¹", "Logowanie nie powiod³o siê");
                 }
             }
-
-            /* obs³uga b³edów na póŸniej
-            if (textBoxLogin.Text == "" || textBoxHaslo.Text == "")
-            {
-                textBoxLogin.ForeColor = Color.Red;
-                textBoxHaslo.ForeColor = Color.Red;
-            }
-            else
-            {
-                this.Hide();
-                glownyForm = new Form2();
-                glownyForm.Show();
-            }
             */
-            //Debug
-            /*    this.Hide();
-                glownyForm = new Form2();
-                glownyForm.Show();*/
+            this.Hide();
+            glownyForm = new Form2();
+            glownyForm.Show();
         }
 
         private void generowanieCaptchy()

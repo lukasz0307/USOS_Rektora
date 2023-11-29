@@ -26,6 +26,7 @@ namespace USOS_Rektora
         }
 
 
+
         //Funkcja pozycjonujaca elementy context menu strip by były tuż po prawej stronie przycisków z menu
         private void pozycjonowanieContextMenuStrip(Button przycisk, ContextMenuStrip menu)
         {
@@ -55,11 +56,21 @@ namespace USOS_Rektora
             pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
             zmianaTekstu(iconButtonWydzialy);
         }
-
+        
         private void iconButtonKadra_Click(object sender, EventArgs e)
         {
             pozycjonowanieContextMenuStrip(iconButtonKadra, menuKadra);
             zmianaTekstu(iconButtonKadra);
+            //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
+            if (!panelUserControl.Controls.Contains(WyswDanychKadra.Instance))
+            {
+                panelUserControl.Controls.Add(WyswDanychKadra.Instance);
+                WyswDanychKadra.Instance.Dock = DockStyle.Fill;
+                WyswDanychKadra.Instance.BringToFront();
+            }
+            else
+                WyswDanychKadra.Instance.BringToFront();
+
         }
 
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
@@ -93,7 +104,7 @@ namespace USOS_Rektora
                 Ogloszenia.Instance.BringToFront();
             }
             else
-                Kalendarz.Instance.BringToFront();
+                Ogloszenia.Instance.BringToFront();
 
 
             zmianaTekstu(iconButtonOgloszenia);
@@ -143,6 +154,6 @@ namespace USOS_Rektora
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-       
+
     }
 }
