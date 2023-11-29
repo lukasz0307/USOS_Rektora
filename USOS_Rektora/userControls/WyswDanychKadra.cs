@@ -62,9 +62,12 @@ namespace USOS_Rektora.userControls
         {
             // obiekt kadra 
             Kadra kadra = new Kadra(1, "Łukasz", "Jankowiak", "prof", "ul.ceglana", "Gdynia", "666 170 667", "lukas@wp.pl");
+
+            string nazwacheckbox = "checkbox" + kadra.id.ToString();
+
             tableDane.RowCount += 1;
             tableDane.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            tableDane.Controls.Add(new Label() { Text = kadra.id.ToString(), Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleCenter }, 0, 1);
+            tableDane.Controls.Add(new Label() { Text = kadra.id.ToString(), Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 0, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.imie, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 1, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.nazwisko, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 2, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.stanowisko, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 3, 1);
@@ -73,10 +76,12 @@ namespace USOS_Rektora.userControls
             tableDane.Controls.Add(new Label() { Text = kadra.nrTel, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 6, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.mail, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 7, 1);
 
+
             tableDane.RowCount += 1;
 
 
         }
+
 
 
 
@@ -169,6 +174,11 @@ namespace USOS_Rektora.userControls
         private void textBoxMail_Leave(object sender, EventArgs e)
         {
             textBoxMail.Text = "Adres e-mail";
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

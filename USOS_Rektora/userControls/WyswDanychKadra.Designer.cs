@@ -45,7 +45,7 @@
             buttonSzukaj = new Button();
             filtr2 = new ComboBox();
             baner = new Label();
-            textBox1 = new TextBox();
+            textBoxFiltr = new TextBox();
             filtr1 = new ComboBox();
             tabPage2 = new TabPage();
             buttonDodaj = new Button();
@@ -57,6 +57,14 @@
             textBoxNazwisko = new TextBox();
             textBoxImie = new TextBox();
             tabPage3 = new TabPage();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            buttonUsun = new Button();
+            textBoxUsun = new TextBox();
+            filtr2Usun = new ComboBox();
+            filtr1Usun = new ComboBox();
+            label9 = new Label();
+            tabPage4 = new TabPage();
             iconButtonRozwijanie = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             panelDane.SuspendLayout();
@@ -66,6 +74,9 @@
             tabPage1.SuspendLayout();
             panelChowaj.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,7 +96,7 @@
             tableDane.AutoScroll = true;
             tableDane.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableDane.ColumnCount = 8;
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 40F));
             tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
             tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
             tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
@@ -93,6 +104,7 @@
             tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
             tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
             tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableDane.Controls.Add(label7, 0, 0);
             tableDane.Controls.Add(label6, 6, 0);
             tableDane.Controls.Add(label5, 5, 0);
@@ -120,7 +132,7 @@
             label7.Location = new Point(1, 1);
             label7.Margin = new Padding(0);
             label7.Name = "label7";
-            label7.Size = new Size(35, 466);
+            label7.Size = new Size(40, 466);
             label7.TabIndex = 7;
             label7.Text = "ID";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -132,7 +144,7 @@
             label6.Dock = DockStyle.Fill;
             label6.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(792, 1);
+            label6.Location = new Point(797, 1);
             label6.Margin = new Padding(0);
             label6.Name = "label6";
             label6.Size = new Size(150, 466);
@@ -147,7 +159,7 @@
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(641, 1);
+            label5.Location = new Point(646, 1);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
             label5.Size = new Size(150, 466);
@@ -162,7 +174,7 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(490, 1);
+            label4.Location = new Point(495, 1);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
             label4.Size = new Size(150, 466);
@@ -177,7 +189,7 @@
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(339, 1);
+            label3.Location = new Point(344, 1);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
             label3.Size = new Size(150, 466);
@@ -192,7 +204,7 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(188, 1);
+            label2.Location = new Point(193, 1);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
             label2.Size = new Size(150, 466);
@@ -207,7 +219,7 @@
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(37, 1);
+            label1.Location = new Point(42, 1);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
             label1.Size = new Size(150, 466);
@@ -222,7 +234,7 @@
             label8.Dock = DockStyle.Fill;
             label8.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(946, 1);
+            label8.Location = new Point(951, 1);
             label8.Name = "label8";
             label8.Size = new Size(144, 466);
             label8.TabIndex = 8;
@@ -245,6 +257,7 @@
             tabControlZarzadz.Controls.Add(tabPage1);
             tabControlZarzadz.Controls.Add(tabPage2);
             tabControlZarzadz.Controls.Add(tabPage3);
+            tabControlZarzadz.Controls.Add(tabPage4);
             tabControlZarzadz.Dock = DockStyle.Fill;
             tabControlZarzadz.Location = new Point(0, 51);
             tabControlZarzadz.Margin = new Padding(0);
@@ -270,10 +283,11 @@
             panelChowaj.Controls.Add(buttonSzukaj);
             panelChowaj.Controls.Add(filtr2);
             panelChowaj.Controls.Add(baner);
-            panelChowaj.Controls.Add(textBox1);
+            panelChowaj.Controls.Add(textBoxFiltr);
             panelChowaj.Controls.Add(filtr1);
             panelChowaj.Dock = DockStyle.Fill;
             panelChowaj.Location = new Point(3, 3);
+            panelChowaj.Margin = new Padding(0);
             panelChowaj.Name = "panelChowaj";
             panelChowaj.Size = new Size(201, 392);
             panelChowaj.TabIndex = 9;
@@ -281,9 +295,9 @@
             // buttonSzukaj
             // 
             buttonSzukaj.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSzukaj.Location = new Point(0, 191);
+            buttonSzukaj.Location = new Point(0, 208);
             buttonSzukaj.Name = "buttonSzukaj";
-            buttonSzukaj.Size = new Size(191, 41);
+            buttonSzukaj.Size = new Size(201, 41);
             buttonSzukaj.TabIndex = 7;
             buttonSzukaj.Text = "Szukaj";
             buttonSzukaj.TextAlign = ContentAlignment.TopCenter;
@@ -296,7 +310,7 @@
             filtr2.Items.AddRange(new object[] { "równego", "zaczynającego się na" });
             filtr2.Location = new Point(0, 91);
             filtr2.Name = "filtr2";
-            filtr2.Size = new Size(191, 36);
+            filtr2.Size = new Size(202, 36);
             filtr2.TabIndex = 5;
             // 
             // baner
@@ -310,13 +324,13 @@
             baner.Text = "Dla";
             baner.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBoxFiltr
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(-3, 151);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(194, 34);
-            textBox1.TabIndex = 6;
+            textBoxFiltr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxFiltr.Location = new Point(-3, 151);
+            textBoxFiltr.Name = "textBoxFiltr";
+            textBoxFiltr.Size = new Size(204, 34);
+            textBoxFiltr.TabIndex = 6;
             // 
             // filtr1
             // 
@@ -325,7 +339,7 @@
             filtr1.Items.AddRange(new object[] { "imiona", "nazwiska", "stanowiska", "adresu" });
             filtr1.Location = new Point(0, 33);
             filtr1.Name = "filtr1";
-            filtr1.Size = new Size(194, 36);
+            filtr1.Size = new Size(202, 36);
             filtr1.TabIndex = 2;
             // 
             // tabPage2
@@ -340,8 +354,8 @@
             tabPage2.Controls.Add(textBoxNazwisko);
             tabPage2.Controls.Add(textBoxImie);
             tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(0);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(207, 398);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Dodaj";
@@ -349,9 +363,9 @@
             // buttonDodaj
             // 
             buttonDodaj.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonDodaj.Location = new Point(3, 356);
+            buttonDodaj.Location = new Point(-1, 356);
             buttonDodaj.Name = "buttonDodaj";
-            buttonDodaj.Size = new Size(201, 39);
+            buttonDodaj.Size = new Size(210, 39);
             buttonDodaj.TabIndex = 7;
             buttonDodaj.Text = "Dodaj";
             buttonDodaj.UseVisualStyleBackColor = true;
@@ -359,10 +373,10 @@
             // textBoxMail
             // 
             textBoxMail.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxMail.Location = new Point(3, 309);
+            textBoxMail.Location = new Point(0, 309);
             textBoxMail.Margin = new Padding(0, 20, 0, 0);
             textBoxMail.Name = "textBoxMail";
-            textBoxMail.Size = new Size(194, 31);
+            textBoxMail.Size = new Size(208, 31);
             textBoxMail.TabIndex = 6;
             textBoxMail.Text = "Adres e-mail";
             textBoxMail.Enter += textBoxMail_Enter;
@@ -371,10 +385,10 @@
             // textBoxNr
             // 
             textBoxNr.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNr.Location = new Point(3, 258);
+            textBoxNr.Location = new Point(-4, 258);
             textBoxNr.Margin = new Padding(0, 20, 0, 0);
             textBoxNr.Name = "textBoxNr";
-            textBoxNr.Size = new Size(194, 31);
+            textBoxNr.Size = new Size(211, 31);
             textBoxNr.TabIndex = 5;
             textBoxNr.Text = "Nr. telefonu";
             textBoxNr.Enter += textBoxNr_Enter;
@@ -383,10 +397,10 @@
             // textBoxMiasto
             // 
             textBoxMiasto.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxMiasto.Location = new Point(3, 207);
+            textBoxMiasto.Location = new Point(-4, 207);
             textBoxMiasto.Margin = new Padding(0, 20, 0, 0);
             textBoxMiasto.Name = "textBoxMiasto";
-            textBoxMiasto.Size = new Size(194, 31);
+            textBoxMiasto.Size = new Size(212, 31);
             textBoxMiasto.TabIndex = 4;
             textBoxMiasto.Text = "Miasto";
             textBoxMiasto.Enter += textBoxMiasto_Enter;
@@ -395,10 +409,10 @@
             // textBoxAdres
             // 
             textBoxAdres.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxAdres.Location = new Point(3, 156);
+            textBoxAdres.Location = new Point(0, 156);
             textBoxAdres.Margin = new Padding(0, 20, 0, 0);
             textBoxAdres.Name = "textBoxAdres";
-            textBoxAdres.Size = new Size(194, 31);
+            textBoxAdres.Size = new Size(207, 31);
             textBoxAdres.TabIndex = 3;
             textBoxAdres.Text = "Adres";
             textBoxAdres.Enter += textBoxAdres_Enter;
@@ -407,10 +421,10 @@
             // textBoxStan
             // 
             textBoxStan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxStan.Location = new Point(3, 105);
+            textBoxStan.Location = new Point(0, 105);
             textBoxStan.Margin = new Padding(0, 20, 0, 0);
             textBoxStan.Name = "textBoxStan";
-            textBoxStan.Size = new Size(194, 31);
+            textBoxStan.Size = new Size(207, 31);
             textBoxStan.TabIndex = 2;
             textBoxStan.Text = "Stanowisko";
             textBoxStan.Enter += textBoxStan_Enter;
@@ -419,10 +433,10 @@
             // textBoxNazwisko
             // 
             textBoxNazwisko.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNazwisko.Location = new Point(3, 54);
+            textBoxNazwisko.Location = new Point(0, 54);
             textBoxNazwisko.Margin = new Padding(0, 20, 0, 0);
             textBoxNazwisko.Name = "textBoxNazwisko";
-            textBoxNazwisko.Size = new Size(194, 31);
+            textBoxNazwisko.Size = new Size(208, 31);
             textBoxNazwisko.TabIndex = 1;
             textBoxNazwisko.Text = "Nazwisko";
             textBoxNazwisko.Enter += textBoxNazwisko_Enter;
@@ -432,10 +446,10 @@
             // 
             textBoxImie.Dock = DockStyle.Top;
             textBoxImie.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxImie.Location = new Point(3, 3);
+            textBoxImie.Location = new Point(0, 0);
             textBoxImie.Margin = new Padding(0);
             textBoxImie.Name = "textBoxImie";
-            textBoxImie.Size = new Size(201, 31);
+            textBoxImie.Size = new Size(207, 31);
             textBoxImie.TabIndex = 0;
             textBoxImie.Text = "Imię";
             textBoxImie.Enter += textBoxImie_Enter;
@@ -443,12 +457,96 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(panel2);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(207, 398);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Usuń";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(207, 398);
+            panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Silver;
+            panel3.Controls.Add(buttonUsun);
+            panel3.Controls.Add(textBoxUsun);
+            panel3.Controls.Add(filtr2Usun);
+            panel3.Controls.Add(filtr1Usun);
+            panel3.Controls.Add(label9);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(207, 398);
+            panel3.TabIndex = 0;
+            // 
+            // buttonUsun
+            // 
+            buttonUsun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonUsun.Location = new Point(4, 191);
+            buttonUsun.Name = "buttonUsun";
+            buttonUsun.Size = new Size(200, 36);
+            buttonUsun.TabIndex = 8;
+            buttonUsun.Text = "Usuń";
+            buttonUsun.UseVisualStyleBackColor = true;
+            // 
+            // textBoxUsun
+            // 
+            textBoxUsun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxUsun.Location = new Point(4, 140);
+            textBoxUsun.Name = "textBoxUsun";
+            textBoxUsun.Size = new Size(201, 31);
+            textBoxUsun.TabIndex = 7;
+            // 
+            // filtr2Usun
+            // 
+            filtr2Usun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            filtr2Usun.FormattingEnabled = true;
+            filtr2Usun.Items.AddRange(new object[] { "równym", "zaczynającym się na" });
+            filtr2Usun.Location = new Point(3, 85);
+            filtr2Usun.Name = "filtr2Usun";
+            filtr2Usun.Size = new Size(201, 33);
+            filtr2Usun.TabIndex = 6;
+            // 
+            // filtr1Usun
+            // 
+            filtr1Usun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            filtr1Usun.FormattingEnabled = true;
+            filtr1Usun.Items.AddRange(new object[] { "ID", "Imieniu", "Nazwisku", "Stanowisku" });
+            filtr1Usun.Location = new Point(3, 33);
+            filtr1Usun.Name = "filtr1Usun";
+            filtr1Usun.Size = new Size(201, 33);
+            filtr1Usun.TabIndex = 5;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(3, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(202, 30);
+            label9.TabIndex = 4;
+            label9.Text = "Usuń członka kadry o";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            label9.Click += label9_Click;
+            // 
+            // tabPage4
+            // 
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(207, 398);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Modyfikuj";
+            tabPage4.UseVisualStyleBackColor = true;
             // 
             // iconButtonRozwijanie
             // 
@@ -499,6 +597,10 @@
             panelChowaj.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -522,7 +624,7 @@
         private Button buttonSzukaj;
         private ComboBox filtr2;
         private Label baner;
-        private TextBox textBox1;
+        private TextBox textBoxFiltr;
         private ComboBox filtr1;
         private TabPage tabPage2;
         private TabPage tabPage3;
@@ -536,5 +638,13 @@
         private TextBox textBoxNr;
         private Button buttonDodaj;
         private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Label label9;
+        private ComboBox filtr1Usun;
+        private ComboBox filtr2Usun;
+        private Button buttonUsun;
+        private TextBox textBoxUsun;
+        private TabPage tabPage4;
     }
 }
