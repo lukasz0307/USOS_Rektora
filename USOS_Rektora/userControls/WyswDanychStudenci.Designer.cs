@@ -1,6 +1,6 @@
 ﻿namespace USOS_Rektora.userControls
 {
-    partial class WyswDanychKadra
+    partial class WyswDanychStudenci
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -61,7 +61,7 @@
             panelFiltrowanie.Location = new Point(0, 0);
             panelFiltrowanie.Name = "panelFiltrowanie";
             panelFiltrowanie.Size = new Size(184, 482);
-            panelFiltrowanie.TabIndex = 0;
+            panelFiltrowanie.TabIndex = 1;
             // 
             // panelChowaj
             // 
@@ -157,21 +157,21 @@
             panelDane.Location = new Point(184, 0);
             panelDane.Name = "panelDane";
             panelDane.Size = new Size(712, 482);
-            panelDane.TabIndex = 1;
+            panelDane.TabIndex = 2;
             // 
             // tableDane
             // 
             tableDane.AutoScroll = true;
             tableDane.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tableDane.ColumnCount = 8;
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5.910938F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2207966F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2207966F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2171488F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2207985F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2207966F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2207966F));
+            tableDane.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.7679319F));
             tableDane.Controls.Add(label7, 0, 0);
             tableDane.Controls.Add(label6, 6, 0);
             tableDane.Controls.Add(label5, 5, 0);
@@ -194,12 +194,12 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Silver;
             label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
             label7.Location = new Point(1, 1);
             label7.Margin = new Padding(0);
             label7.Name = "label7";
-            label7.Size = new Size(35, 466);
+            label7.Size = new Size(41, 480);
             label7.TabIndex = 7;
             label7.Text = "ID";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -209,12 +209,12 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Silver;
             label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(792, 1);
+            label6.Location = new Point(508, 1);
             label6.Margin = new Padding(0);
             label6.Name = "label6";
-            label6.Size = new Size(150, 466);
+            label6.Size = new Size(92, 480);
             label6.TabIndex = 5;
             label6.Text = "Nr. telefonu";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -224,12 +224,12 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Silver;
             label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(641, 1);
+            label5.Location = new Point(415, 1);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(150, 466);
+            label5.Size = new Size(92, 480);
             label5.TabIndex = 4;
             label5.Text = "Miasto";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -239,12 +239,12 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Silver;
             label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(490, 1);
+            label4.Location = new Point(322, 1);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(150, 466);
+            label4.Size = new Size(92, 480);
             label4.TabIndex = 3;
             label4.Text = "Adres";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -254,12 +254,12 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Silver;
             label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(339, 1);
+            label3.Location = new Point(229, 1);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(150, 466);
+            label3.Size = new Size(92, 480);
             label3.TabIndex = 2;
             label3.Text = "Stanowisko";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -269,12 +269,12 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Silver;
             label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(188, 1);
+            label2.Location = new Point(136, 1);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(150, 466);
+            label2.Size = new Size(92, 480);
             label2.TabIndex = 1;
             label2.Text = "Nazwisko";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -284,12 +284,12 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Silver;
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(37, 1);
+            label1.Location = new Point(43, 1);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(150, 466);
+            label1.Size = new Size(92, 480);
             label1.TabIndex = 6;
             label1.Text = "Imię";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -299,24 +299,23 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Silver;
             label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Segoe UI", 12.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI", 9.7F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(946, 1);
+            label8.Location = new Point(604, 1);
             label8.Name = "label8";
-            label8.Size = new Size(144, 466);
+            label8.Size = new Size(104, 480);
             label8.TabIndex = 8;
             label8.Text = "Adres e-mail";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // WyswDanychKadra
+            // WyswDanychStudenci
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelDane);
             Controls.Add(panelFiltrowanie);
-            Name = "WyswDanychKadra";
+            Name = "WyswDanychStudenci";
             Size = new Size(896, 482);
-            Load += WyswDanych_Load;
             panelFiltrowanie.ResumeLayout(false);
             panelChowaj.ResumeLayout(false);
             panelChowaj.PerformLayout();
@@ -330,21 +329,21 @@
         #endregion
 
         private Panel panelFiltrowanie;
-        private FontAwesome.Sharp.IconButton iconButtonRozwijanie;
-        private ComboBox filtr1;
-        private Panel panelDane;
-        private Label baner;
-        private ComboBox filtr2;
-        private TextBox textBox1;
-        private Button buttonSzukaj;
         private Panel panelChowaj;
+        private Button buttonSzukaj;
+        private ComboBox filtr2;
+        private Label baner;
+        private TextBox textBox1;
+        private ComboBox filtr1;
+        private FontAwesome.Sharp.IconButton iconButtonRozwijanie;
+        private Panel panelDane;
         private TableLayoutPanel tableDane;
+        private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Label label7;
         private Label label1;
         private Label label8;
     }

@@ -87,6 +87,7 @@ namespace USOS_Rektora
         private void buttonprzypomnij_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 1;
+           
         }
 
         private void buttonWroc_Click(object sender, EventArgs e)
