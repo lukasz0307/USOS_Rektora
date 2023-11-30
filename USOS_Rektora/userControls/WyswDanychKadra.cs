@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace USOS_Rektora.userControls
     public partial class WyswDanychKadra : UserControl
     {
         private static WyswDanychKadra _instance;
+        public int aktualneId;
         public static WyswDanychKadra Instance
         {
             get
@@ -48,6 +50,8 @@ namespace USOS_Rektora.userControls
                 this.nrTel = nrTel;
                 this.mail = mail;
             }
+
+
         }
         public WyswDanychKadra()
         {
@@ -56,16 +60,42 @@ namespace USOS_Rektora.userControls
         }
 
 
-
+        public void dane(string[] kadra)
+        {
+            tableDane.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tableDane.Controls.Add(new Label() { Text = kadra[0], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 0, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[1], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 1, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[2], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 2, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[3], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 3, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[4], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 4, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[5], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 5, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[6], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 6, aktualneId);
+            tableDane.Controls.Add(new Label() { Text = kadra[7], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 7, aktualneId);
+        }
 
         private void WyswDanych_Load(object sender, EventArgs e)
         {
             // obiekt kadra 
             Kadra kadra = new Kadra(1, "Łukasz", "Jankowiak", "prof", "ul.ceglana", "Gdynia", "666 170 667", "lukas@wp.pl");
+            aktualneId = kadra.id;
 
-            string nazwacheckbox = "checkbox" + kadra.id.ToString();
+            string[] table = new string[8];
+            table[0] = kadra.id.ToString();
+            table[1] = kadra.imie;
+            table[2] = kadra.nazwisko;
+            table[3] = kadra.stanowisko;
+            table[4] = kadra.adres;
+            table[5] = kadra.miasto;
+            table[6] = kadra.nrTel;
+            table[7] = kadra.mail;
+            dane(table);
+
+
 
             tableDane.RowCount += 1;
+
+
+            /*
             tableDane.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tableDane.Controls.Add(new Label() { Text = kadra.id.ToString(), Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 0, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.imie, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 1, 1);
@@ -75,7 +105,7 @@ namespace USOS_Rektora.userControls
             tableDane.Controls.Add(new Label() { Text = kadra.miasto, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 5, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.nrTel, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 6, 1);
             tableDane.Controls.Add(new Label() { Text = kadra.mail, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 7, 1);
-
+            */
 
             tableDane.RowCount += 1;
 
@@ -113,7 +143,7 @@ namespace USOS_Rektora.userControls
         }
         private void textBoxImie_Leave(object sender, EventArgs e)
         {
-            textBoxImie.Text = "Imię";
+            if (textBoxImie.Text == "") textBoxImie.Text = "Imię";
         }
 
         private void textBoxNazwisko_Enter(object sender, EventArgs e)
@@ -123,7 +153,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxNazwisko_Leave(object sender, EventArgs e)
         {
-            textBoxNazwisko.Text = "Nazwisko";
+            if (textBoxNazwisko.Text == "") textBoxNazwisko.Text = "Nazwisko";
         }
 
         private void textBoxStan_Enter(object sender, EventArgs e)
@@ -133,7 +163,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxStan_Leave(object sender, EventArgs e)
         {
-            textBoxStan.Text = "Stanowisko";
+            if (textBoxStan.Text == "") textBoxStan.Text = "Stanowisko";
         }
 
         private void textBoxAdres_Enter(object sender, EventArgs e)
@@ -143,7 +173,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxAdres_Leave(object sender, EventArgs e)
         {
-            textBoxAdres.Text = "Adres";
+            if (textBoxAdres.Text == "") textBoxAdres.Text = "Adres";
         }
 
         private void textBoxMiasto_Enter(object sender, EventArgs e)
@@ -153,7 +183,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxMiasto_Leave(object sender, EventArgs e)
         {
-            textBoxMiasto.Text = "Miasto";
+            if (textBoxMiasto.Text == "") textBoxMiasto.Text = "Miasto";
         }
 
         private void textBoxNr_Enter(object sender, EventArgs e)
@@ -163,7 +193,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxNr_Leave(object sender, EventArgs e)
         {
-            textBoxNr.Text = "Nr.telefonu";
+            if (textBoxNr.Text == "") textBoxNr.Text = "Nr.telefonu";
         }
 
         private void textBoxMail_Enter(object sender, EventArgs e)
@@ -173,10 +203,26 @@ namespace USOS_Rektora.userControls
 
         private void textBoxMail_Leave(object sender, EventArgs e)
         {
-            textBoxMail.Text = "Adres e-mail";
+            if (textBoxMail.Text == "") textBoxMail.Text = "Adres e-mail";
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void buttonDodaj_Click(object sender, EventArgs e)
+        {
+            aktualneId++;
+            Kadra kadra = new Kadra(aktualneId, textBoxImie.Text, textBoxNazwisko.Text, textBoxStan.Text, textBoxAdres.Text, textBoxMiasto.Text, textBoxNr.Text, textBoxMail.Text);
+            string[] table = new string[8];
+            table[0] = kadra.id.ToString();
+            table[1] = kadra.imie;
+            table[2] = kadra.nazwisko;
+            table[3] = kadra.stanowisko;
+            table[4] = kadra.adres;
+            table[5] = kadra.miasto;
+            table[6] = kadra.nrTel;
+            table[7] = kadra.mail;
+            dane(table);
+        }
+
+        private void buttonUsun_Click(object sender, EventArgs e)
         {
 
         }
