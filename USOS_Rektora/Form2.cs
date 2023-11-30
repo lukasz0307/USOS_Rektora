@@ -56,10 +56,10 @@ namespace USOS_Rektora
             pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
             zmianaTekstu(iconButtonWydzialy);
         }
-        
+
         private void iconButtonKadra_Click(object sender, EventArgs e)
         {
-            pozycjonowanieContextMenuStrip(iconButtonKadra, menuKadra);
+            //pozycjonowanieContextMenuStrip(iconButtonKadra, menuKadra);
             zmianaTekstu(iconButtonKadra);
             //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
             if (!panelUserControl.Controls.Contains(WyswDanychKadra.Instance))

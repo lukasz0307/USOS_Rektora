@@ -139,7 +139,7 @@ namespace USOS_Rektora.userControls
         //Obsługa podpowiedzi textboxów dodawnia członka kadry
         private void textBoxImie_Enter(object sender, EventArgs e)
         {
-            textBoxImie.Text = "";
+            if (textBoxImie.Text == "Imię") textBoxImie.Text = "";
         }
         private void textBoxImie_Leave(object sender, EventArgs e)
         {
@@ -148,7 +148,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxNazwisko_Enter(object sender, EventArgs e)
         {
-            textBoxNazwisko.Text = "";
+            if (textBoxImie.Text == "Nazwisko") textBoxNazwisko.Text = "";
         }
 
         private void textBoxNazwisko_Leave(object sender, EventArgs e)
@@ -158,7 +158,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxStan_Enter(object sender, EventArgs e)
         {
-            textBoxStan.Text = "";
+            if (textBoxImie.Text == "Stanowisko") textBoxStan.Text = "";
         }
 
         private void textBoxStan_Leave(object sender, EventArgs e)
@@ -168,7 +168,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxAdres_Enter(object sender, EventArgs e)
         {
-            textBoxAdres.Text = "";
+            if (textBoxImie.Text == "Adres") textBoxAdres.Text = "";
         }
 
         private void textBoxAdres_Leave(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxMiasto_Enter(object sender, EventArgs e)
         {
-            textBoxMiasto.Text = "";
+            if (textBoxImie.Text == "Miasto") textBoxMiasto.Text = "";
         }
 
         private void textBoxMiasto_Leave(object sender, EventArgs e)
@@ -188,7 +188,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxNr_Enter(object sender, EventArgs e)
         {
-            textBoxNr.Text = "";
+            if (textBoxImie.Text == "Nr.telefonu") textBoxNr.Text = "";
         }
 
         private void textBoxNr_Leave(object sender, EventArgs e)
@@ -198,7 +198,7 @@ namespace USOS_Rektora.userControls
 
         private void textBoxMail_Enter(object sender, EventArgs e)
         {
-            textBoxMail.Text = "";
+            if (textBoxImie.Text == "Adres e-mail") textBoxMail.Text = "";
         }
 
         private void textBoxMail_Leave(object sender, EventArgs e)

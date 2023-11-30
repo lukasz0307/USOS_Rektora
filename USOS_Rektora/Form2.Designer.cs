@@ -236,7 +236,6 @@
             // 
             // iconButtonKadra
             // 
-            iconButtonKadra.ContextMenuStrip = menuKadra;
             iconButtonKadra.Dock = DockStyle.Top;
             iconButtonKadra.FlatAppearance.BorderSize = 0;
             iconButtonKadra.FlatStyle = FlatStyle.Flat;
