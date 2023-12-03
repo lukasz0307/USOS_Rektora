@@ -209,7 +209,7 @@
             tabControlKontener.Controls.Add(tabPage3);
             tabControlKontener.Controls.Add(tabPage4);
             tabControlKontener.Dock = DockStyle.Fill;
-            tabControlKontener.ItemSize = new Size(20, 10);
+            tabControlKontener.ItemSize = new Size(0, 1);
             tabControlKontener.Location = new Point(0, 169);
             tabControlKontener.Margin = new Padding(0);
             tabControlKontener.Name = "tabControlKontener";
@@ -228,11 +228,11 @@
             tabPage1.Controls.Add(buttonprzypomnij);
             tabPage1.Controls.Add(textPass);
             tabPage1.Controls.Add(buttonLogin);
-            tabPage1.Location = new Point(4, 14);
+            tabPage1.Location = new Point(4, 5);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(1174, 466);
+            tabPage1.Size = new Size(1174, 475);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPageLogowanie";
             // 
@@ -242,7 +242,7 @@
             checkBoxHaslo.AutoSize = true;
             checkBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             checkBoxHaslo.ForeColor = Color.White;
-            checkBoxHaslo.Location = new Point(765, 253);
+            checkBoxHaslo.Location = new Point(765, 257);
             checkBoxHaslo.Margin = new Padding(3, 4, 3, 4);
             checkBoxHaslo.Name = "checkBoxHaslo";
             checkBoxHaslo.Size = new Size(178, 41);
@@ -255,7 +255,7 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.Controls.Add(labelHaslo);
-            panel2.Location = new Point(0, 207);
+            panel2.Location = new Point(0, 211);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(1173, 47);
@@ -278,7 +278,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.Controls.Add(labelLogin);
-            panel1.Location = new Point(0, 92);
+            panel1.Location = new Point(0, 96);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1173, 47);
@@ -302,7 +302,7 @@
             textLogin.Anchor = AnchorStyles.None;
             textLogin.BackColor = Color.Silver;
             textLogin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textLogin.Location = new Point(430, 145);
+            textLogin.Location = new Point(430, 149);
             textLogin.Name = "textLogin";
             textLogin.Size = new Size(313, 43);
             textLogin.TabIndex = 12;
@@ -310,12 +310,12 @@
             // buttonprzypomnij
             // 
             buttonprzypomnij.Anchor = AnchorStyles.None;
-            buttonprzypomnij.Location = new Point(574, 313);
+            buttonprzypomnij.Location = new Point(622, 317);
             buttonprzypomnij.Margin = new Padding(3, 4, 3, 4);
             buttonprzypomnij.Name = "buttonprzypomnij";
-            buttonprzypomnij.Size = new Size(217, 53);
+            buttonprzypomnij.Size = new Size(121, 53);
             buttonprzypomnij.TabIndex = 17;
-            buttonprzypomnij.Text = "ZMIEŃ/PRZYPOMNIJ HASŁO";
+            buttonprzypomnij.Text = "ZMIEŃ HASŁO";
             buttonprzypomnij.UseVisualStyleBackColor = true;
             buttonprzypomnij.Click += buttonprzypomnij_Click;
             // 
@@ -324,7 +324,7 @@
             textPass.Anchor = AnchorStyles.None;
             textPass.BackColor = Color.Silver;
             textPass.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textPass.Location = new Point(430, 253);
+            textPass.Location = new Point(430, 257);
             textPass.Margin = new Padding(3, 4, 3, 4);
             textPass.Name = "textPass";
             textPass.Size = new Size(313, 42);
@@ -335,10 +335,10 @@
             // 
             buttonLogin.Anchor = AnchorStyles.None;
             buttonLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonLogin.Location = new Point(385, 313);
+            buttonLogin.Location = new Point(430, 317);
             buttonLogin.Margin = new Padding(3, 4, 3, 4);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(138, 53);
+            buttonLogin.Size = new Size(121, 53);
             buttonLogin.TabIndex = 16;
             buttonLogin.Text = "ZALOGUJ SIĘ";
             buttonLogin.UseVisualStyleBackColor = true;
@@ -585,6 +585,7 @@
             textBoxNoweHaslo2.Name = "textBoxNoweHaslo2";
             textBoxNoweHaslo2.Size = new Size(313, 42);
             textBoxNoweHaslo2.TabIndex = 24;
+            textBoxNoweHaslo2.UseSystemPasswordChar = true;
             // 
             // textBoxNoweHaslo1
             // 
@@ -596,6 +597,7 @@
             textBoxNoweHaslo1.Name = "textBoxNoweHaslo1";
             textBoxNoweHaslo1.Size = new Size(313, 42);
             textBoxNoweHaslo1.TabIndex = 23;
+            textBoxNoweHaslo1.UseSystemPasswordChar = true;
             // 
             // panel7
             // 

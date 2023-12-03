@@ -67,7 +67,7 @@ namespace USOS_Rektora
         {
             Random random = new Random();
             string captchaString = "";
-            int dlugosc = random.Next(6, 10);
+            int dlugosc = random.Next(5, 7);
             for (int i = 0; i < dlugosc; i++)
             {
                 captchaString += char.ConvertFromUtf32(random.Next(97, 122));
@@ -79,6 +79,7 @@ namespace USOS_Rektora
         private void buttonprzypomnij_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 1;
+
 
         }
         // powrot do logowania
@@ -133,7 +134,7 @@ namespace USOS_Rektora
         {
             generowanieCaptchy();
         }
-
+        //wygenerowanie nowej captchy po kliknieciu przycisku
         private void button1_Click(object sender, EventArgs e)
         {
             generowanieCaptchy();
@@ -179,6 +180,7 @@ namespace USOS_Rektora
                         smtpClient.EnableSsl = true;
                         smtpClient.Send(mailMessage);
                         MessageBox.Show("Email zosta³ wys³any");
+                        tabControlKontener.SelectedIndex = 2;
                     }
                     catch (Exception ex)
                     {
@@ -203,14 +205,19 @@ namespace USOS_Rektora
 
         private void textBoxKod_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxKod.Text == kod)
+
+            if (textBoxKod.Text.Length == 4)
             {
-                tabControlKontener.SelectedIndex = 2;
+                if (textBoxKod.Text == kod)
+                {
+                    tabControlKontener.SelectedIndex = 3;
+                }
+                else
+                {
+                    MessageBox.Show("B³êdny kod");
+                }
             }
-            else
-            {
-                MessageBox.Show("B³êdny kod");
-            }
+
         }
 
         private void buttonWroc2_Click(object sender, EventArgs e)
@@ -225,14 +232,35 @@ namespace USOS_Rektora
 
         private void buttonPotw_Click(object sender, EventArgs e)
         {
+            /*testowanie zawartosci bazy danych
+            string query = "SELECT * FROM users";
+            SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
+            SQLiteCommand cmd = new SQLiteCommand(query, conn);
+            conn.Open();
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                MessageBox.Show(reader["username"] + " " + reader["password"]);
+            }
+           */
+
             if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
-            {/*
-                string query = "UPDATE password FROM users WHERE username= @user";
+            {
+                string query = "UPDATE users SET password = @newpassword WHERE username= @user";
                 SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
                 SQLiteCommand cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
+                cmd.Parameters.AddWithValue("@user", username);
+                cmd.Parameters.AddWithValue("@newpassword", textBoxNoweHaslo1.Text);
                 conn.Open();
-                object result = cmd.ExecuteScalar();*/
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Has³o zosta³o zmienione");
+                tabControlKontener.SelectedIndex = 0;
+            }
+            else
+            {
+
+                MessageBox.Show("Has³a ró¿ni¹ siê");
             }
         }
     }
