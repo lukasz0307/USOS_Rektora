@@ -3,12 +3,14 @@
 using System.Runtime.InteropServices;
 using System.Data.SQLite;
 using System.Data;
+using System.Net.Mail;
 
 namespace USOS_Rektora
 {
     public partial class Logowanie : Form
     {
-
+        public string kod;
+        public string username;
         public Form2 glownyForm;
 
         public Logowanie()
@@ -23,7 +25,7 @@ namespace USOS_Rektora
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        //Obs³uga przycisku który zamyka formularz logowania a otwiera formularz g³ówny
+        //Obs³uga przycisku który zamyka formularz logowania i otwiera formularz g³ówny
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             /*
@@ -73,23 +75,13 @@ namespace USOS_Rektora
             captcha.Text = captchaString;
         }
 
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
-        {
-            textLogin.ForeColor = Color.Black;
-        }
-
-        private void textBoxHaslo_TextChanged(object sender, EventArgs e)
-        {
-            textPass.ForeColor = Color.Black;
-        }
-
-        //Zmienianie zak³adek tab control
+        //przejscie do zmiany hasla
         private void buttonprzypomnij_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 1;
-           
-        }
 
+        }
+        // powrot do logowania
         private void buttonWroc_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 0;
@@ -136,7 +128,7 @@ namespace USOS_Rektora
                 textPass.UseSystemPasswordChar = true;
             }
         }
-
+        // wygenerowanie captchy po za³adowaniu formularza
         private void Logowanie_Load(object sender, EventArgs e)
         {
             generowanieCaptchy();
@@ -146,12 +138,104 @@ namespace USOS_Rektora
         {
             generowanieCaptchy();
         }
+        //obs³uga wysy³ania maila
+        private void buttonDalej_Click(object sender, EventArgs e)
+        {
+            //admin admin123
+            string query = "SELECT username FROM users WHERE username= @user";
+            SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
+            SQLiteCommand cmd = new SQLiteCommand(query, conn);
+            cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
+            conn.Open();
+            object result = cmd.ExecuteScalar();
+            //obs³uga b³edu gdy uzytkownik nie poda maila lub jest b³êdny
+            if (result != null)
+            {
+                if (textBoxWeryfikacja.Text == captcha.Text)
+                {
+                    username = result.ToString();
+                    conn.Close();
+                    try
+                    {
+                        MailMessage mailMessage = new MailMessage();
+                        SmtpClient smtpClient = new SmtpClient();
+                        smtpClient.Host = "smtp.gmail.com";
+                        mailMessage.From = new MailAddress("usoumg@gmail.com");
+                        mailMessage.To.Add("lukas4500j@gmail.com");
+                        mailMessage.Subject = "Resetowanie has³a";
+
+                        //generowanie kodu do zmiany has³a
+                        Random random = new Random();
+                        for (int i = 0; i < 4; i++)
+                        {
+                            int cyfry = random.Next(0, 10);
+                            kod += cyfry.ToString();
+                        }
+
+
+                        mailMessage.Body = "U¿ytkowniku " + username + " kod do zresetowania twojego has³a to: " + kod;
+                        smtpClient.Port = 587;
+                        smtpClient.Credentials = new System.Net.NetworkCredential("usoumg@gmail.com", "qazo iesh mflw gian");
+                        smtpClient.EnableSsl = true;
+                        smtpClient.Send(mailMessage);
+                        MessageBox.Show("Email zosta³ wys³any");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Przepisz litery poprawnie");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("B³êdny login");
+            }
+
+
+
+
+        }
+
+        private void textBoxKod_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxKod.Text == kod)
+            {
+                tabControlKontener.SelectedIndex = 2;
+            }
+            else
+            {
+                MessageBox.Show("B³êdny kod");
+            }
+        }
+
+        private void buttonWroc2_Click(object sender, EventArgs e)
+        {
+            tabControlKontener.SelectedIndex = 1;
+        }
+
+        private void buttonWroc3_Click(object sender, EventArgs e)
+        {
+            tabControlKontener.SelectedIndex = 2;
+        }
+
+        private void buttonPotw_Click(object sender, EventArgs e)
+        {
+            if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
+            {/*
+                string query = "UPDATE password FROM users WHERE username= @user";
+                SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
+                SQLiteCommand cmd = new SQLiteCommand(query, conn);
+                cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
+                conn.Open();
+                object result = cmd.ExecuteScalar();*/
+            }
+        }
     }
-
-
-
-
-
 
 
 

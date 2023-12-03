@@ -377,11 +377,9 @@
             textBoxMail.Location = new Point(0, 309);
             textBoxMail.Margin = new Padding(0, 20, 0, 0);
             textBoxMail.Name = "textBoxMail";
+            textBoxMail.PlaceholderText = "Adres e-mail";
             textBoxMail.Size = new Size(208, 31);
             textBoxMail.TabIndex = 6;
-            textBoxMail.Text = "Adres e-mail";
-            textBoxMail.Enter += textBoxMail_Enter;
-            textBoxMail.Leave += textBoxMail_Leave;
             // 
             // textBoxNr
             // 
@@ -389,11 +387,9 @@
             textBoxNr.Location = new Point(-4, 258);
             textBoxNr.Margin = new Padding(0, 20, 0, 0);
             textBoxNr.Name = "textBoxNr";
+            textBoxNr.PlaceholderText = "Nr. telefonu";
             textBoxNr.Size = new Size(211, 31);
             textBoxNr.TabIndex = 5;
-            textBoxNr.Text = "Nr. telefonu";
-            textBoxNr.Enter += textBoxNr_Enter;
-            textBoxNr.Leave += textBoxNr_Leave;
             // 
             // textBoxMiasto
             // 
@@ -401,11 +397,9 @@
             textBoxMiasto.Location = new Point(-4, 207);
             textBoxMiasto.Margin = new Padding(0, 20, 0, 0);
             textBoxMiasto.Name = "textBoxMiasto";
+            textBoxMiasto.PlaceholderText = "Miasto";
             textBoxMiasto.Size = new Size(212, 31);
             textBoxMiasto.TabIndex = 4;
-            textBoxMiasto.Text = "Miasto";
-            textBoxMiasto.Enter += textBoxMiasto_Enter;
-            textBoxMiasto.Leave += textBoxMiasto_Leave;
             // 
             // textBoxAdres
             // 
@@ -413,11 +407,9 @@
             textBoxAdres.Location = new Point(0, 156);
             textBoxAdres.Margin = new Padding(0, 20, 0, 0);
             textBoxAdres.Name = "textBoxAdres";
+            textBoxAdres.PlaceholderText = "Adres";
             textBoxAdres.Size = new Size(207, 31);
             textBoxAdres.TabIndex = 3;
-            textBoxAdres.Text = "Adres";
-            textBoxAdres.Enter += textBoxAdres_Enter;
-            textBoxAdres.Leave += textBoxAdres_Leave;
             // 
             // textBoxStan
             // 
@@ -425,11 +417,9 @@
             textBoxStan.Location = new Point(0, 105);
             textBoxStan.Margin = new Padding(0, 20, 0, 0);
             textBoxStan.Name = "textBoxStan";
+            textBoxStan.PlaceholderText = "Stanowisko";
             textBoxStan.Size = new Size(207, 31);
             textBoxStan.TabIndex = 2;
-            textBoxStan.Text = "Stanowisko";
-            textBoxStan.Enter += textBoxStan_Enter;
-            textBoxStan.Leave += textBoxStan_Leave;
             // 
             // textBoxNazwisko
             // 
@@ -437,11 +427,9 @@
             textBoxNazwisko.Location = new Point(0, 54);
             textBoxNazwisko.Margin = new Padding(0, 20, 0, 0);
             textBoxNazwisko.Name = "textBoxNazwisko";
+            textBoxNazwisko.PlaceholderText = "Nazwisko";
             textBoxNazwisko.Size = new Size(208, 31);
             textBoxNazwisko.TabIndex = 1;
-            textBoxNazwisko.Text = "Nazwisko";
-            textBoxNazwisko.Enter += textBoxNazwisko_Enter;
-            textBoxNazwisko.Leave += textBoxNazwisko_Leave;
             // 
             // textBoxImie
             // 
@@ -450,11 +438,9 @@
             textBoxImie.Location = new Point(0, 0);
             textBoxImie.Margin = new Padding(0);
             textBoxImie.Name = "textBoxImie";
+            textBoxImie.PlaceholderText = "Imię";
             textBoxImie.Size = new Size(207, 31);
             textBoxImie.TabIndex = 0;
-            textBoxImie.Text = "Imię";
-            textBoxImie.Enter += textBoxImie_Enter;
-            textBoxImie.Leave += textBoxImie_Leave;
             // 
             // tabPage3
             // 
