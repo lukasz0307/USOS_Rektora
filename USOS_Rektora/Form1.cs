@@ -62,7 +62,7 @@ namespace USOS_Rektora
             glownyForm = new Form2();
             glownyForm.Show();
         }
-
+        //Funkcja generuj¹ca captche
         private void generowanieCaptchy()
         {
             Random random = new Random();
@@ -149,7 +149,7 @@ namespace USOS_Rektora
             cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
             conn.Open();
             object result = cmd.ExecuteScalar();
-            //obs³uga b³edu gdy uzytkownik nie poda maila lub jest b³êdny
+            //obs³uga b³edu gdy uzytkownik nie poda loginu lub jest b³êdny
             if (result != null)
             {
                 if (textBoxWeryfikacja.Text == captcha.Text)
@@ -176,7 +176,7 @@ namespace USOS_Rektora
 
                         mailMessage.Body = "U¿ytkowniku " + username + " kod do zresetowania twojego has³a to: " + kod;
                         smtpClient.Port = 587;
-                        smtpClient.Credentials = new System.Net.NetworkCredential("usoumg@gmail.com", "qazo iesh mflw gian");
+                        smtpClient.Credentials = new System.Net.NetworkCredential("usoumg@gmail.com", "qazo iesh mflw gian");//mail i has³o do niego wygenerowane przez konto google
                         smtpClient.EnableSsl = true;
                         smtpClient.Send(mailMessage);
                         MessageBox.Show("Email zosta³ wys³any");
@@ -191,18 +191,13 @@ namespace USOS_Rektora
                 {
                     MessageBox.Show("Przepisz litery poprawnie");
                 }
-
             }
             else
             {
                 MessageBox.Show("B³êdny login");
             }
-
-
-
-
         }
-
+        //weryfikacja kodu przys³anego na maila
         private void textBoxKod_TextChanged(object sender, EventArgs e)
         {
 
@@ -219,17 +214,17 @@ namespace USOS_Rektora
             }
 
         }
-
+        //powrót do zmiany hasla
         private void buttonWroc2_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 1;
         }
-
+        // powrot do kodu
         private void buttonWroc3_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 2;
         }
-
+        // przycisk zatwierdzajacy zmiane hasla
         private void buttonPotw_Click(object sender, EventArgs e)
         {
             /*testowanie zawartosci bazy danych
@@ -264,7 +259,5 @@ namespace USOS_Rektora
             }
         }
     }
-
-
 
 }

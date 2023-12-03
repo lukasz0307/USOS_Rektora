@@ -28,7 +28,7 @@ namespace USOS_Rektora.userControls
         {
             InitializeComponent();
         }
-
+        //funkcja która dostosowuje kierunki do wybranego wydziału i stopnia studiów
         private void wyswKierunkow()
         {
             comboBoxKierunek.Items.Clear();

@@ -59,7 +59,7 @@ namespace USOS_Rektora.userControls
 
         }
 
-
+        //funkcja wyswietlająca za pomocą labeli i tableLayoutu dane z bazy wsadzone do klasy
         public void dane(string[] kadra)
         {
             tableDane.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
@@ -72,7 +72,7 @@ namespace USOS_Rektora.userControls
             tableDane.Controls.Add(new Label() { Text = kadra[6], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 6, aktualneId);
             tableDane.Controls.Add(new Label() { Text = kadra[7], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 7, aktualneId);
         }
-
+        //tworzenie obiektu klasy Kadra oraz wyswietlanie danych z bazy
         private void WyswDanych_Load(object sender, EventArgs e)
         {
             // obiekt kadra 
@@ -95,26 +95,7 @@ namespace USOS_Rektora.userControls
             tableDane.RowCount += 1;
 
 
-            /*
-            tableDane.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            tableDane.Controls.Add(new Label() { Text = kadra.id.ToString(), Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 0, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.imie, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 1, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.nazwisko, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 2, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.stanowisko, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 3, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.adres, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 4, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.miasto, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 5, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.nrTel, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 6, 1);
-            tableDane.Controls.Add(new Label() { Text = kadra.mail, Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 7, 1);
-            */
-
-            tableDane.RowCount += 1;
-
-
         }
-
-
-
-
 
         //obsługa przycisku odpowiadającego za rozwijanie panelu z filtrowaniem
         private void iconButtonRozwijanie_Click(object sender, EventArgs e)
@@ -135,77 +116,7 @@ namespace USOS_Rektora.userControls
             }
         }
 
-
-        //Obsługa podpowiedzi textboxów dodawnia członka kadry
-        private void textBoxImie_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Imię") textBoxImie.Text = "";
-        }
-        private void textBoxImie_Leave(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "") textBoxImie.Text = "Imię";
-        }
-
-        private void textBoxNazwisko_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Nazwisko") textBoxNazwisko.Text = "";
-        }
-
-        private void textBoxNazwisko_Leave(object sender, EventArgs e)
-        {
-            if (textBoxNazwisko.Text == "") textBoxNazwisko.Text = "Nazwisko";
-        }
-
-        private void textBoxStan_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Stanowisko") textBoxStan.Text = "";
-        }
-
-        private void textBoxStan_Leave(object sender, EventArgs e)
-        {
-            if (textBoxStan.Text == "") textBoxStan.Text = "Stanowisko";
-        }
-
-        private void textBoxAdres_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Adres") textBoxAdres.Text = "";
-        }
-
-        private void textBoxAdres_Leave(object sender, EventArgs e)
-        {
-            if (textBoxAdres.Text == "") textBoxAdres.Text = "Adres";
-        }
-
-        private void textBoxMiasto_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Miasto") textBoxMiasto.Text = "";
-        }
-
-        private void textBoxMiasto_Leave(object sender, EventArgs e)
-        {
-            if (textBoxMiasto.Text == "") textBoxMiasto.Text = "Miasto";
-        }
-
-        private void textBoxNr_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Nr.telefonu") textBoxNr.Text = "";
-        }
-
-        private void textBoxNr_Leave(object sender, EventArgs e)
-        {
-            if (textBoxNr.Text == "") textBoxNr.Text = "Nr.telefonu";
-        }
-
-        private void textBoxMail_Enter(object sender, EventArgs e)
-        {
-            if (textBoxImie.Text == "Adres e-mail") textBoxMail.Text = "";
-        }
-
-        private void textBoxMail_Leave(object sender, EventArgs e)
-        {
-            if (textBoxMail.Text == "") textBoxMail.Text = "Adres e-mail";
-        }
-
+        //obsługa przycisku do dodawania rekordów do tabeli kadra
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
             aktualneId++;
