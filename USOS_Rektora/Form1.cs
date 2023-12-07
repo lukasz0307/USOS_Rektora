@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Data.SQLite;
 using System.Data;
 using System.Net.Mail;
+using System;
 
 namespace USOS_Rektora
 {
@@ -58,6 +59,18 @@ namespace USOS_Rektora
                 }
             }
             */
+
+            //testowanie zawartosci bazy danych
+            string query = "SELECT * FROM users";
+            SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
+            SQLiteCommand cmd = new SQLiteCommand(query, conn);
+            conn.Open();
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                MessageBox.Show(reader["username"] + " " + reader["password"]);
+            }
+
             this.Hide();
             glownyForm = new Form2();
             glownyForm.Show();
@@ -236,8 +249,8 @@ namespace USOS_Rektora
             while (reader.Read())
             {
                 MessageBox.Show(reader["username"] + " " + reader["password"]);
-            }
-           */
+            }*/
+           
 
             if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
             {

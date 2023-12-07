@@ -132,7 +132,7 @@
             label7.Location = new Point(1, 1);
             label7.Margin = new Padding(0);
             label7.Name = "label7";
-            label7.Size = new Size(40, 467);
+            label7.Size = new Size(40, 466);
             label7.TabIndex = 7;
             label7.Text = "ID";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -147,7 +147,7 @@
             label6.Location = new Point(797, 1);
             label6.Margin = new Padding(0);
             label6.Name = "label6";
-            label6.Size = new Size(150, 467);
+            label6.Size = new Size(150, 466);
             label6.TabIndex = 5;
             label6.Text = "Nr. telefonu";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -162,7 +162,7 @@
             label5.Location = new Point(646, 1);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(150, 467);
+            label5.Size = new Size(150, 466);
             label5.TabIndex = 4;
             label5.Text = "Miasto";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -177,7 +177,7 @@
             label4.Location = new Point(495, 1);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(150, 467);
+            label4.Size = new Size(150, 466);
             label4.TabIndex = 3;
             label4.Text = "Adres";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -192,7 +192,7 @@
             label3.Location = new Point(344, 1);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(150, 467);
+            label3.Size = new Size(150, 466);
             label3.TabIndex = 2;
             label3.Text = "Stanowisko";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -207,7 +207,7 @@
             label2.Location = new Point(193, 1);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(150, 467);
+            label2.Size = new Size(150, 466);
             label2.TabIndex = 1;
             label2.Text = "Nazwisko";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -222,7 +222,7 @@
             label1.Location = new Point(42, 1);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(150, 467);
+            label1.Size = new Size(150, 466);
             label1.TabIndex = 6;
             label1.Text = "Imię";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -236,7 +236,7 @@
             label8.ForeColor = Color.White;
             label8.Location = new Point(951, 1);
             label8.Name = "label8";
-            label8.Size = new Size(144, 467);
+            label8.Size = new Size(144, 466);
             label8.TabIndex = 8;
             label8.Text = "Adres e-mail";
             label8.TextAlign = ContentAlignment.MiddleCenter;
