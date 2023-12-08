@@ -18,6 +18,7 @@ namespace USOS_Rektora.userControls
         int actualDay;
         int actualYear;
         int numberOfDaysInMonth;
+        DateTime firstDayOfMonth;
         public static Kalendarz Instance
         {
             get
@@ -31,11 +32,36 @@ namespace USOS_Rektora.userControls
         {
             InitializeComponent();
         }
-        private void wyswDaty(int  year,int month, int day)
+        private void wyswDaty(int year, int month, int day)
         {
+            //wyswietlanie miesiąca i roku u góry na banerze
             DateTime dateTime = new DateTime(year, month, day);
             string month_name = (dateTime.ToString("MMMM") + " " + actualYear.ToString());
             miesiac.Text = month_name;
+
+
+            //pobranie pierwszego dnia miesiąca
+            firstDayOfMonth = new DateTime(year, month, 1);
+            int numberFirstDay = Convert.ToInt32(firstDayOfMonth.DayOfWeek.ToString("d"));
+            //pobranie liczby dni w miesiącu
+            numberOfDaysInMonth = System.DateTime.DaysInMonth(year, month);
+
+            //utworzenie pustych kontrolek na dni z poprzedniego miesiaca
+            //oraz ustalic od którego dnia tygodnia zacząć wyswietlanie
+            for (int i = 1; i < numberFirstDay; i++)
+            {
+                dzien_pusty ucDzien_pusty = new dzien_pusty();
+                kalendarzKomponenty.Controls.Add(ucDzien_pusty);
+
+            }
+            //utworzenie kontrolek z dniami miesiąca
+            for (int i = 1; i <= numberOfDaysInMonth; i++)
+            {
+                dzien ucDzien = new dzien();
+                ucDzien.Anchor = AnchorStyles.None;
+                ucDzien.days(i);
+                kalendarzKomponenty.Controls.Add(ucDzien);
+            }
         }
         private void Kalendarz_Load(object sender, EventArgs e)
         {
@@ -45,29 +71,13 @@ namespace USOS_Rektora.userControls
             actualDay = now.Day;
             wyswDaty(actualYear, actualMonth, actualDay);
 
-            DateTime firstDayOfMonth = new DateTime(actualYear, actualMonth, 1);
-            string nameFirstDay = firstDayOfMonth.ToString("dddd");
-            numberOfDaysInMonth = System.DateTime.DaysInMonth(actualYear, actualMonth);
-            MessageBox.Show(numberOfDaysInMonth.ToString());
-
-
-
-            /*
-             * DateTime myDate = new DateTime(2015, 12, 25, 10, 30, 45);
-               int year = myDate.Year; // 2015
-                int month = myDate.Month; //12
-                int day = myDate.Day; // 25
-                int hour = myDate.Hour; // 10
-                int minute = myDate.Minute; // 30
-                int second = myDate.Second; // 45
-                int weekDay = (int)myDate.DayOfWeek;
-             */
         }
 
         private void iconButtonNast_Click(object sender, EventArgs e)
         {
+            kalendarzKomponenty.Controls.Clear();
             actualMonth++;
-            if(actualMonth > 12)
+            if (actualMonth > 12)
             {
                 actualMonth = 1;
                 actualYear++;
@@ -77,13 +87,14 @@ namespace USOS_Rektora.userControls
             {
                 wyswDaty(actualYear, actualMonth, actualDay);
             }
-           
+
         }
 
         private void iconButtonPop_Click(object sender, EventArgs e)
         {
+            kalendarzKomponenty.Controls.Clear();
             actualMonth--;
-            if (actualMonth <1)
+            if (actualMonth < 1)
             {
                 actualMonth = 12;
                 actualYear--;
