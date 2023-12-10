@@ -31,8 +31,9 @@
             panel1 = new Panel();
             iconButtonZamknij = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
+            panel3 = new Panel();
             Zatw = new Button();
-            textBox1 = new TextBox();
+            textBoxWyd = new TextBox();
             data = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -71,15 +72,26 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(224, 224, 224);
+            panel2.Controls.Add(panel3);
             panel2.Controls.Add(Zatw);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(textBoxWyd);
             panel2.Controls.Add(data);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 36);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(365, 141);
+            panel2.Size = new Size(365, 168);
             panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(64, 64, 64);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(0, 132);
+            panel3.Margin = new Padding(0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(365, 36);
+            panel3.TabIndex = 3;
             // 
             // Zatw
             // 
@@ -94,18 +106,17 @@
             Zatw.UseVisualStyleBackColor = true;
             Zatw.Click += Zatw_Click;
             // 
-            // textBox1
+            // textBoxWyd
             // 
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(49, 45);
-            textBox1.Margin = new Padding(40, 3, 40, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(267, 33);
-            textBox1.TabIndex = 1;
+            textBoxWyd.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxWyd.Location = new Point(49, 45);
+            textBoxWyd.Margin = new Padding(40, 3, 40, 3);
+            textBoxWyd.Name = "textBoxWyd";
+            textBoxWyd.Size = new Size(267, 33);
+            textBoxWyd.TabIndex = 1;
             // 
             // data
             // 
-            data.Anchor = AnchorStyles.None;
             data.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             data.Location = new Point(9, 14);
             data.Margin = new Padding(0);
@@ -119,11 +130,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(365, 177);
+            ClientSize = new Size(365, 204);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "dodWydarz";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += dodWydarz_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -137,7 +149,8 @@
         private FontAwesome.Sharp.IconButton iconButtonZamknij;
         private Panel panel2;
         private Button Zatw;
-        private TextBox textBox1;
+        private TextBox textBoxWyd;
         private Label data;
+        private Panel panel3;
     }
 }

@@ -38,7 +38,7 @@
             nrDay.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             nrDay.Location = new Point(3, 0);
             nrDay.Name = "nrDay";
-            nrDay.Size = new Size(22, 17);
+            nrDay.Size = new Size(28, 23);
             nrDay.TabIndex = 0;
             nrDay.Text = "00";
             // 
@@ -46,16 +46,16 @@
             // 
             Wydarzenie.Dock = DockStyle.Bottom;
             Wydarzenie.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Wydarzenie.Location = new Point(0, 17);
+            Wydarzenie.Location = new Point(0, 23);
             Wydarzenie.Margin = new Padding(0);
             Wydarzenie.Name = "Wydarzenie";
-            Wydarzenie.Size = new Size(112, 30);
+            Wydarzenie.Size = new Size(128, 40);
             Wydarzenie.TabIndex = 1;
             Wydarzenie.Click += Wydarzenie_Click;
             // 
             // dzien
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             BorderStyle = BorderStyle.Fixed3D;
@@ -64,7 +64,7 @@
             ForeColor = Color.Black;
             Margin = new Padding(0);
             Name = "dzien";
-            Size = new Size(112, 47);
+            Size = new Size(128, 63);
             Load += dzien_Load;
             ResumeLayout(false);
             PerformLayout();

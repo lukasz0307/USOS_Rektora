@@ -25,6 +25,12 @@ namespace USOS_Rektora.userControls
 
         private void Zatw_Click(object sender, EventArgs e)
         {
+            string[] tab = new String[2];
+            tab[0] = textBoxWyd.Text;
+            tab[1] = dzien.static_day + "/" + dzien.static_day + "/" + Kalendarz.static_month + "/" + Kalendarz.static_year;
+
+
+
             this.Close();
         }
 

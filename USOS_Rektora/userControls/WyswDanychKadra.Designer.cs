@@ -66,6 +66,12 @@
             iconButtonRozwijanie = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             timerMenu = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
+            coMody = new ComboBox();
+            label2 = new Label();
+            dlaMod = new ComboBox();
+            label3 = new Label();
+            filtrMod = new TextBox();
             panelDane.SuspendLayout();
             panel4.SuspendLayout();
             panelFiltrowanie.SuspendLayout();
@@ -76,6 +82,7 @@
             tabPage3.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            tabPage4.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -140,10 +147,10 @@
             labelStan.BorderStyle = BorderStyle.FixedSingle;
             labelStan.Dock = DockStyle.Left;
             labelStan.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelStan.Location = new Point(234, 0);
+            labelStan.Location = new Point(223, 0);
             labelStan.Margin = new Padding(0);
             labelStan.Name = "labelStan";
-            labelStan.Size = new Size(94, 38);
+            labelStan.Size = new Size(105, 38);
             labelStan.TabIndex = 3;
             labelStan.Text = "Stanowisko";
             labelStan.TextAlign = ContentAlignment.MiddleCenter;
@@ -154,7 +161,7 @@
             labelNazw.BorderStyle = BorderStyle.FixedSingle;
             labelNazw.Dock = DockStyle.Left;
             labelNazw.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNazw.Location = new Point(130, 0);
+            labelNazw.Location = new Point(119, 0);
             labelNazw.Margin = new Padding(0);
             labelNazw.Name = "labelNazw";
             labelNazw.Size = new Size(104, 38);
@@ -168,7 +175,7 @@
             labelImie.BorderStyle = BorderStyle.FixedSingle;
             labelImie.Dock = DockStyle.Left;
             labelImie.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelImie.Location = new Point(44, 0);
+            labelImie.Location = new Point(33, 0);
             labelImie.Margin = new Padding(0);
             labelImie.Name = "labelImie";
             labelImie.Size = new Size(86, 38);
@@ -185,7 +192,7 @@
             labelId.Location = new Point(0, 0);
             labelId.Margin = new Padding(0);
             labelId.Name = "labelId";
-            labelId.Size = new Size(44, 38);
+            labelId.Size = new Size(33, 38);
             labelId.TabIndex = 0;
             labelId.Text = "ID";
             labelId.TextAlign = ContentAlignment.MiddleCenter;
@@ -261,7 +268,7 @@
             buttonSzukaj.Name = "buttonSzukaj";
             buttonSzukaj.Size = new Size(176, 31);
             buttonSzukaj.TabIndex = 7;
-            buttonSzukaj.Text = "Sukaj";
+            buttonSzukaj.Text = "Szukaj";
             buttonSzukaj.TextAlign = ContentAlignment.TopCenter;
             buttonSzukaj.UseVisualStyleBackColor = true;
             // 
@@ -478,6 +485,12 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.Gray;
+            tabPage4.Controls.Add(filtrMod);
+            tabPage4.Controls.Add(label3);
+            tabPage4.Controls.Add(dlaMod);
+            tabPage4.Controls.Add(label2);
+            tabPage4.Controls.Add(coMody);
+            tabPage4.Controls.Add(label1);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Margin = new Padding(3, 2, 3, 2);
             tabPage4.Name = "tabPage4";
@@ -522,6 +535,67 @@
             // 
             timerMenu.Interval = 10;
             // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(1, 2);
+            label1.Name = "label1";
+            label1.Size = new Size(177, 22);
+            label1.TabIndex = 5;
+            label1.Text = "Modyfikuj";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // coMody
+            // 
+            coMody.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            coMody.FormattingEnabled = true;
+            coMody.Items.AddRange(new object[] { "Imię", "Nazwisko", "Stanowisko", "Nr. tel.", "Adres e-mail" });
+            coMody.Location = new Point(6, 27);
+            coMody.Name = "coMody";
+            coMody.Size = new Size(168, 28);
+            coMody.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(1, 58);
+            label2.Name = "label2";
+            label2.Size = new Size(177, 22);
+            label2.TabIndex = 6;
+            label2.Text = "dla rekordu o";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dlaMod
+            // 
+            dlaMod.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dlaMod.FormattingEnabled = true;
+            dlaMod.Items.AddRange(new object[] { "ID" });
+            dlaMod.Location = new Point(6, 83);
+            dlaMod.Name = "dlaMod";
+            dlaMod.Size = new Size(168, 28);
+            dlaMod.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(1, 114);
+            label3.Name = "label3";
+            label3.Size = new Size(177, 22);
+            label3.TabIndex = 8;
+            label3.Text = "równym";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // filtrMod
+            // 
+            filtrMod.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            filtrMod.Location = new Point(6, 139);
+            filtrMod.Name = "filtrMod";
+            filtrMod.Size = new Size(168, 27);
+            filtrMod.TabIndex = 9;
+            // 
             // WyswDanychKadra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -545,6 +619,8 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -584,9 +660,15 @@
         private Panel panel4;
         private Label labelId;
         private Label labelImie;
-        private Label labelStan;
         private Label labelNazw;
         private Label labelMail;
         private Label labelTel;
+        private Label labelStan;
+        private ComboBox dlaMod;
+        private Label label2;
+        private ComboBox coMody;
+        private Label label1;
+        private TextBox filtrMod;
+        private Label label3;
     }
 }

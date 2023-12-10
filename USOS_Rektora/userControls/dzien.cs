@@ -33,7 +33,7 @@ namespace USOS_Rektora.userControls
             dodWydarz wyd = new dodWydarz();
             static_day = nrDay.Text;
             wyd.Show();
-            
+
         }
     }
 }

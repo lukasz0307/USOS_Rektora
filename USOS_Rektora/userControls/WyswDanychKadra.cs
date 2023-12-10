@@ -91,18 +91,19 @@ namespace USOS_Rektora.userControls
         //obsługa przycisku odpowiadającego za rozwijanie panelu z filtrowaniem
         private void iconButtonRozwijanie_Click(object sender, EventArgs e)
         {
+
             iconButtonRozwijanie.Rotation += 180;
             int rozmiar = panelFiltrowanie.Width;
             if (rozmiar == 188)
             {
-                timerMenu.Stop();
+
                 panelFiltrowanie.Width = 50;
                 tabControlZarzadz.Visible = false;
 
             }
             else
             {
-                timerMenu.Stop();
+
                 panelFiltrowanie.Width = 188;
                 tabControlZarzadz.Visible = true;
 
