@@ -12,6 +12,7 @@ namespace USOS_Rektora.userControls
 {
     public partial class dzien : UserControl
     {
+        public static string static_day;
         public dzien()
         {
             InitializeComponent();
@@ -21,10 +22,18 @@ namespace USOS_Rektora.userControls
         {
 
         }
-        
+
         public void days(int numberday)
         {
             nrDay.Text = numberday.ToString();
+        }
+
+        private void Wydarzenie_Click(object sender, EventArgs e)
+        {
+            dodWydarz wyd = new dodWydarz();
+            static_day = nrDay.Text;
+            wyd.Show();
+            
         }
     }
 }

@@ -14,6 +14,7 @@ namespace USOS_Rektora
 {
     public partial class Form2 : Form
     {
+        
         public Logowanie logowanieForm;
         public Form2()
         {

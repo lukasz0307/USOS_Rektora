@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace USOS_Rektora.userControls
 {
+    
     public partial class Kalendarz : UserControl
     {
+        public static int static_month, static_year;
         private static Kalendarz _instance;
         int actualMonth;
         int actualDay;
@@ -39,6 +41,8 @@ namespace USOS_Rektora.userControls
             string month_name = (dateTime.ToString("MMMM") + " " + actualYear.ToString());
             miesiac.Text = month_name;
 
+            static_month=month;
+            static_year=year;
 
             //pobranie pierwszego dnia miesiąca
             firstDayOfMonth = new DateTime(year, month, 1);

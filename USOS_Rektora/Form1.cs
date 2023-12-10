@@ -13,6 +13,7 @@ namespace USOS_Rektora
         public string kod;
         public string username;
         public Form2 glownyForm;
+        string captchaStr;
 
         public Logowanie()
         {
@@ -86,6 +87,7 @@ namespace USOS_Rektora
                 captchaString += char.ConvertFromUtf32(random.Next(97, 122));
             }
             captcha.Text = captchaString;
+            captchaStr=captchaString;
         }
 
         //przejscie do zmiany hasla
@@ -165,7 +167,7 @@ namespace USOS_Rektora
             //obs³uga b³edu gdy uzytkownik nie poda loginu lub jest b³êdny
             if (result != null)
             {
-                if (textBoxWeryfikacja.Text == captcha.Text)
+                if (textBoxWeryfikacja.Text == captchaStr)
                 {
                     username = result.ToString();
                     conn.Close();

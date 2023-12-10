@@ -33,20 +33,16 @@ namespace USOS_Rektora.userControls
             public string imie;
             public string nazwisko;
             public string stanowisko;
-            public string adres;
-            public string miasto;
             public string nrTel;
             public string mail;
 
             //Konstruktor klasy Kadra
-            public Kadra(int id, string imie, string nazwisko, string stanowisko, string adres, string miasto, string nrTel, string mail)
+            public Kadra(int id, string imie, string nazwisko, string stanowisko, string nrTel, string mail)
             {
                 this.id = id;
                 this.imie = imie;
                 this.nazwisko = nazwisko;
                 this.stanowisko = stanowisko;
-                this.adres = adres;
-                this.miasto = miasto;
                 this.nrTel = nrTel;
                 this.mail = mail;
             }
@@ -59,58 +55,55 @@ namespace USOS_Rektora.userControls
 
         }
 
-        //funkcja wyswietlająca za pomocą labeli i tableLayoutu dane z bazy wsadzone do klasy
+        //funkcja wyswietlająca za pomocą labeli i FlowLayoutPanelu dane z bazy wsadzone do klasy
         public void dane(string[] kadra)
         {
-            tableDane.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            tableDane.Controls.Add(new Label() { Text = kadra[0], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 0, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[1], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 1, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[2], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 2, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[3], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 3, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[4], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 4, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[5], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 5, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[6], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 6, aktualneId);
-            tableDane.Controls.Add(new Label() { Text = kadra[7], Font = new Font("Segoe UI", 12, FontStyle.Regular), Dock = DockStyle.Fill }, 7, aktualneId);
+            flowLayoutPanel1.Controls.Add(new Label() { Text = kadra[0], Font = new Font("Segoe UI", 12, FontStyle.Regular), Size = labelId.Size, BorderStyle = BorderStyle.FixedSingle, Margin = labelId.Margin });
+            flowLayoutPanel1.Controls.Add(new Label() { Text = kadra[1], Font = new Font("Segoe UI", 12, FontStyle.Regular), Size = labelImie.Size, BorderStyle = BorderStyle.FixedSingle, Margin = labelId.Margin });
+            flowLayoutPanel1.Controls.Add(new Label() { Text = kadra[2], Font = new Font("Segoe UI", 12, FontStyle.Regular), Size = labelNazw.Size, BorderStyle = BorderStyle.FixedSingle, Margin = labelId.Margin });
+            flowLayoutPanel1.Controls.Add(new Label() { Text = kadra[3], Font = new Font("Segoe UI", 12, FontStyle.Regular), Size = labelStan.Size, BorderStyle = BorderStyle.FixedSingle, Margin = labelId.Margin });
+            flowLayoutPanel1.Controls.Add(new Label() { Text = kadra[4], Font = new Font("Segoe UI", 12, FontStyle.Regular), Size = labelTel.Size, BorderStyle = BorderStyle.FixedSingle, Margin = labelId.Margin });
+            flowLayoutPanel1.Controls.Add(new Label() { Text = kadra[5], Font = new Font("Segoe UI", 12, FontStyle.Regular), Size = labelMail.Size, BorderStyle = BorderStyle.FixedSingle, Margin = labelId.Margin });
+
         }
         //tworzenie obiektu klasy Kadra oraz wyswietlanie danych z bazy
         private void WyswDanych_Load(object sender, EventArgs e)
         {
             // obiekt kadra 
-            Kadra kadra = new Kadra(1, "Łukasz", "Jankowiak", "prof", "ul.ceglana", "Gdynia", "666 170 667", "lukas@wp.pl");
+            Kadra kadra = new Kadra(1, "Łukasz", "Jankowiak", "prof", "666 170 667", "lukas@wp.pl");
             aktualneId = kadra.id;
 
-            string[] table = new string[8];
+            string[] table = new string[6];
             table[0] = kadra.id.ToString();
             table[1] = kadra.imie;
             table[2] = kadra.nazwisko;
             table[3] = kadra.stanowisko;
-            table[4] = kadra.adres;
-            table[5] = kadra.miasto;
-            table[6] = kadra.nrTel;
-            table[7] = kadra.mail;
+            table[4] = kadra.nrTel;
+            table[5] = kadra.mail;
             dane(table);
 
 
 
-            tableDane.RowCount += 1;
-
-
         }
+
+
 
         //obsługa przycisku odpowiadającego za rozwijanie panelu z filtrowaniem
         private void iconButtonRozwijanie_Click(object sender, EventArgs e)
         {
             iconButtonRozwijanie.Rotation += 180;
             int rozmiar = panelFiltrowanie.Width;
-            if (rozmiar == 215)
+            if (rozmiar == 188)
             {
+                timerMenu.Stop();
                 panelFiltrowanie.Width = 50;
                 tabControlZarzadz.Visible = false;
 
             }
             else
             {
-                panelFiltrowanie.Width = 215;
+                timerMenu.Stop();
+                panelFiltrowanie.Width = 188;
                 tabControlZarzadz.Visible = true;
 
             }
@@ -120,16 +113,14 @@ namespace USOS_Rektora.userControls
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
             aktualneId++;
-            Kadra kadra = new Kadra(aktualneId, textBoxImie.Text, textBoxNazwisko.Text, textBoxStan.Text, textBoxAdres.Text, textBoxMiasto.Text, textBoxNr.Text, textBoxMail.Text);
+            Kadra kadra = new Kadra(aktualneId, textBoxImie.Text, textBoxNazwisko.Text, textBoxStan.Text, textBoxNr.Text, textBoxMail.Text);
             string[] table = new string[8];
             table[0] = kadra.id.ToString();
             table[1] = kadra.imie;
             table[2] = kadra.nazwisko;
             table[3] = kadra.stanowisko;
-            table[4] = kadra.adres;
-            table[5] = kadra.miasto;
-            table[6] = kadra.nrTel;
-            table[7] = kadra.mail;
+            table[4] = kadra.nrTel;
+            table[5] = kadra.mail;
             dane(table);
         }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             nrDay = new Label();
+            Wydarzenie = new Label();
             SuspendLayout();
             // 
             // nrDay
@@ -41,12 +42,24 @@
             nrDay.TabIndex = 0;
             nrDay.Text = "00";
             // 
+            // Wydarzenie
+            // 
+            Wydarzenie.Dock = DockStyle.Bottom;
+            Wydarzenie.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Wydarzenie.Location = new Point(0, 17);
+            Wydarzenie.Margin = new Padding(0);
+            Wydarzenie.Name = "Wydarzenie";
+            Wydarzenie.Size = new Size(112, 30);
+            Wydarzenie.TabIndex = 1;
+            Wydarzenie.Click += Wydarzenie_Click;
+            // 
             // dzien
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             BorderStyle = BorderStyle.Fixed3D;
+            Controls.Add(Wydarzenie);
             Controls.Add(nrDay);
             ForeColor = Color.Black;
             Margin = new Padding(0);
@@ -60,5 +73,6 @@
         #endregion
 
         private Label nrDay;
+        private Label Wydarzenie;
     }
 }
