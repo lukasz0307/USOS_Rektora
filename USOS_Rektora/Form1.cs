@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.Data;
 using System.Net.Mail;
 using System;
+using MySql.Data.MySqlClient;
 
 namespace USOS_Rektora
 {
@@ -63,14 +64,17 @@ namespace USOS_Rektora
 
             //testowanie zawartosci bazy danych
             string query = "SELECT * FROM users";
-            SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
+            string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
-            SQLiteDataReader reader = cmd.ExecuteReader();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query;
+            MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 MessageBox.Show(reader["username"] + " " + reader["password"]);
             }
+            conn.Close();
 
             this.Hide();
             glownyForm = new Form2();
@@ -157,12 +161,19 @@ namespace USOS_Rektora
         //obs³uga wysy³ania maila
         private void buttonDalej_Click(object sender, EventArgs e)
         {
+            
+
+
+
             //admin admin123
             string query = "SELECT username FROM users WHERE username= @user";
-            SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
-            cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
+            string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
+            MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
+            MySqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
+            
             object result = cmd.ExecuteScalar();
             //obs³uga b³edu gdy uzytkownik nie poda loginu lub jest b³êdny
             if (result != null)
@@ -256,12 +267,15 @@ namespace USOS_Rektora
 
             if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
             {
+ 
                 string query = "UPDATE users SET password = @newpassword WHERE username= @user";
-                SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
-                SQLiteCommand cmd = new SQLiteCommand(query, conn);
+                string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@user", username);
                 cmd.Parameters.AddWithValue("@newpassword", textBoxNoweHaslo1.Text);
-                conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Has³o zosta³o zmienione");

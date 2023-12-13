@@ -76,7 +76,15 @@ namespace USOS_Rektora
 
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
         {
-            pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
+            //pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
+            if (!panelUserControl.Controls.Contains(WyswDanychStudenci.Instance))
+            {
+                panelUserControl.Controls.Add(WyswDanychStudenci.Instance);
+                WyswDanychStudenci.Instance.Dock = DockStyle.Fill;
+                WyswDanychStudenci.Instance.BringToFront();
+            }
+            else
+                WyswDanychKadra.Instance.BringToFront();
             zmianaTekstu(iconButtonUczniowie);
         }
 

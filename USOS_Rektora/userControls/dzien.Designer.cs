@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             nrDay = new Label();
             Wydarzenie = new Label();
+            timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // nrDay
@@ -53,6 +55,10 @@
             Wydarzenie.TabIndex = 1;
             Wydarzenie.Click += Wydarzenie_Click;
             // 
+            // timer
+            // 
+            timer.Tick += timer1_Tick;
+            // 
             // dzien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -74,5 +80,6 @@
 
         private Label nrDay;
         private Label Wydarzenie;
+        private System.Windows.Forms.Timer timer;
     }
 }
