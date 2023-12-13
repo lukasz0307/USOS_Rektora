@@ -14,7 +14,6 @@ namespace USOS_Rektora.userControls
     
     public partial class Kalendarz : UserControl
     {
-        private static Kalendarz _instance;
         //Zmienne przekazywanie do okienka z dodawaniem wydarzenia w celu ich wyswietlenia
         public static int static_month, static_year;
         //zmienne potzrebne do podania jako argumenty  funkcji wyswDaty
@@ -24,15 +23,7 @@ namespace USOS_Rektora.userControls
         //zmienna zawierająca liczbe dni w danym miesiącu
         int numberOfDaysInMonth;
         DateTime firstDayOfMonth;
-        public static Kalendarz Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new Kalendarz();
-                return _instance;
-            }
-        }
+        
         public Kalendarz()
         {
             InitializeComponent();

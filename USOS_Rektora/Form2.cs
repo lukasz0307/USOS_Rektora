@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using USOS_Rektora.Properties;
 using USOS_Rektora.userControls;
 
 namespace USOS_Rektora
@@ -41,6 +42,13 @@ namespace USOS_Rektora
             logowanieForm = new Logowanie();
             logowanieForm.Show();
         }
+        //funkcja wyswietlająca kontrolki userControl w głównym panelu
+        public void wyswUserControli(UserControl userControl)
+        {
+            panelUserControl.Controls.Clear();
+            userControl.Dock = DockStyle.Fill;
+            panelUserControl.Controls.Add(userControl);
+        }
         //Obsługa przycisków należących do menu
         private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
@@ -52,70 +60,38 @@ namespace USOS_Rektora
         {
             //pozycjonowanieContextMenuStrip(iconButtonKadra, menuKadra);
             zmianaTekstu(iconButtonKadra);
-            //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
-            if (!panelUserControl.Controls.Contains(WyswDanychKadra.Instance))
-            {
-                panelUserControl.Controls.Add(WyswDanychKadra.Instance);
-                WyswDanychKadra.Instance.Dock = DockStyle.Fill;
-                WyswDanychKadra.Instance.BringToFront();
-            }
-            else
-                WyswDanychKadra.Instance.BringToFront();
+            WyswDanychKadra kadra = new WyswDanychKadra();
+            wyswUserControli(kadra);
         }
         //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychStudenci
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
         {
             //pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
-            if (!panelUserControl.Controls.Contains(WyswDanychStudenci.Instance))
-            {
-                panelUserControl.Controls.Add(WyswDanychStudenci.Instance);
-                WyswDanychStudenci.Instance.Dock = DockStyle.Fill;
-                WyswDanychStudenci.Instance.BringToFront();
-            }
-            else
-                WyswDanychKadra.Instance.BringToFront();
             zmianaTekstu(iconButtonUczniowie);
+            WyswDanychStudenci studenci = new WyswDanychStudenci();
+            wyswUserControli(studenci);
         }
         //Wyświetlenie w panelu głównym kontrolki userControl Kalendarz
         private void iconButtonKalendarz_Click(object sender, EventArgs e)
         {
             zmianaTekstu(iconButtonKalendarz);
-            //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
-            if (!panelUserControl.Controls.Contains(Kalendarz.Instance))
-            {
-                panelUserControl.Controls.Add(Kalendarz.Instance);
-                Kalendarz.Instance.Dock = DockStyle.Fill;
-                Kalendarz.Instance.BringToFront();
-            }
-            else
-                Kalendarz.Instance.BringToFront();
+            Kalendarz kalendarz = new Kalendarz();
+            wyswUserControli(kalendarz);
         }
         //Wyświetlenie w panelu głównym kontrolki userControl Ogloszenia
         private void iconButtonogloszenia_Click(object sender, EventArgs e)
         {
-            //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
-            if (!panelUserControl.Controls.Contains(Ogloszenia.Instance))
-            {
-                panelUserControl.Controls.Add(Ogloszenia.Instance);
-                Ogloszenia.Instance.Dock = DockStyle.Fill;
-                Ogloszenia.Instance.BringToFront();
-            }
-            else
-                Ogloszenia.Instance.BringToFront();
             zmianaTekstu(iconButtonOgloszenia);
+            Ogloszenia ogloszenia = new Ogloszenia();
+            wyswUserControli(ogloszenia);
         }
         //Wyświetlenie w panelu głównym kontrolki userControl PlanyLekcji
         private void iconButtonPlany_Click(object sender, EventArgs e)
         {
+
             zmianaTekstu(iconButtonPlany);
-            if (!panelUserControl.Controls.Contains(PlanyLekcji.Instance))
-            {
-                panelUserControl.Controls.Add(PlanyLekcji.Instance);
-                PlanyLekcji.Instance.Dock = DockStyle.Fill;
-                PlanyLekcji.Instance.BringToFront();
-            }
-            else
-                Kalendarz.Instance.BringToFront();
+            PlanyLekcji plany = new PlanyLekcji();
+            wyswUserControli(plany);
         }
         //obsluga przycisku służącego do maksymalizacji okna aplikacji
         private void iconButtonMaks_Click(object sender, EventArgs e)
@@ -142,6 +118,19 @@ namespace USOS_Rektora
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        
+        //wyswietlanie kontrolki userControl StronaGlowna po załadowaniu formularza
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            StronaGlowna stronaGlowna = new StronaGlowna();
+            wyswUserControli(stronaGlowna);
+        }
+
+        private void logo_Click(object sender, EventArgs e)
+        {
+            StronaGlowna stronaGlowna = new StronaGlowna();
+            wyswUserControli(stronaGlowna);
         }
     }
 }

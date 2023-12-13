@@ -227,6 +227,7 @@
             tabControlZarz.Location = new Point(99, 0);
             tabControlZarz.Margin = new Padding(0);
             tabControlZarz.Name = "tabControlZarz";
+            tabControlZarz.Padding = new Point(0, 0);
             tabControlZarz.SelectedIndex = 0;
             tabControlZarz.Size = new Size(797, 109);
             tabControlZarz.SizeMode = TabSizeMode.Fixed;
@@ -236,6 +237,7 @@
             // 
             tabPage4.BackColor = Color.Silver;
             tabPage4.Location = new Point(4, 5);
+            tabPage4.Margin = new Padding(0);
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(789, 100);
             tabPage4.TabIndex = 3;

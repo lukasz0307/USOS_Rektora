@@ -34,7 +34,6 @@
             iconButtonMaks = new FontAwesome.Sharp.IconButton();
             iconButtonZamknij = new FontAwesome.Sharp.IconButton();
             pictureBoxLogo = new PictureBox();
-            Naglowek = new Label();
             panelLogowania = new Panel();
             tabControlKontener = new TabControl();
             tabPage1 = new TabPage();
@@ -64,6 +63,7 @@
             panel5 = new Panel();
             label1 = new Label();
             tabPage4 = new TabPage();
+            checkBoxHasla = new CheckBox();
             buttonPotw = new Button();
             buttonWroc3 = new Button();
             textBoxNoweHaslo2 = new TextBox();
@@ -95,7 +95,6 @@
             panelNaglowka.BackColor = Color.Navy;
             panelNaglowka.Controls.Add(panelBar);
             panelNaglowka.Controls.Add(pictureBoxLogo);
-            panelNaglowka.Controls.Add(Naglowek);
             panelNaglowka.Dock = DockStyle.Top;
             panelNaglowka.Location = new Point(0, 0);
             panelNaglowka.Name = "panelNaglowka";
@@ -173,24 +172,14 @@
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Location = new Point(0, 35);
-            pictureBoxLogo.Margin = new Padding(0);
+            pictureBoxLogo.Anchor = AnchorStyles.None;
+            pictureBoxLogo.Image = Properties.Resources.logo_usos2;
+            pictureBoxLogo.Location = new Point(421, 48);
+            pictureBoxLogo.Margin = new Padding(421, 0, 421, 0);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(230, 133);
+            pictureBoxLogo.Size = new Size(340, 120);
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
-            // 
-            // Naglowek
-            // 
-            Naglowek.Anchor = AnchorStyles.None;
-            Naglowek.AutoSize = true;
-            Naglowek.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Naglowek.ForeColor = SystemColors.ControlLightLight;
-            Naglowek.Location = new Point(522, 65);
-            Naglowek.Name = "Naglowek";
-            Naglowek.Size = new Size(149, 62);
-            Naglowek.TabIndex = 0;
-            Naglowek.Text = "USOS";
             // 
             // panelLogowania
             // 
@@ -242,7 +231,7 @@
             checkBoxHaslo.AutoSize = true;
             checkBoxHaslo.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             checkBoxHaslo.ForeColor = Color.White;
-            checkBoxHaslo.Location = new Point(765, 257);
+            checkBoxHaslo.Location = new Point(765, 258);
             checkBoxHaslo.Margin = new Padding(3, 4, 3, 4);
             checkBoxHaslo.Name = "checkBoxHaslo";
             checkBoxHaslo.Size = new Size(178, 41);
@@ -255,7 +244,7 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.Controls.Add(labelHaslo);
-            panel2.Location = new Point(0, 211);
+            panel2.Location = new Point(0, 212);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(1173, 47);
@@ -278,7 +267,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.Controls.Add(labelLogin);
-            panel1.Location = new Point(0, 96);
+            panel1.Location = new Point(0, 97);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1173, 47);
@@ -302,7 +291,7 @@
             textLogin.Anchor = AnchorStyles.None;
             textLogin.BackColor = Color.Silver;
             textLogin.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textLogin.Location = new Point(430, 149);
+            textLogin.Location = new Point(430, 150);
             textLogin.Name = "textLogin";
             textLogin.Size = new Size(313, 43);
             textLogin.TabIndex = 12;
@@ -310,7 +299,7 @@
             // buttonprzypomnij
             // 
             buttonprzypomnij.Anchor = AnchorStyles.None;
-            buttonprzypomnij.Location = new Point(622, 317);
+            buttonprzypomnij.Location = new Point(622, 318);
             buttonprzypomnij.Margin = new Padding(3, 4, 3, 4);
             buttonprzypomnij.Name = "buttonprzypomnij";
             buttonprzypomnij.Size = new Size(121, 53);
@@ -324,7 +313,7 @@
             textPass.Anchor = AnchorStyles.None;
             textPass.BackColor = Color.Silver;
             textPass.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textPass.Location = new Point(430, 257);
+            textPass.Location = new Point(430, 258);
             textPass.Margin = new Padding(3, 4, 3, 4);
             textPass.Name = "textPass";
             textPass.Size = new Size(313, 42);
@@ -335,7 +324,7 @@
             // 
             buttonLogin.Anchor = AnchorStyles.None;
             buttonLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonLogin.Location = new Point(430, 317);
+            buttonLogin.Location = new Point(430, 318);
             buttonLogin.Margin = new Padding(3, 4, 3, 4);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(121, 53);
@@ -355,11 +344,11 @@
             tabPage2.Controls.Add(buttonDalej);
             tabPage2.Controls.Add(textBoxLogin);
             tabPage2.Controls.Add(textBoxWeryfikacja);
-            tabPage2.Location = new Point(4, 14);
+            tabPage2.Location = new Point(4, 5);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1174, 466);
+            tabPage2.Size = new Size(1174, 472);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPageZmiana";
             // 
@@ -367,7 +356,7 @@
             // 
             buttonLosuj.Anchor = AnchorStyles.None;
             buttonLosuj.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonLosuj.Location = new Point(197, 274);
+            buttonLosuj.Location = new Point(197, 338);
             buttonLosuj.Name = "buttonLosuj";
             buttonLosuj.Size = new Size(101, 35);
             buttonLosuj.TabIndex = 22;
@@ -381,7 +370,7 @@
             captcha.AutoSize = true;
             captcha.Font = new Font("SimSun-ExtB", 13.8F, FontStyle.Bold | FontStyle.Italic | FontStyle.Strikeout, GraphicsUnit.Point);
             captcha.ForeColor = Color.White;
-            captcha.Location = new Point(304, 278);
+            captcha.Location = new Point(304, 342);
             captcha.Name = "captcha";
             captcha.Size = new Size(88, 23);
             captcha.TabIndex = 21;
@@ -391,7 +380,7 @@
             // 
             panel4.Anchor = AnchorStyles.None;
             panel4.Controls.Add(labelweryfikacja);
-            panel4.Location = new Point(0, 207);
+            panel4.Location = new Point(0, 271);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
             panel4.Size = new Size(1173, 47);
@@ -414,7 +403,7 @@
             // 
             panel3.Anchor = AnchorStyles.None;
             panel3.Controls.Add(labelMail);
-            panel3.Location = new Point(0, 80);
+            panel3.Location = new Point(0, 144);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(1173, 47);
@@ -436,7 +425,7 @@
             // buttonWroc
             // 
             buttonWroc.Anchor = AnchorStyles.None;
-            buttonWroc.Location = new Point(647, 336);
+            buttonWroc.Location = new Point(647, 400);
             buttonWroc.Name = "buttonWroc";
             buttonWroc.Size = new Size(96, 53);
             buttonWroc.TabIndex = 17;
@@ -447,7 +436,7 @@
             // buttonDalej
             // 
             buttonDalej.Anchor = AnchorStyles.None;
-            buttonDalej.Location = new Point(430, 336);
+            buttonDalej.Location = new Point(430, 400);
             buttonDalej.Name = "buttonDalej";
             buttonDalej.RightToLeft = RightToLeft.No;
             buttonDalej.Size = new Size(111, 53);
@@ -461,7 +450,7 @@
             textBoxLogin.Anchor = AnchorStyles.None;
             textBoxLogin.BackColor = Color.Silver;
             textBoxLogin.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(430, 135);
+            textBoxLogin.Location = new Point(430, 199);
             textBoxLogin.Margin = new Padding(3, 4, 3, 4);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(313, 42);
@@ -472,7 +461,7 @@
             textBoxWeryfikacja.Anchor = AnchorStyles.None;
             textBoxWeryfikacja.BackColor = Color.Silver;
             textBoxWeryfikacja.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxWeryfikacja.Location = new Point(430, 271);
+            textBoxWeryfikacja.Location = new Point(430, 335);
             textBoxWeryfikacja.Margin = new Padding(3, 4, 3, 4);
             textBoxWeryfikacja.Name = "textBoxWeryfikacja";
             textBoxWeryfikacja.Size = new Size(313, 42);
@@ -484,17 +473,17 @@
             tabPage3.Controls.Add(buttonWroc2);
             tabPage3.Controls.Add(textBoxKod);
             tabPage3.Controls.Add(panel5);
-            tabPage3.Location = new Point(4, 14);
+            tabPage3.Location = new Point(4, 5);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1174, 466);
+            tabPage3.Size = new Size(1174, 472);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPageKod";
             // 
             // buttonWroc2
             // 
             buttonWroc2.Anchor = AnchorStyles.None;
-            buttonWroc2.Location = new Point(538, 297);
+            buttonWroc2.Location = new Point(538, 361);
             buttonWroc2.Name = "buttonWroc2";
             buttonWroc2.Size = new Size(96, 53);
             buttonWroc2.TabIndex = 22;
@@ -507,7 +496,7 @@
             textBoxKod.Anchor = AnchorStyles.None;
             textBoxKod.BackColor = Color.Silver;
             textBoxKod.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxKod.Location = new Point(429, 230);
+            textBoxKod.Location = new Point(429, 294);
             textBoxKod.Margin = new Padding(3, 4, 3, 4);
             textBoxKod.Name = "textBoxKod";
             textBoxKod.Size = new Size(313, 42);
@@ -518,7 +507,7 @@
             // 
             panel5.Anchor = AnchorStyles.None;
             panel5.Controls.Add(label1);
-            panel5.Location = new Point(1, 175);
+            panel5.Location = new Point(1, 239);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
             panel5.Size = new Size(1173, 47);
@@ -540,23 +529,39 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.Silver;
+            tabPage4.Controls.Add(checkBoxHasla);
             tabPage4.Controls.Add(buttonPotw);
             tabPage4.Controls.Add(buttonWroc3);
             tabPage4.Controls.Add(textBoxNoweHaslo2);
             tabPage4.Controls.Add(textBoxNoweHaslo1);
             tabPage4.Controls.Add(panel7);
             tabPage4.Controls.Add(panel6);
-            tabPage4.Location = new Point(4, 14);
+            tabPage4.Location = new Point(4, 5);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1174, 466);
+            tabPage4.Size = new Size(1174, 472);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPageNoweHaslo";
+            // 
+            // checkBoxHasla
+            // 
+            checkBoxHasla.Anchor = AnchorStyles.None;
+            checkBoxHasla.AutoSize = true;
+            checkBoxHasla.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            checkBoxHasla.ForeColor = Color.White;
+            checkBoxHasla.Location = new Point(769, 348);
+            checkBoxHasla.Margin = new Padding(3, 4, 3, 4);
+            checkBoxHasla.Name = "checkBoxHasla";
+            checkBoxHasla.Size = new Size(176, 41);
+            checkBoxHasla.TabIndex = 27;
+            checkBoxHasla.Text = "Pokaż hasła";
+            checkBoxHasla.UseVisualStyleBackColor = true;
+            checkBoxHasla.CheckedChanged += checkBoxHasla_CheckedChanged;
             // 
             // buttonPotw
             // 
             buttonPotw.Anchor = AnchorStyles.None;
-            buttonPotw.Location = new Point(435, 337);
+            buttonPotw.Location = new Point(435, 397);
             buttonPotw.Name = "buttonPotw";
             buttonPotw.Size = new Size(101, 53);
             buttonPotw.TabIndex = 26;
@@ -567,7 +572,7 @@
             // buttonWroc3
             // 
             buttonWroc3.Anchor = AnchorStyles.None;
-            buttonWroc3.Location = new Point(652, 337);
+            buttonWroc3.Location = new Point(652, 397);
             buttonWroc3.Name = "buttonWroc3";
             buttonWroc3.Size = new Size(96, 53);
             buttonWroc3.TabIndex = 25;
@@ -580,7 +585,7 @@
             textBoxNoweHaslo2.Anchor = AnchorStyles.None;
             textBoxNoweHaslo2.BackColor = Color.Silver;
             textBoxNoweHaslo2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNoweHaslo2.Location = new Point(435, 288);
+            textBoxNoweHaslo2.Location = new Point(435, 348);
             textBoxNoweHaslo2.Margin = new Padding(3, 4, 3, 4);
             textBoxNoweHaslo2.Name = "textBoxNoweHaslo2";
             textBoxNoweHaslo2.Size = new Size(313, 42);
@@ -592,7 +597,7 @@
             textBoxNoweHaslo1.Anchor = AnchorStyles.None;
             textBoxNoweHaslo1.BackColor = Color.Silver;
             textBoxNoweHaslo1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNoweHaslo1.Location = new Point(435, 153);
+            textBoxNoweHaslo1.Location = new Point(435, 213);
             textBoxNoweHaslo1.Margin = new Padding(3, 4, 3, 4);
             textBoxNoweHaslo1.Name = "textBoxNoweHaslo1";
             textBoxNoweHaslo1.Size = new Size(313, 42);
@@ -603,7 +608,7 @@
             // 
             panel7.Anchor = AnchorStyles.None;
             panel7.Controls.Add(label3);
-            panel7.Location = new Point(1, 237);
+            panel7.Location = new Point(1, 297);
             panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
             panel7.Size = new Size(1173, 47);
@@ -626,7 +631,7 @@
             // 
             panel6.Anchor = AnchorStyles.None;
             panel6.Controls.Add(label2);
-            panel6.Location = new Point(1, 98);
+            panel6.Location = new Point(1, 158);
             panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
             panel6.Size = new Size(1173, 47);
@@ -657,7 +662,6 @@
             StartPosition = FormStartPosition.Manual;
             Load += Logowanie_Load;
             panelNaglowka.ResumeLayout(false);
-            panelNaglowka.PerformLayout();
             panelBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panelLogowania.ResumeLayout(false);
@@ -683,7 +687,6 @@
         #endregion
 
         private Panel panelNaglowka;
-        private Label Naglowek;
         private Panel panelLogowania;
         private PictureBox pictureBoxLogo;
         private TabControl tabControlKontener;
@@ -726,5 +729,6 @@
         private Label label3;
         private Panel panel6;
         private Label label2;
+        private CheckBox checkBoxHasla;
     }
 }

@@ -28,18 +28,6 @@ namespace USOS_Rektora.userControls
         string coModyfikować;
         //zmienna przechowująca kwerendę update
         string queryUpdate;
-
-
-        private static WyswDanychStudenci _instance;
-        public static WyswDanychStudenci Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new WyswDanychStudenci();
-                return _instance;
-            }
-        }
         public WyswDanychStudenci()
         {
             InitializeComponent();
@@ -81,10 +69,12 @@ namespace USOS_Rektora.userControls
             if (rozmiar == 153)
             {
                 panelObsluga.Height = 40;
+                flowLayoutPanelDane.Height = 386;
             }
             else
             {
                 panelObsluga.Height = 153;
+                flowLayoutPanelDane.Height = 278;
             }
         }
         //przejscie do zakładki z dodawaniem rekordu

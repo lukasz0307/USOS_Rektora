@@ -41,9 +41,6 @@
             płatnościToolStripMenuItem = new ToolStripMenuItem();
             iconButtonWyloguj = new FontAwesome.Sharp.IconButton();
             iconButtonKadra = new FontAwesome.Sharp.IconButton();
-            menuKadra = new ContextMenuStrip(components);
-            kontaktToolStripMenuItem = new ToolStripMenuItem();
-            kontaktToolStripMenuItem1 = new ToolStripMenuItem();
             iconButtonWydzialy = new FontAwesome.Sharp.IconButton();
             menuWydzialy = new ContextMenuStrip(components);
             MenuItemKierunki = new ToolStripMenuItem();
@@ -51,7 +48,10 @@
             mechanicznyToolStripMenuItem1 = new ToolStripMenuItem();
             zarządzaniaINaukOJakościToolStripMenuItem1 = new ToolStripMenuItem();
             działArmatorskiToolStripMenuItem1 = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
+            logo = new PictureBox();
+            menuKadra = new ContextMenuStrip(components);
+            kontaktToolStripMenuItem = new ToolStripMenuItem();
+            kontaktToolStripMenuItem1 = new ToolStripMenuItem();
             panelBanera = new Panel();
             labelTytulu = new Label();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
@@ -64,9 +64,9 @@
             panelglowny = new Panel();
             panelMenu.SuspendLayout();
             menuUczniowie.SuspendLayout();
-            menuKadra.SuspendLayout();
             menuWydzialy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
+            menuKadra.SuspendLayout();
             panelBanera.SuspendLayout();
             panelBar.SuspendLayout();
             tableLayoutPanel.SuspendLayout();
@@ -83,7 +83,7 @@
             panelMenu.Controls.Add(iconButtonWyloguj);
             panelMenu.Controls.Add(iconButtonKadra);
             panelMenu.Controls.Add(iconButtonWydzialy);
-            panelMenu.Controls.Add(pictureBox1);
+            panelMenu.Controls.Add(logo);
             panelMenu.Dock = DockStyle.Fill;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(0);
@@ -254,31 +254,6 @@
             iconButtonKadra.UseVisualStyleBackColor = true;
             iconButtonKadra.Click += iconButtonKadra_Click;
             // 
-            // menuKadra
-            // 
-            menuKadra.BackColor = Color.Gray;
-            menuKadra.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            menuKadra.ImageScalingSize = new Size(20, 20);
-            menuKadra.Items.AddRange(new ToolStripItem[] { kontaktToolStripMenuItem, kontaktToolStripMenuItem1 });
-            menuKadra.Name = "menuKadra";
-            menuKadra.Size = new Size(198, 108);
-            // 
-            // kontaktToolStripMenuItem
-            // 
-            kontaktToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
-            kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            kontaktToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            kontaktToolStripMenuItem.Size = new Size(197, 52);
-            kontaktToolStripMenuItem.Text = "Lista";
-            // 
-            // kontaktToolStripMenuItem1
-            // 
-            kontaktToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
-            kontaktToolStripMenuItem1.Name = "kontaktToolStripMenuItem1";
-            kontaktToolStripMenuItem1.Padding = new Padding(0, 4, 0, 4);
-            kontaktToolStripMenuItem1.Size = new Size(197, 52);
-            kontaktToolStripMenuItem1.Text = "Kontakt";
-            // 
             // iconButtonWydzialy
             // 
             iconButtonWydzialy.ContextMenuStrip = menuWydzialy;
@@ -347,15 +322,42 @@
             działArmatorskiToolStripMenuItem1.Size = new Size(463, 46);
             działArmatorskiToolStripMenuItem1.Text = "Dział armatorski";
             // 
-            // pictureBox1
+            // logo
             // 
-            pictureBox1.BackColor = Color.FromArgb(64, 64, 64);
-            pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(286, 123);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            logo.BackColor = Color.FromArgb(64, 64, 64);
+            logo.Dock = DockStyle.Top;
+            logo.Image = Properties.Resources.logo_usos3;
+            logo.Location = new Point(0, 0);
+            logo.Name = "logo";
+            logo.Size = new Size(286, 123);
+            logo.TabIndex = 0;
+            logo.TabStop = false;
+            logo.Click += logo_Click;
+            // 
+            // menuKadra
+            // 
+            menuKadra.BackColor = Color.Gray;
+            menuKadra.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            menuKadra.ImageScalingSize = new Size(20, 20);
+            menuKadra.Items.AddRange(new ToolStripItem[] { kontaktToolStripMenuItem, kontaktToolStripMenuItem1 });
+            menuKadra.Name = "menuKadra";
+            menuKadra.Size = new Size(198, 108);
+            // 
+            // kontaktToolStripMenuItem
+            // 
+            kontaktToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
+            kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
+            kontaktToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
+            kontaktToolStripMenuItem.Size = new Size(197, 52);
+            kontaktToolStripMenuItem.Text = "Lista";
+            // 
+            // kontaktToolStripMenuItem1
+            // 
+            kontaktToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
+            kontaktToolStripMenuItem1.Name = "kontaktToolStripMenuItem1";
+            kontaktToolStripMenuItem1.Padding = new Padding(0, 4, 0, 4);
+            kontaktToolStripMenuItem1.Size = new Size(197, 52);
+            kontaktToolStripMenuItem1.Text = "Kontakt";
             // 
             // panelBanera
             // 
@@ -377,7 +379,7 @@
             labelTytulu.Name = "labelTytulu";
             labelTytulu.Size = new Size(896, 123);
             labelTytulu.TabIndex = 0;
-            labelTytulu.Text = "Home";
+            labelTytulu.Text = "Strona główna";
             labelTytulu.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // iconMenuItem1
@@ -505,11 +507,12 @@
             Controls.Add(tableLayoutPanel);
             Controls.Add(panelBar);
             Name = "Form2";
+            Load += Form2_Load;
             panelMenu.ResumeLayout(false);
             menuUczniowie.ResumeLayout(false);
-            menuKadra.ResumeLayout(false);
             menuWydzialy.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo).EndInit();
+            menuKadra.ResumeLayout(false);
             panelBanera.ResumeLayout(false);
             panelBar.ResumeLayout(false);
             tableLayoutPanel.ResumeLayout(false);
@@ -544,7 +547,7 @@
         private Panel panelUserControl;
         private ToolStripMenuItem listaToolStripMenuItem;
         private FontAwesome.Sharp.IconButton iconButtonWydzialy;
-        private PictureBox pictureBox1;
+        private PictureBox logo;
         private TableLayoutPanel tableLayoutPanel;
         private Panel panelglowny;
         private ToolStripMenuItem elektrycznyToolStripMenuItem;

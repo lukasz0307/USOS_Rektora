@@ -76,7 +76,7 @@ namespace USOS_Rektora
                 captchaString += char.ConvertFromUtf32(random.Next(97, 122));
             }
             captcha.Text = captchaString;
-            captchaStr=captchaString;
+            captchaStr = captchaString;
         }
         //przejscie do zmiany hasla
         private void buttonprzypomnij_Click(object sender, EventArgs e)
@@ -200,7 +200,7 @@ namespace USOS_Rektora
             {
                 if (textBoxKod.Text == kod)
                 {
-                    tabControlKontener.SelectedIndex = 3; 
+                    tabControlKontener.SelectedIndex = 3;
                 }
                 else
                 {
@@ -223,7 +223,7 @@ namespace USOS_Rektora
         private void buttonPotw_Click(object sender, EventArgs e)
         {
             //sprawdzanie czy u¿ytkownik wype³ni³ wszystkie pola
-            if (textBoxNoweHaslo1.Text!="" && textBoxNoweHaslo2.Text != "")
+            if (textBoxNoweHaslo1.Text != "" && textBoxNoweHaslo2.Text != "")
             {
                 //sprawdzanie czy has³a które poda³ u¿ytkownik s¹ takie same
                 if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
@@ -248,6 +248,20 @@ namespace USOS_Rektora
             else
             {
                 MessageBox.Show("Uzupe³nij pola z has³ami");
+            }
+        }
+        //Obs³uga checkboxa odpowiadaj¹cego za pokazanie/ukrycie nowych hase³
+        private void checkBoxHasla_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHasla.Checked)
+            {
+                textBoxNoweHaslo1.UseSystemPasswordChar = false;
+                textBoxNoweHaslo2.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxNoweHaslo1.UseSystemPasswordChar = true;
+                textBoxNoweHaslo2.UseSystemPasswordChar = true;
             }
         }
     }
