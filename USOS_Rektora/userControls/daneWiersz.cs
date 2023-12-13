@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace USOS_Rektora.userControls
 {
-
+    
     public partial class daneWiersz : UserControl
     {
-
+        public static int id=0;
         public daneWiersz()
         {
             InitializeComponent();
@@ -32,6 +32,15 @@ namespace USOS_Rektora.userControls
         {
             wczytajDane();
 
+        }
+
+        private void checkBoxId_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxId.Checked)
+            {
+                id = int.Parse(checkBoxId.Text);
+            }
+            
         }
     }
 }

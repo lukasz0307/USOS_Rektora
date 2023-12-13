@@ -223,20 +223,21 @@
             tabControlZarz.Controls.Add(tabPage2);
             tabControlZarz.Controls.Add(tabPage3);
             tabControlZarz.Dock = DockStyle.Fill;
-            tabControlZarz.ItemSize = new Size(15, 10);
+            tabControlZarz.ItemSize = new Size(0, 1);
             tabControlZarz.Location = new Point(99, 0);
             tabControlZarz.Margin = new Padding(0);
             tabControlZarz.Name = "tabControlZarz";
             tabControlZarz.SelectedIndex = 0;
             tabControlZarz.Size = new Size(797, 109);
+            tabControlZarz.SizeMode = TabSizeMode.Fixed;
             tabControlZarz.TabIndex = 3;
             // 
             // tabPage4
             // 
             tabPage4.BackColor = Color.Silver;
-            tabPage4.Location = new Point(4, 14);
+            tabPage4.Location = new Point(4, 5);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(789, 91);
+            tabPage4.Size = new Size(789, 100);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             // 
@@ -250,10 +251,10 @@
             tabPage1.Controls.Add(textBoxIndeks);
             tabPage1.Controls.Add(textBoxNazw);
             tabPage1.Controls.Add(textBoxImie);
-            tabPage1.Location = new Point(4, 14);
+            tabPage1.Location = new Point(4, 5);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(789, 91);
+            tabPage1.Size = new Size(789, 100);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
@@ -263,7 +264,7 @@
             comboBoxKier.Enabled = false;
             comboBoxKier.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxKier.FormattingEnabled = true;
-            comboBoxKier.Location = new Point(660, 6);
+            comboBoxKier.Location = new Point(660, 11);
             comboBoxKier.Margin = new Padding(5, 3, 3, 3);
             comboBoxKier.Name = "comboBoxKier";
             comboBoxKier.Size = new Size(123, 33);
@@ -276,7 +277,7 @@
             comboBoxWydz.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxWydz.FormattingEnabled = true;
             comboBoxWydz.Items.AddRange(new object[] { "Elektryczny", "Nawigacyjny", "Mechaniczny", "Zarządzania i nauk o jakości" });
-            comboBoxWydz.Location = new Point(529, 6);
+            comboBoxWydz.Location = new Point(529, 11);
             comboBoxWydz.Margin = new Padding(5, 3, 3, 3);
             comboBoxWydz.Name = "comboBoxWydz";
             comboBoxWydz.Size = new Size(123, 33);
@@ -290,7 +291,7 @@
             comboBoxSem.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxSem.FormattingEnabled = true;
             comboBoxSem.Items.AddRange(new object[] { "I", "II", "III", "IV", "V", "VI", "VII" });
-            comboBoxSem.Location = new Point(398, 6);
+            comboBoxSem.Location = new Point(398, 11);
             comboBoxSem.Margin = new Padding(5, 3, 3, 3);
             comboBoxSem.Name = "comboBoxSem";
             comboBoxSem.Size = new Size(123, 33);
@@ -309,7 +310,7 @@
             Dodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Dodaj.IconSize = 30;
             Dodaj.ImageAlign = ContentAlignment.MiddleRight;
-            Dodaj.Location = new Point(300, 52);
+            Dodaj.Location = new Point(300, 57);
             Dodaj.Margin = new Padding(0);
             Dodaj.Name = "Dodaj";
             Dodaj.Size = new Size(99, 36);
@@ -323,7 +324,7 @@
             // 
             textBoxIndeks.Anchor = AnchorStyles.None;
             textBoxIndeks.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxIndeks.Location = new Point(267, 6);
+            textBoxIndeks.Location = new Point(267, 11);
             textBoxIndeks.Margin = new Padding(5, 3, 3, 3);
             textBoxIndeks.Name = "textBoxIndeks";
             textBoxIndeks.PlaceholderText = "Nr. indeksu";
@@ -334,7 +335,7 @@
             // 
             textBoxNazw.Anchor = AnchorStyles.None;
             textBoxNazw.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNazw.Location = new Point(136, 6);
+            textBoxNazw.Location = new Point(136, 11);
             textBoxNazw.Margin = new Padding(5, 3, 3, 3);
             textBoxNazw.Name = "textBoxNazw";
             textBoxNazw.PlaceholderText = "Nazwisko";
@@ -345,7 +346,7 @@
             // 
             textBoxImie.Anchor = AnchorStyles.None;
             textBoxImie.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxImie.Location = new Point(5, 6);
+            textBoxImie.Location = new Point(5, 11);
             textBoxImie.Margin = new Padding(5, 3, 3, 3);
             textBoxImie.Name = "textBoxImie";
             textBoxImie.PlaceholderText = "Imię";
@@ -356,10 +357,10 @@
             // 
             tabPage2.BackColor = Color.Silver;
             tabPage2.Controls.Add(usun);
-            tabPage2.Location = new Point(4, 14);
+            tabPage2.Location = new Point(4, 5);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(789, 91);
+            tabPage2.Size = new Size(789, 100);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
@@ -375,7 +376,7 @@
             usun.IconFont = FontAwesome.Sharp.IconFont.Auto;
             usun.IconSize = 30;
             usun.ImageAlign = ContentAlignment.MiddleRight;
-            usun.Location = new Point(298, 31);
+            usun.Location = new Point(298, 36);
             usun.Margin = new Padding(0);
             usun.Name = "usun";
             usun.Size = new Size(99, 36);
@@ -383,6 +384,7 @@
             usun.Text = "Usuń";
             usun.TextAlign = ContentAlignment.MiddleLeft;
             usun.UseVisualStyleBackColor = false;
+            usun.Click += usun_Click;
             // 
             // tabPage3
             // 
@@ -391,10 +393,10 @@
             tabPage3.Controls.Add(textBoxNowaWart);
             tabPage3.Controls.Add(label1);
             tabPage3.Controls.Add(comboBoxMod);
-            tabPage3.Location = new Point(4, 14);
+            tabPage3.Location = new Point(4, 5);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(789, 91);
+            tabPage3.Size = new Size(789, 100);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             // 
@@ -410,7 +412,7 @@
             Modyfikuj.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Modyfikuj.IconSize = 30;
             Modyfikuj.ImageAlign = ContentAlignment.MiddleRight;
-            Modyfikuj.Location = new Point(600, 22);
+            Modyfikuj.Location = new Point(600, 27);
             Modyfikuj.Margin = new Padding(0);
             Modyfikuj.Name = "Modyfikuj";
             Modyfikuj.Size = new Size(130, 34);
@@ -423,8 +425,9 @@
             // textBoxNowaWart
             // 
             textBoxNowaWart.Anchor = AnchorStyles.None;
+            textBoxNowaWart.Enabled = false;
             textBoxNowaWart.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNowaWart.Location = new Point(432, 25);
+            textBoxNowaWart.Location = new Point(432, 30);
             textBoxNowaWart.Margin = new Padding(20, 3, 3, 3);
             textBoxNowaWart.Name = "textBoxNowaWart";
             textBoxNowaWart.PlaceholderText = "Nowa wartość";
@@ -436,7 +439,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(23, 28);
+            label1.Location = new Point(23, 33);
             label1.Margin = new Padding(20, 0, 3, 0);
             label1.Name = "label1";
             label1.Size = new Size(212, 25);
@@ -449,11 +452,12 @@
             comboBoxMod.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxMod.FormattingEnabled = true;
             comboBoxMod.Items.AddRange(new object[] { "Imię", "Nazwisko", "Nr. Indeksu", "Semestr", "Kierunek", "Adres e-mail" });
-            comboBoxMod.Location = new Point(258, 25);
+            comboBoxMod.Location = new Point(258, 30);
             comboBoxMod.Margin = new Padding(20, 3, 3, 3);
             comboBoxMod.Name = "comboBoxMod";
             comboBoxMod.Size = new Size(151, 33);
             comboBoxMod.TabIndex = 0;
+            comboBoxMod.SelectedIndexChanged += comboBoxMod_SelectedIndexChanged;
             // 
             // panel2
             // 

@@ -80,6 +80,7 @@
             checkBoxId.TabIndex = 7;
             checkBoxId.Text = "ID";
             checkBoxId.UseVisualStyleBackColor = false;
+            checkBoxId.CheckedChanged += checkBoxId_CheckedChanged;
             // 
             // wydz
             // 
