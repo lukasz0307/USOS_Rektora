@@ -14,7 +14,6 @@ namespace USOS_Rektora
 {
     public partial class Form2 : Form
     {
-        
         public Logowanie logowanieForm;
         public Form2()
         {
@@ -25,25 +24,16 @@ namespace USOS_Rektora
         {
             labelTytulu.Text = przycisk.Text;
         }
-
-
-
         //Funkcja pozycjonujaca elementy context menu strip by były tuż po prawej stronie przycisków z menu
         private void pozycjonowanieContextMenuStrip(Button przycisk, ContextMenuStrip menu)
         {
             menu.Show(przycisk, new Point(przycisk.Width, 0));
         }
-
-
         //Importy slużące do przeciągania aplikacji łapiąc myszką za pasek u góry
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
-
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-
-
         //Obsługa przycisku służącego do powrótu do formularza logowania
         private void iconButtonWyloguj_Click(object sender, EventArgs e)
         {
@@ -57,7 +47,7 @@ namespace USOS_Rektora
             pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
             zmianaTekstu(iconButtonWydzialy);
         }
-
+        //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychKadra
         private void iconButtonKadra_Click(object sender, EventArgs e)
         {
             //pozycjonowanieContextMenuStrip(iconButtonKadra, menuKadra);
@@ -71,9 +61,8 @@ namespace USOS_Rektora
             }
             else
                 WyswDanychKadra.Instance.BringToFront();
-
         }
-
+        //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychStudenci
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
         {
             //pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
@@ -87,11 +76,10 @@ namespace USOS_Rektora
                 WyswDanychKadra.Instance.BringToFront();
             zmianaTekstu(iconButtonUczniowie);
         }
-
+        //Wyświetlenie w panelu głównym kontrolki userControl Kalendarz
         private void iconButtonKalendarz_Click(object sender, EventArgs e)
         {
             zmianaTekstu(iconButtonKalendarz);
-
             //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
             if (!panelUserControl.Controls.Contains(Kalendarz.Instance))
             {
@@ -102,7 +90,7 @@ namespace USOS_Rektora
             else
                 Kalendarz.Instance.BringToFront();
         }
-
+        //Wyświetlenie w panelu głównym kontrolki userControl Ogloszenia
         private void iconButtonogloszenia_Click(object sender, EventArgs e)
         {
             //Kod odpowiadający za odpalenie kontrolki user control wewnątrz głównego formularza
@@ -114,15 +102,12 @@ namespace USOS_Rektora
             }
             else
                 Ogloszenia.Instance.BringToFront();
-
-
             zmianaTekstu(iconButtonOgloszenia);
         }
-
+        //Wyświetlenie w panelu głównym kontrolki userControl PlanyLekcji
         private void iconButtonPlany_Click(object sender, EventArgs e)
         {
             zmianaTekstu(iconButtonPlany);
-
             if (!panelUserControl.Controls.Contains(PlanyLekcji.Instance))
             {
                 panelUserControl.Controls.Add(PlanyLekcji.Instance);
@@ -132,7 +117,6 @@ namespace USOS_Rektora
             else
                 Kalendarz.Instance.BringToFront();
         }
-
         //obsluga przycisku służącego do maksymalizacji okna aplikacji
         private void iconButtonMaks_Click(object sender, EventArgs e)
         {
@@ -141,13 +125,11 @@ namespace USOS_Rektora
             else
                 this.WindowState = FormWindowState.Normal;
         }
-
         //obsluga przycisku służącego do minimalizacji okna aplikacji
         private void iconButtonMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         //obsluga przycisku służącego do zamknięcia okna aplikacji
         private void iconButtonZamknij_Click(object sender, EventArgs e)
         {
@@ -155,14 +137,11 @@ namespace USOS_Rektora
             logowanieForm = new Logowanie();
             logowanieForm.Close();
         }
-
         //funkcja służąca do przeciągania okienka aplikacji za pasek u góry
         private void panelBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
     }
 }

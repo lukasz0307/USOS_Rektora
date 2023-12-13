@@ -13,11 +13,13 @@ namespace USOS_Rektora.userControls
     
     public partial class daneWiersz : UserControl
     {
+        //zmienna zawierająca id rekordu z zaznaczonym checkboxem, poczatkowo ustawione na zero do obsługi błedów
         public static int id=0;
         public daneWiersz()
         {
             InitializeComponent();
         }
+        //funkcja wczytująca dane wyswietlane w pojedynczym wierszu z danymi
         public void wczytajDane()
         {
             checkBoxId.Text = WyswDanychStudenci.staticId.ToString();
@@ -28,19 +30,18 @@ namespace USOS_Rektora.userControls
             kier.Text = WyswDanychStudenci.staticKier;
             wydz.Text = WyswDanychStudenci.staticMail;
         }
+        //wywołanie funkcji daneWiersz po załadowaniu komponentu
         private void daneWiersz_Load(object sender, EventArgs e)
         {
             wczytajDane();
-
         }
-
+        //przekazanie id zaznaczonego rekordu do zmiennej
         private void checkBoxId_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxId.Checked)
             {
                 id = int.Parse(checkBoxId.Text);
             }
-            
         }
     }
 }

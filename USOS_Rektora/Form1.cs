@@ -1,5 +1,3 @@
-
-
 using System.Runtime.InteropServices;
 using System.Data.SQLite;
 using System.Data;
@@ -11,24 +9,26 @@ namespace USOS_Rektora
 {
     public partial class Logowanie : Form
     {
+
+        string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
+        //zmienna przechowuj¹ca losowany kod wysy³any na maila potrzebny do zmiany has³a
         public string kod;
+        //zmienna przechowuj¹ca nazwe u¿ytkownika
         public string username;
         public Form2 glownyForm;
+        //zmienna przechowuj¹ca losowany ci¹g znaków wyœwietlany w captchy
         string captchaStr;
-
         public Logowanie()
         {
             InitializeComponent();
         }
-
         //Importy slu¿¹ce do przeci¹gania aplikacji ³api¹c myszk¹ za pasek u góry
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
-
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        //Obs³uga przycisku który zamyka formularz logowania i otwiera formularz g³ówny
+        //Obs³uga przycisku odpowiedzialnego za zalogowanie siê do systemu
+        //oraz zamykania formularza logowania i otwierania formularza g³ównego
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             /*
@@ -61,21 +61,6 @@ namespace USOS_Rektora
                 }
             }
             */
-
-            //testowanie zawartosci bazy danych
-            string query = "SELECT * FROM users";
-            string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-            MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = query;
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                MessageBox.Show(reader["username"] + " " + reader["password"]);
-            }
-            conn.Close();
-
             this.Hide();
             glownyForm = new Form2();
             glownyForm.Show();
@@ -93,21 +78,16 @@ namespace USOS_Rektora
             captcha.Text = captchaString;
             captchaStr=captchaString;
         }
-
         //przejscie do zmiany hasla
         private void buttonprzypomnij_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 1;
-
-
         }
         // powrot do logowania
         private void buttonWroc_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 0;
         }
-
-
         //obsluga przycisku s³u¿¹cego do maksymalizacji okna aplikacji
         private void iconButtonMaks_Click(object sender, EventArgs e)
         {
@@ -116,26 +96,22 @@ namespace USOS_Rektora
             else
                 this.WindowState = FormWindowState.Normal;
         }
-
         //obsluga przycisku s³u¿¹cego do minimalizacji okna aplikacji
         private void iconButtonMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         //obsluga przycisku s³u¿¹cego do zamkniêcia okna aplikacji
         private void iconButtonZamknij_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         //funkcja s³u¿¹ca do przeci¹gania okienka aplikacji za pasek u góry
         private void panelBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
         //Obs³uga checkboxa odpowiadaj¹cego za pokazanie/ukrycie has³a
         private void checkBoxHaslo_CheckedChanged(object sender, EventArgs e)
         {
@@ -161,19 +137,12 @@ namespace USOS_Rektora
         //obs³uga wysy³ania maila
         private void buttonDalej_Click(object sender, EventArgs e)
         {
-            
-
-
-
-            //admin admin123
             string query = "SELECT username FROM users WHERE username= @user";
-            string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@user", textBoxLogin.Text);
-            
             object result = cmd.ExecuteScalar();
             //obs³uga b³edu gdy uzytkownik nie poda loginu lub jest b³êdny
             if (result != null)
@@ -182,15 +151,15 @@ namespace USOS_Rektora
                 {
                     username = result.ToString();
                     conn.Close();
+                    //wysy³anie maila z kodem potzebnym do zmiany has³a
                     try
                     {
                         MailMessage mailMessage = new MailMessage();
                         SmtpClient smtpClient = new SmtpClient();
                         smtpClient.Host = "smtp.gmail.com";
-                        mailMessage.From = new MailAddress("usoumg@gmail.com");
-                        mailMessage.To.Add("lukas4500j@gmail.com");
-                        mailMessage.Subject = "Resetowanie has³a";
-
+                        mailMessage.From = new MailAddress("usoumg@gmail.com");//adres skad jest wysy³any mail
+                        mailMessage.To.Add("lukas4500j@gmail.com");//adres do kogo jest wysy³any mail
+                        mailMessage.Subject = "Resetowanie has³a";//temat e-maila
                         //generowanie kodu do zmiany has³a
                         Random random = new Random();
                         for (int i = 0; i < 4; i++)
@@ -198,15 +167,15 @@ namespace USOS_Rektora
                             int cyfry = random.Next(0, 10);
                             kod += cyfry.ToString();
                         }
-
-
+                        //treœæ maila
                         mailMessage.Body = "U¿ytkowniku " + username + " kod do zresetowania twojego has³a to: " + kod;
                         smtpClient.Port = 587;
-                        smtpClient.Credentials = new System.Net.NetworkCredential("usoumg@gmail.com", "qazo iesh mflw gian");//mail i has³o do niego wygenerowane przez konto google
+                        //mail i has³o do niego wygenerowane przez konto google
                         smtpClient.EnableSsl = true;
+                        smtpClient.Credentials = new System.Net.NetworkCredential("usoumg@gmail.com", "qazo iesh mflw gian");
                         smtpClient.Send(mailMessage);
                         MessageBox.Show("Email zosta³ wys³any");
-                        tabControlKontener.SelectedIndex = 2;
+                        tabControlKontener.SelectedIndex = 2;//przejœcia do zak³adki z wpisywaniem kodu z maila
                     }
                     catch (Exception ex)
                     {
@@ -226,12 +195,12 @@ namespace USOS_Rektora
         //weryfikacja kodu przys³anego na maila
         private void textBoxKod_TextChanged(object sender, EventArgs e)
         {
-
+            //obs³ug tego by po wpisaniu poprawnego kodu wyswietlila siêzak³adka z ustawianiem nowego has³a
             if (textBoxKod.Text.Length == 4)
             {
                 if (textBoxKod.Text == kod)
                 {
-                    tabControlKontener.SelectedIndex = 3;
+                    tabControlKontener.SelectedIndex = 3; 
                 }
                 else
                 {
@@ -245,7 +214,7 @@ namespace USOS_Rektora
         {
             tabControlKontener.SelectedIndex = 1;
         }
-        // powrot do kodu
+        // powrot do kodu z maila
         private void buttonWroc3_Click(object sender, EventArgs e)
         {
             tabControlKontener.SelectedIndex = 2;
@@ -253,38 +222,32 @@ namespace USOS_Rektora
         // przycisk zatwierdzajacy zmiane hasla
         private void buttonPotw_Click(object sender, EventArgs e)
         {
-            /*testowanie zawartosci bazy danych
-            string query = "SELECT * FROM users";
-            SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
-            SQLiteCommand cmd = new SQLiteCommand(query, conn);
-            conn.Open();
-            SQLiteDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            //sprawdzanie czy u¿ytkownik wype³ni³ wszystkie pola
+            if (textBoxNoweHaslo1.Text!="" && textBoxNoweHaslo2.Text != "")
             {
-                MessageBox.Show(reader["username"] + " " + reader["password"]);
-            }*/
-           
-
-            if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
-            {
- 
-                string query = "UPDATE users SET password = @newpassword WHERE username= @user";
-                string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
-                MySqlConnection conn = new MySqlConnection(connectionString);
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@user", username);
-                cmd.Parameters.AddWithValue("@newpassword", textBoxNoweHaslo1.Text);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Has³o zosta³o zmienione");
-                tabControlKontener.SelectedIndex = 0;
+                //sprawdzanie czy has³a które poda³ u¿ytkownik s¹ takie same
+                if (textBoxNoweHaslo1.Text == textBoxNoweHaslo2.Text)
+                {
+                    string query = "UPDATE users SET password = @newpassword WHERE username= @user";
+                    MySqlConnection conn = new MySqlConnection(connectionString);
+                    conn.Open();
+                    MySqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@user", username);
+                    cmd.Parameters.AddWithValue("@newpassword", textBoxNoweHaslo1.Text);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Has³o zosta³o zmienione");
+                    tabControlKontener.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Has³a ró¿ni¹ siê");
+                }
             }
             else
             {
-
-                MessageBox.Show("Has³a ró¿ni¹ siê");
+                MessageBox.Show("Uzupe³nij pola z has³ami");
             }
         }
     }

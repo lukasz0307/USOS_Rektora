@@ -14,11 +14,14 @@ namespace USOS_Rektora.userControls
     
     public partial class Kalendarz : UserControl
     {
-        public static int static_month, static_year;
         private static Kalendarz _instance;
+        //Zmienne przekazywanie do okienka z dodawaniem wydarzenia w celu ich wyswietlenia
+        public static int static_month, static_year;
+        //zmienne potzrebne do podania jako argumenty  funkcji wyswDaty
         int actualMonth;
         int actualDay;
         int actualYear;
+        //zmienna zawierająca liczbe dni w danym miesiącu
         int numberOfDaysInMonth;
         DateTime firstDayOfMonth;
         public static Kalendarz Instance
@@ -36,27 +39,24 @@ namespace USOS_Rektora.userControls
         }
         private void wyswDaty(int year, int month, int day)
         {
-            //wyswietlanie miesiąca i roku u góry na banerze
+            //wyswietlanie aktualmego miesiąca i roku u góry na banerze
             DateTime dateTime = new DateTime(year, month, day);
             string month_name = (dateTime.ToString("MMMM") + " " + actualYear.ToString());
             miesiac.Text = month_name;
-
-            static_month=month;
+            //ustawianie wartosci zmiennych przekazywanych do okienka z dodawaniem wydarzenia w celu ich wyswietlenia
+            static_month = month;
             static_year=year;
-
             //pobranie pierwszego dnia miesiąca
             firstDayOfMonth = new DateTime(year, month, 1);
             int numberFirstDay = Convert.ToInt32(firstDayOfMonth.DayOfWeek.ToString("d"));
             //pobranie liczby dni w miesiącu
             numberOfDaysInMonth = System.DateTime.DaysInMonth(year, month);
-
             //utworzenie pustych kontrolek na dni z poprzedniego miesiaca
             //oraz ustalic od którego dnia tygodnia zacząć wyswietlanie
             for (int i = 1; i < numberFirstDay; i++)
             {
                 dzien_pusty ucDzien_pusty = new dzien_pusty();
                 kalendarzKomponenty.Controls.Add(ucDzien_pusty);
-
             }
             //utworzenie kontrolek z dniami miesiąca
             for (int i = 1; i <= numberOfDaysInMonth; i++)
@@ -67,6 +67,7 @@ namespace USOS_Rektora.userControls
                 kalendarzKomponenty.Controls.Add(ucDzien);
             }
         }
+        //wywołanie funkcji wyswDaty po załadowaniu kalendarza
         private void Kalendarz_Load(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
@@ -76,11 +77,12 @@ namespace USOS_Rektora.userControls
             wyswDaty(actualYear, actualMonth, actualDay);
 
         }
-
+        //przejście do następengo miesiąca
         private void iconButtonNast_Click(object sender, EventArgs e)
         {
             kalendarzKomponenty.Controls.Clear();
             actualMonth++;
+            //obsługa wyjątku gdy aktualnie wyswietlony miesiąc to grudzień i następny miesiąc jest w następnym roku
             if (actualMonth > 12)
             {
                 actualMonth = 1;
@@ -91,13 +93,13 @@ namespace USOS_Rektora.userControls
             {
                 wyswDaty(actualYear, actualMonth, actualDay);
             }
-
         }
-
+        //przejście do poprzedniego miesiąca
         private void iconButtonPop_Click(object sender, EventArgs e)
         {
             kalendarzKomponenty.Controls.Clear();
             actualMonth--;
+            //obsługa wyjątku gdy aktualnie wyswietlony miesiąc to styczeń i poprzedni miesiąc jest w poprzedni roku
             if (actualMonth < 1)
             {
                 actualMonth = 12;

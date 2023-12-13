@@ -81,10 +81,10 @@ namespace USOS_Rektora.userControls
                 }
             }
         }
-
+        //obsługa przycisku który zapisuje plik z planem lekcji
         private void buttonPobierz_Click(object sender, EventArgs e)
         {
-            
+            //sprawdzanie czy użytkownik wypełnił wszystkie dane
             if (comboBoxKierunek.SelectedItem != null && comboBoxStopien.SelectedItem != null && comboBoxTryb.SelectedItem != null && comboBoxWydzial.SelectedItem != null)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -93,7 +93,6 @@ namespace USOS_Rektora.userControls
                 ImageFormat format = ImageFormat.Jpeg;
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
                     plan.Save(saveFileDialog.FileName, format);
                 }
             }
@@ -101,14 +100,13 @@ namespace USOS_Rektora.userControls
             {
                 MessageBox.Show("Wypelnij wszystkie pola");
             }
-            
         }
-
+        //wywołanie funkcji wyswKierunkow po wybraniu wydzialu z comboboxa
         private void comboBoxWydzial_SelectedIndexChanged(object sender, EventArgs e)
         {
             wyswKierunkow();
         }
-
+        //wywołanie funkcji wyswKierunkow po wybraniu stopnia z comboboxa
         private void comboBoxStopien_SelectedIndexChanged(object sender, EventArgs e)
         {
             wyswKierunkow();
