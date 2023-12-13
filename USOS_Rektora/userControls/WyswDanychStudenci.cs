@@ -15,7 +15,7 @@ namespace USOS_Rektora.userControls
     {
         // zmienna zawierająca łańcuch znaków połączenia do bazy danych
         string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
-        //Zmienne przekazywanie do elemntu userCOntrol daneWiersz w celu ich wyswietlenia
+        //Zmienne przekazywanie do elemntu userControl daneWiersz w celu ich wyswietlenia
         public static int staticId;
         public static string staticImie;
         public static string staticNazwisko;

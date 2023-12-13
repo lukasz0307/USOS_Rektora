@@ -14,16 +14,6 @@ namespace USOS_Rektora.userControls
 {
     public partial class PlanyLekcji : UserControl
     {
-        private static PlanyLekcji _instance;
-        public static PlanyLekcji Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new PlanyLekcji();
-                return _instance;
-            }
-        }
         public PlanyLekcji()
         {
             InitializeComponent();

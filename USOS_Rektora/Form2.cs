@@ -119,7 +119,7 @@ namespace USOS_Rektora
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        
+
         //wyswietlanie kontrolki userControl StronaGlowna po załadowaniu formularza
         private void Form2_Load(object sender, EventArgs e)
         {

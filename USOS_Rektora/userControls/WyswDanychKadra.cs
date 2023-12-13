@@ -14,18 +14,6 @@ namespace USOS_Rektora.userControls
 {
     public partial class WyswDanychKadra : UserControl
     {
-        private static WyswDanychKadra _instance;
-        public int aktualneId;
-        public static WyswDanychKadra Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new WyswDanychKadra();
-                return _instance;
-            }
-        }
-
         class Kadra
         {
             //pola klasy Kadra
@@ -69,18 +57,7 @@ namespace USOS_Rektora.userControls
         //tworzenie obiektu klasy Kadra oraz wyswietlanie danych z bazy
         private void WyswDanych_Load(object sender, EventArgs e)
         {
-            // obiekt kadra 
-            Kadra kadra = new Kadra(1, "Łukasz", "Jankowiak", "prof", "666 170 667", "lukas@wp.pl");
-            aktualneId = kadra.id;
-
-            string[] table = new string[6];
-            table[0] = kadra.id.ToString();
-            table[1] = kadra.imie;
-            table[2] = kadra.nazwisko;
-            table[3] = kadra.stanowisko;
-            table[4] = kadra.nrTel;
-            table[5] = kadra.mail;
-            dane(table);
+            
 
 
 
@@ -113,16 +90,7 @@ namespace USOS_Rektora.userControls
         //obsługa przycisku do dodawania rekordów do tabeli kadra
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
-            aktualneId++;
-            Kadra kadra = new Kadra(aktualneId, textBoxImie.Text, textBoxNazwisko.Text, textBoxStan.Text, textBoxNr.Text, textBoxMail.Text);
-            string[] table = new string[8];
-            table[0] = kadra.id.ToString();
-            table[1] = kadra.imie;
-            table[2] = kadra.nazwisko;
-            table[3] = kadra.stanowisko;
-            table[4] = kadra.nrTel;
-            table[5] = kadra.mail;
-            dane(table);
+           
         }
 
         private void buttonUsun_Click(object sender, EventArgs e)

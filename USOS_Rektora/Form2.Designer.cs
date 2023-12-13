@@ -127,7 +127,8 @@
             iconButtonOgloszenia.Name = "iconButtonOgloszenia";
             iconButtonOgloszenia.Size = new Size(286, 60);
             iconButtonOgloszenia.TabIndex = 5;
-            iconButtonOgloszenia.Text = "Ogłoszenia";
+            iconButtonOgloszenia.Text = "Dod. Ogłoszenie";
+            iconButtonOgloszenia.TextAlign = ContentAlignment.MiddleRight;
             iconButtonOgloszenia.UseVisualStyleBackColor = true;
             iconButtonOgloszenia.Click += iconButtonogloszenia_Click;
             // 
