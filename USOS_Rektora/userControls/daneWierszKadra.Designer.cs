@@ -1,6 +1,6 @@
 ﻿namespace USOS_Rektora.userControls
 {
-    partial class daneWiersz
+    partial class daneWierszKadra
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -31,10 +31,9 @@
             panelNaglowki = new Panel();
             panel1 = new Panel();
             checkBoxId = new CheckBox();
-            wydz = new Label();
-            kier = new Label();
-            semestr = new Label();
-            indeks = new Label();
+            mail = new Label();
+            nrTel = new Label();
+            stanowisko = new Label();
             nazw = new Label();
             imie = new Label();
             panelNaglowki.SuspendLayout();
@@ -44,18 +43,17 @@
             // panelNaglowki
             // 
             panelNaglowki.Controls.Add(panel1);
-            panelNaglowki.Controls.Add(wydz);
-            panelNaglowki.Controls.Add(kier);
-            panelNaglowki.Controls.Add(semestr);
-            panelNaglowki.Controls.Add(indeks);
+            panelNaglowki.Controls.Add(mail);
+            panelNaglowki.Controls.Add(nrTel);
+            panelNaglowki.Controls.Add(stanowisko);
             panelNaglowki.Controls.Add(nazw);
             panelNaglowki.Controls.Add(imie);
             panelNaglowki.Dock = DockStyle.Fill;
             panelNaglowki.Location = new Point(0, 0);
             panelNaglowki.Margin = new Padding(0);
             panelNaglowki.Name = "panelNaglowki";
-            panelNaglowki.Size = new Size(896, 51);
-            panelNaglowki.TabIndex = 4;
+            panelNaglowki.Size = new Size(784, 38);
+            panelNaglowki.TabIndex = 5;
             // 
             // panel1
             // 
@@ -65,75 +63,62 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(57, 51);
+            panel1.Size = new Size(50, 38);
             panel1.TabIndex = 8;
             // 
             // checkBoxId
             // 
             checkBoxId.BackColor = Color.Silver;
-            checkBoxId.CheckAlign = ContentAlignment.MiddleRight;
+            checkBoxId.CheckAlign = ContentAlignment.MiddleCenter;
             checkBoxId.Dock = DockStyle.Fill;
+            checkBoxId.ForeColor = Color.Silver;
             checkBoxId.Location = new Point(0, 0);
             checkBoxId.Margin = new Padding(0);
             checkBoxId.Name = "checkBoxId";
-            checkBoxId.Size = new Size(55, 49);
+            checkBoxId.Size = new Size(48, 36);
             checkBoxId.TabIndex = 7;
             checkBoxId.Text = "ID";
             checkBoxId.UseVisualStyleBackColor = false;
             checkBoxId.CheckedChanged += checkBoxId_CheckedChanged;
             // 
-            // wydz
+            // mail
             // 
-            wydz.BackColor = Color.Silver;
-            wydz.BorderStyle = BorderStyle.FixedSingle;
-            wydz.Dock = DockStyle.Right;
-            wydz.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            wydz.Location = new Point(707, 0);
-            wydz.Margin = new Padding(0);
-            wydz.Name = "wydz";
-            wydz.Size = new Size(189, 51);
-            wydz.TabIndex = 6;
-            wydz.Text = "Wydział";
-            wydz.TextAlign = ContentAlignment.MiddleCenter;
+            mail.BackColor = Color.Silver;
+            mail.BorderStyle = BorderStyle.FixedSingle;
+            mail.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mail.Location = new Point(622, 0);
+            mail.Margin = new Padding(0);
+            mail.Name = "mail";
+            mail.Size = new Size(162, 39);
+            mail.TabIndex = 5;
+            mail.Text = "Adres e-mail";
+            mail.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // kier
+            // nrTel
             // 
-            kier.BackColor = Color.Silver;
-            kier.BorderStyle = BorderStyle.FixedSingle;
-            kier.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            kier.Location = new Point(552, 0);
-            kier.Margin = new Padding(0);
-            kier.Name = "kier";
-            kier.Size = new Size(155, 51);
-            kier.TabIndex = 5;
-            kier.Text = "Kierunek";
-            kier.TextAlign = ContentAlignment.MiddleCenter;
+            nrTel.BackColor = Color.Silver;
+            nrTel.BorderStyle = BorderStyle.FixedSingle;
+            nrTel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            nrTel.Location = new Point(463, 0);
+            nrTel.Margin = new Padding(0);
+            nrTel.Name = "nrTel";
+            nrTel.Size = new Size(160, 39);
+            nrTel.TabIndex = 4;
+            nrTel.Text = "Numer telefonu";
+            nrTel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // semestr
+            // stanowisko
             // 
-            semestr.BackColor = Color.Silver;
-            semestr.BorderStyle = BorderStyle.FixedSingle;
-            semestr.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            semestr.Location = new Point(459, 0);
-            semestr.Margin = new Padding(0);
-            semestr.Name = "semestr";
-            semestr.Size = new Size(93, 51);
-            semestr.TabIndex = 4;
-            semestr.Text = "Semestr";
-            semestr.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // indeks
-            // 
-            indeks.BackColor = Color.Silver;
-            indeks.BorderStyle = BorderStyle.FixedSingle;
-            indeks.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            indeks.Location = new Point(316, 0);
-            indeks.Margin = new Padding(0);
-            indeks.Name = "indeks";
-            indeks.Size = new Size(143, 51);
-            indeks.TabIndex = 3;
-            indeks.Text = "Nr. indeksu";
-            indeks.TextAlign = ContentAlignment.MiddleCenter;
+            stanowisko.BackColor = Color.Silver;
+            stanowisko.BorderStyle = BorderStyle.FixedSingle;
+            stanowisko.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stanowisko.Location = new Point(312, 0);
+            stanowisko.Margin = new Padding(0);
+            stanowisko.Name = "stanowisko";
+            stanowisko.Size = new Size(151, 39);
+            stanowisko.TabIndex = 3;
+            stanowisko.Text = "Stanowisko";
+            stanowisko.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // nazw
             // 
@@ -143,7 +128,7 @@
             nazw.Location = new Point(178, 0);
             nazw.Margin = new Padding(0);
             nazw.Name = "nazw";
-            nazw.Size = new Size(138, 51);
+            nazw.Size = new Size(134, 39);
             nazw.TabIndex = 2;
             nazw.Text = "Nazwisko";
             nazw.TextAlign = ContentAlignment.MiddleCenter;
@@ -153,23 +138,23 @@
             imie.BackColor = Color.Silver;
             imie.BorderStyle = BorderStyle.FixedSingle;
             imie.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            imie.Location = new Point(57, 0);
+            imie.Location = new Point(50, 0);
             imie.Margin = new Padding(0);
             imie.Name = "imie";
-            imie.Size = new Size(121, 51);
+            imie.Size = new Size(129, 39);
             imie.TabIndex = 1;
             imie.Text = "Imię";
             imie.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // daneWiersz
+            // daneWierszKadra
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelNaglowki);
-            Margin = new Padding(0);
-            Name = "daneWiersz";
-            Size = new Size(896, 51);
-            Load += daneWiersz_Load;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "daneWierszKadra";
+            Size = new Size(784, 38);
+            Load += daneWierszKadra_Load;
             panelNaglowki.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -178,13 +163,12 @@
         #endregion
 
         private Panel panelNaglowki;
+        private Panel panel1;
         private CheckBox checkBoxId;
-        private Label wydz;
-        private Label kier;
-        private Label semestr;
-        private Label indeks;
+        private Label mail;
+        private Label nrTel;
+        private Label stanowisko;
         private Label nazw;
         private Label imie;
-        private Panel panel1;
     }
 }

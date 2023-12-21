@@ -98,7 +98,7 @@
             iconButtonPlany.FlatStyle = FlatStyle.Flat;
             iconButtonPlany.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             iconButtonPlany.ForeColor = Color.FromArgb(224, 224, 224);
-            iconButtonPlany.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            iconButtonPlany.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
             iconButtonPlany.IconColor = Color.FromArgb(224, 224, 224);
             iconButtonPlany.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButtonPlany.ImageAlign = ContentAlignment.MiddleLeft;
@@ -170,7 +170,7 @@
             iconButtonUczniowie.Name = "iconButtonUczniowie";
             iconButtonUczniowie.Size = new Size(286, 60);
             iconButtonUczniowie.TabIndex = 3;
-            iconButtonUczniowie.Text = "Uczniowie";
+            iconButtonUczniowie.Text = "Studenci";
             iconButtonUczniowie.UseVisualStyleBackColor = false;
             iconButtonUczniowie.Click += iconButtonUczniowie_Click;
             // 
@@ -181,7 +181,7 @@
             menuUczniowie.ImageScalingSize = new Size(20, 20);
             menuUczniowie.Items.AddRange(new ToolStripItem[] { listaToolStripMenuItem, ocenyToolStripMenuItem, frekwencjaToolStripMenuItem, płatnościToolStripMenuItem });
             menuUczniowie.Name = "menuUczniowie";
-            menuUczniowie.Size = new Size(244, 212);
+            menuUczniowie.Size = new Size(244, 240);
             // 
             // listaToolStripMenuItem
             // 
@@ -190,6 +190,7 @@
             listaToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             listaToolStripMenuItem.Size = new Size(243, 52);
             listaToolStripMenuItem.Text = "Lista";
+            listaToolStripMenuItem.Click += listaToolStripMenuItem_Click;
             // 
             // ocenyToolStripMenuItem
             // 
@@ -198,6 +199,7 @@
             ocenyToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             ocenyToolStripMenuItem.Size = new Size(243, 52);
             ocenyToolStripMenuItem.Text = "Oceny";
+            ocenyToolStripMenuItem.Click += ocenyToolStripMenuItem_Click;
             // 
             // frekwencjaToolStripMenuItem
             // 
@@ -206,6 +208,7 @@
             frekwencjaToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             frekwencjaToolStripMenuItem.Size = new Size(243, 52);
             frekwencjaToolStripMenuItem.Text = "Frekwencja";
+            frekwencjaToolStripMenuItem.Click += frekwencjaToolStripMenuItem_Click;
             // 
             // płatnościToolStripMenuItem
             // 

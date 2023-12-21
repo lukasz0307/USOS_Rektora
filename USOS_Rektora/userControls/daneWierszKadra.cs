@@ -10,28 +10,29 @@ using System.Windows.Forms;
 
 namespace USOS_Rektora.userControls
 {
-    
-    public partial class daneWiersz : UserControl
+    public partial class daneWierszKadra : UserControl
     {
-        //zmienna zawierająca id rekordu z zaznaczonym checkboxem, poczatkowo ustawione na zero do obsługi błedów
-        public static int id=0;
-        public daneWiersz()
+        //zmienna zawierająca id rekordu z zaznaczonym checkboxem,
+        //poczatkowo ustawione na zero do obsługi błedów
+        public static int id = 0;
+
+        public daneWierszKadra()
         {
             InitializeComponent();
         }
         //funkcja wczytująca dane wyswietlane w pojedynczym wierszu z danymi
         public void wczytajDane()
         {
-            checkBoxId.Text = WyswDanychStudenci.staticId.ToString();
-            imie.Text = WyswDanychStudenci.staticImie;
-            nazw.Text = WyswDanychStudenci.staticNazwisko;
-            indeks.Text = WyswDanychStudenci.staticIndeks;
-            semestr.Text = WyswDanychStudenci.staticSemestr;
-            kier.Text = WyswDanychStudenci.staticKier;
-            wydz.Text = WyswDanychStudenci.staticMail;
+            checkBoxId.Text = WyswDanychKadra.staticId.ToString();
+            imie.Text = WyswDanychKadra.staticImie;
+            nazw.Text = WyswDanychKadra.staticNazwisko;
+            stanowisko.Text = WyswDanychKadra.staticStanowisko;
+            nrTel.Text = WyswDanychKadra.staticNrTel;
+            mail.Text = WyswDanychKadra.staticMail;
+
         }
         //wywołanie funkcji daneWiersz po załadowaniu komponentu
-        private void daneWiersz_Load(object sender, EventArgs e)
+        private void daneWierszKadra_Load(object sender, EventArgs e)
         {
             wczytajDane();
         }

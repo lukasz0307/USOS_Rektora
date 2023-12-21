@@ -32,8 +32,8 @@
             panelNaglowki = new Panel();
             labelWydz = new Label();
             labelKierunek = new Label();
-            labelTel = new Label();
-            labelStan = new Label();
+            labelSem = new Label();
+            labelInd = new Label();
             labelNazw = new Label();
             labelImie = new Label();
             labelId = new Label();
@@ -85,8 +85,8 @@
             panelNaglowki.BackColor = Color.Gray;
             panelNaglowki.Controls.Add(labelWydz);
             panelNaglowki.Controls.Add(labelKierunek);
-            panelNaglowki.Controls.Add(labelTel);
-            panelNaglowki.Controls.Add(labelStan);
+            panelNaglowki.Controls.Add(labelSem);
+            panelNaglowki.Controls.Add(labelInd);
             panelNaglowki.Controls.Add(labelNazw);
             panelNaglowki.Controls.Add(labelImie);
             panelNaglowki.Controls.Add(labelId);
@@ -125,33 +125,33 @@
             labelKierunek.Text = "Kierunek";
             labelKierunek.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // labelTel
+            // labelSem
             // 
-            labelTel.BackColor = Color.Gray;
-            labelTel.BorderStyle = BorderStyle.FixedSingle;
-            labelTel.Dock = DockStyle.Left;
-            labelTel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTel.Location = new Point(459, 0);
-            labelTel.Margin = new Padding(0);
-            labelTel.Name = "labelTel";
-            labelTel.Size = new Size(93, 51);
-            labelTel.TabIndex = 4;
-            labelTel.Text = "Semestr";
-            labelTel.TextAlign = ContentAlignment.MiddleCenter;
+            labelSem.BackColor = Color.Gray;
+            labelSem.BorderStyle = BorderStyle.FixedSingle;
+            labelSem.Dock = DockStyle.Left;
+            labelSem.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelSem.Location = new Point(459, 0);
+            labelSem.Margin = new Padding(0);
+            labelSem.Name = "labelSem";
+            labelSem.Size = new Size(93, 51);
+            labelSem.TabIndex = 4;
+            labelSem.Text = "Semestr";
+            labelSem.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // labelStan
+            // labelInd
             // 
-            labelStan.BackColor = Color.Gray;
-            labelStan.BorderStyle = BorderStyle.FixedSingle;
-            labelStan.Dock = DockStyle.Left;
-            labelStan.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelStan.Location = new Point(316, 0);
-            labelStan.Margin = new Padding(0);
-            labelStan.Name = "labelStan";
-            labelStan.Size = new Size(143, 51);
-            labelStan.TabIndex = 3;
-            labelStan.Text = "Nr. indeksu";
-            labelStan.TextAlign = ContentAlignment.MiddleCenter;
+            labelInd.BackColor = Color.Gray;
+            labelInd.BorderStyle = BorderStyle.FixedSingle;
+            labelInd.Dock = DockStyle.Left;
+            labelInd.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            labelInd.Location = new Point(316, 0);
+            labelInd.Margin = new Padding(0);
+            labelInd.Name = "labelInd";
+            labelInd.Size = new Size(143, 51);
+            labelInd.TabIndex = 3;
+            labelInd.Text = "Nr. indeksu";
+            labelInd.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelNazw
             // 
@@ -192,7 +192,6 @@
             labelId.Name = "labelId";
             labelId.Size = new Size(57, 51);
             labelId.TabIndex = 0;
-            labelId.Text = "ID";
             labelId.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelObsluga
@@ -236,10 +235,10 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.Silver;
-            tabPage4.Location = new Point(4, 5);
+            tabPage4.Location = new Point(4, 14);
             tabPage4.Margin = new Padding(0);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(789, 100);
+            tabPage4.Size = new Size(789, 91);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             // 
@@ -253,10 +252,10 @@
             tabPage1.Controls.Add(textBoxIndeks);
             tabPage1.Controls.Add(textBoxNazw);
             tabPage1.Controls.Add(textBoxImie);
-            tabPage1.Location = new Point(4, 5);
+            tabPage1.Location = new Point(4, 14);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(789, 100);
+            tabPage1.Size = new Size(789, 91);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
@@ -359,10 +358,10 @@
             // 
             tabPage2.BackColor = Color.Silver;
             tabPage2.Controls.Add(usun);
-            tabPage2.Location = new Point(4, 5);
+            tabPage2.Location = new Point(4, 14);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(789, 100);
+            tabPage2.Size = new Size(789, 91);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
@@ -453,7 +452,7 @@
             comboBoxMod.Anchor = AnchorStyles.None;
             comboBoxMod.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxMod.FormattingEnabled = true;
-            comboBoxMod.Items.AddRange(new object[] { "Imię", "Nazwisko", "Nr. Indeksu", "Semestr", "Kierunek", "Adres e-mail" });
+            comboBoxMod.Items.AddRange(new object[] { "Imię", "Nazwisko", "Nr. Indeksu", "Semestr", "Kierunek", "Wydział" });
             comboBoxMod.Location = new Point(258, 30);
             comboBoxMod.Margin = new Padding(20, 3, 3, 3);
             comboBoxMod.Name = "comboBoxMod";
@@ -584,8 +583,8 @@
         private FlowLayoutPanel flowLayoutPanelDane;
         private Panel panelNaglowki;
         private Label labelKierunek;
-        private Label labelTel;
-        private Label labelStan;
+        private Label labelSem;
+        private Label labelInd;
         private Label labelNazw;
         private Label labelImie;
         private Label labelId;

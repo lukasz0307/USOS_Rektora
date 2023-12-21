@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,7 +45,7 @@ namespace USOS_Rektora.userControls
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                daneWiersz wiersz = new daneWiersz();
+                daneWierszStud wiersz = new daneWierszStud();
                 staticId = (int)reader["id"];
                 staticImie = (string)reader["name"];
                 staticNazwisko = (string)reader["surname"];
@@ -94,23 +95,19 @@ namespace USOS_Rektora.userControls
         }
         //obsługa przycisku dodającego dane do bazy danych 
         private void Dodaj_Click(object sender, EventArgs e)
-        {/*
-            int aktualneId;
-            string query = "SELECT max(id) FROM students";
-            string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-            MySqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = query;
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                aktualneId = (int)reader["id"];
-            }
-            conn.Close();
-            */
-            //sprawdzanie czy uzytkoonik wypełnił wszystkie pola
-            if (textBoxImie.Text != "" && textBoxNazw.Text != "" && textBoxIndeks.Text != "" && comboBoxSem.SelectedItem.ToString() != "" && comboBoxKier.SelectedItem.ToString() != "" && comboBoxWydz.SelectedItem.ToString() != "")
+        {
+            
+            //wyrazenie regularne sprawdzające poprawnosci dodawanego imienia i nazwiska
+            string wzorImieNazwisko = @"^[A-Z]{1}\w+$";
+            Regex regexImieNazwisko = new Regex(wzorImieNazwisko);
+            Match matchImie = regexImieNazwisko.Match(textBoxImie.Text);
+            Match matchNazwisko = regexImieNazwisko.Match(textBoxNazw.Text);
+            //wyrazenie regularne sprawdzające poprawnosci dodawanego imdeksu
+            string wzorIndeks = @"^\d{5}$";
+            Regex regexIndeks = new Regex(wzorIndeks);
+            Match matchIndeks = regexIndeks.Match(textBoxIndeks.Text);
+            //sprawdzanie czy uzytkoonik wypełnił wszystkie pola zgodnie z wyrazeniami regularnymi
+            if (matchImie.Success && matchNazwisko.Success && matchIndeks.Success && comboBoxSem.SelectedIndex != -1 && comboBoxKier.SelectedIndex != -1 && comboBoxWydz.SelectedIndex != -1)
             {
                 string queryInsert = "INSERT INTO `students` (`id`, `name`, `surname`, `nrIndex`, `term`, `specialization`, `department`) VALUES (NULL, @name, @surname, @nrIndeks, @term, @specialization, @department);";
                 MySqlConnection conn1 = new MySqlConnection(connectionString);
@@ -173,7 +170,7 @@ namespace USOS_Rektora.userControls
         private void Modyfikuj_Click(object sender, EventArgs e)
         {
             //sprawdzanie czy użytkownik zaznaczy rekord do modyfikacji
-            if (daneWiersz.id != 0)
+            if (daneWierszStud.id != 0)
             {
                 switch (coModyfikować)
                 {
@@ -192,7 +189,7 @@ namespace USOS_Rektora.userControls
                     case "Kierunek":
                         queryUpdate = "UPDATE students SET specialization = @newvalue WHERE id= @id";
                         break;
-                    case "Adres e - mail":
+                    case "Wydział":
                         queryUpdate = "UPDATE students SET department = @newvalue WHERE id= @id";
                         break;
                 }
@@ -207,18 +204,18 @@ namespace USOS_Rektora.userControls
                         MySqlCommand cmd = conn.CreateCommand();
                         cmd.CommandText = queryUpdate;
                         cmd.Parameters.AddWithValue("@newvalue", textBoxNowaWart.Text);
-                        cmd.Parameters.AddWithValue("@id", daneWiersz.id);
+                        cmd.Parameters.AddWithValue("@id", daneWierszStud.id);
                         int result = cmd.ExecuteNonQuery();
                         //sprawdzanie czy update się wykonał
                         if (result == 1)
                         {
-                            MessageBox.Show("Pomyślnie Zmodyfikowano rekord o id " + daneWiersz.id);
+                            MessageBox.Show("Pomyślnie Zmodyfikowano rekord o id " + daneWierszStud.id);
                             WyswDane();
                             conn.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Błąd przy modyfikowaniu rekordu o id " + daneWiersz.id);
+                            MessageBox.Show("Błąd przy modyfikowaniu rekordu o id " + daneWierszStud.id);
                         }
                     }
                     else
@@ -236,7 +233,8 @@ namespace USOS_Rektora.userControls
                 MessageBox.Show("Zaznacz rekord który chcesz zmodyfikować");
             }
         }
-        //odblokowanie textboxa z nową wartością do modyfikacji i przekazanie co zmodyfikowac wybranej z comboboxa 
+        //odblokowanie textboxa z nową wartością do modyfikacji
+        //i przekazanie co zmodyfikowac wybranej z comboboxa 
         private void comboBoxMod_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxNowaWart.Enabled = true;
@@ -246,7 +244,7 @@ namespace USOS_Rektora.userControls
         private void usun_Click(object sender, EventArgs e)
         {
             //sprawdzanie czy użytkownik zaznaczy rekord do modyfikacji
-            if (daneWiersz.id != 0)
+            if (daneWierszStud.id != 0)
             {
                 //sprawdzanie czy uzytkoonik wypełnił pole z nową wartością
                 string queryDelete = "DELETE FROM students WHERE id = @id";
@@ -254,20 +252,19 @@ namespace USOS_Rektora.userControls
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = queryDelete;
-                cmd.Parameters.AddWithValue("@id", daneWiersz.id);
+                cmd.Parameters.AddWithValue("@id", daneWierszStud.id);
                 int result = cmd.ExecuteNonQuery();
                 //sprawdzanie czy update się wykonał
                 if (result == 1)
                 {
-                    MessageBox.Show("Pomyślnie usunnięto rekord o id " + daneWiersz.id);
+                    MessageBox.Show("Pomyślnie usunnięto rekord o id " + daneWierszStud.id);
                     WyswDane();
                     conn.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Błąd przy usuwaniu rekordu o id " + daneWiersz.id);
+                    MessageBox.Show("Błąd przy usuwaniu rekordu o id " + daneWierszStud.id);
                 }
-
             }
         }
     }

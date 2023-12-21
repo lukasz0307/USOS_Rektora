@@ -29,89 +29,67 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panelDane = new Panel();
-            panel4 = new Panel();
+            timerMenu = new System.Windows.Forms.Timer(components);
+            panelNaglowki = new Panel();
             labelMail = new Label();
             labelTel = new Label();
             labelStan = new Label();
             labelNazw = new Label();
             labelImie = new Label();
             labelId = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panelFiltrowanie = new Panel();
-            tabControlZarzadz = new TabControl();
-            tabPage1 = new TabPage();
-            panelChowaj = new Panel();
-            buttonSzukaj = new Button();
-            filtr2 = new ComboBox();
-            baner = new Label();
-            textBoxFiltr = new TextBox();
-            filtr1 = new ComboBox();
-            tabPage2 = new TabPage();
-            buttonDodaj = new Button();
-            textBoxMail = new TextBox();
-            textBoxNr = new TextBox();
-            textBoxStan = new TextBox();
-            textBoxNazwisko = new TextBox();
-            textBoxImie = new TextBox();
-            tabPage3 = new TabPage();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            buttonUsun = new Button();
-            textBoxUsun = new TextBox();
-            filtr2Usun = new ComboBox();
-            filtr1Usun = new ComboBox();
-            label9 = new Label();
-            tabPage4 = new TabPage();
-            iconButtonRozwijanie = new FontAwesome.Sharp.IconButton();
+            flowLayoutPanelDane = new FlowLayoutPanel();
+            panelObsluga = new Panel();
             panel1 = new Panel();
-            timerMenu = new System.Windows.Forms.Timer(components);
+            tabControlZarz = new TabControl();
+            tabPage4 = new TabPage();
+            tabPage1 = new TabPage();
+            textBoxmail = new TextBox();
+            textBoxStan = new TextBox();
+            Dodaj = new FontAwesome.Sharp.IconButton();
+            textboxNr = new TextBox();
+            textBoxNazw = new TextBox();
+            textBoxImie = new TextBox();
+            tabPage2 = new TabPage();
+            usun = new FontAwesome.Sharp.IconButton();
+            tabPage3 = new TabPage();
+            Modyfikuj = new FontAwesome.Sharp.IconButton();
+            textBoxNowaWart = new TextBox();
             label1 = new Label();
-            coMody = new ComboBox();
-            label2 = new Label();
-            dlaMod = new ComboBox();
-            label3 = new Label();
-            filtrMod = new TextBox();
-            panelDane.SuspendLayout();
-            panel4.SuspendLayout();
-            panelFiltrowanie.SuspendLayout();
-            tabControlZarzadz.SuspendLayout();
+            comboBoxMod = new ComboBox();
+            panel2 = new Panel();
+            iconButtonMod = new FontAwesome.Sharp.IconButton();
+            iconButtonUsun = new FontAwesome.Sharp.IconButton();
+            iconButtonDodaj = new FontAwesome.Sharp.IconButton();
+            iconButtonZwin = new FontAwesome.Sharp.IconButton();
+            panelNaglowki.SuspendLayout();
+            panelObsluga.SuspendLayout();
+            panel1.SuspendLayout();
+            tabControlZarz.SuspendLayout();
             tabPage1.SuspendLayout();
-            panelChowaj.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            tabPage4.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // panelDane
+            // timerMenu
             // 
-            panelDane.AutoSize = true;
-            panelDane.BackColor = Color.FromArgb(224, 224, 224);
-            panelDane.Controls.Add(panel4);
-            panelDane.Controls.Add(flowLayoutPanel1);
-            panelDane.Dock = DockStyle.Fill;
-            panelDane.Location = new Point(0, 0);
-            panelDane.Margin = new Padding(3, 2, 3, 2);
-            panelDane.Name = "panelDane";
-            panelDane.Size = new Size(596, 362);
-            panelDane.TabIndex = 1;
+            timerMenu.Interval = 10;
             // 
-            // panel4
+            // panelNaglowki
             // 
-            panel4.Controls.Add(labelMail);
-            panel4.Controls.Add(labelTel);
-            panel4.Controls.Add(labelStan);
-            panel4.Controls.Add(labelNazw);
-            panel4.Controls.Add(labelImie);
-            panel4.Controls.Add(labelId);
-            panel4.Location = new Point(0, 0);
-            panel4.Margin = new Padding(0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(596, 38);
-            panel4.TabIndex = 1;
+            panelNaglowki.BackColor = Color.Gray;
+            panelNaglowki.Controls.Add(labelMail);
+            panelNaglowki.Controls.Add(labelTel);
+            panelNaglowki.Controls.Add(labelStan);
+            panelNaglowki.Controls.Add(labelNazw);
+            panelNaglowki.Controls.Add(labelImie);
+            panelNaglowki.Controls.Add(labelId);
+            panelNaglowki.Dock = DockStyle.Top;
+            panelNaglowki.Location = new Point(0, 0);
+            panelNaglowki.Margin = new Padding(0);
+            panelNaglowki.Name = "panelNaglowki";
+            panelNaglowki.Size = new Size(896, 51);
+            panelNaglowki.TabIndex = 3;
             // 
             // labelMail
             // 
@@ -119,10 +97,10 @@
             labelMail.BorderStyle = BorderStyle.FixedSingle;
             labelMail.Dock = DockStyle.Left;
             labelMail.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMail.Location = new Point(453, 0);
+            labelMail.Location = new Point(712, 0);
             labelMail.Margin = new Padding(0);
             labelMail.Name = "labelMail";
-            labelMail.Size = new Size(143, 38);
+            labelMail.Size = new Size(185, 51);
             labelMail.TabIndex = 5;
             labelMail.Text = "Adres e-mail";
             labelMail.TextAlign = ContentAlignment.MiddleCenter;
@@ -133,12 +111,12 @@
             labelTel.BorderStyle = BorderStyle.FixedSingle;
             labelTel.Dock = DockStyle.Left;
             labelTel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTel.Location = new Point(328, 0);
+            labelTel.Location = new Point(529, 0);
             labelTel.Margin = new Padding(0);
             labelTel.Name = "labelTel";
-            labelTel.Size = new Size(125, 38);
+            labelTel.Size = new Size(183, 51);
             labelTel.TabIndex = 4;
-            labelTel.Text = "Nr. tel.";
+            labelTel.Text = "Numer telefonu";
             labelTel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelStan
@@ -147,10 +125,10 @@
             labelStan.BorderStyle = BorderStyle.FixedSingle;
             labelStan.Dock = DockStyle.Left;
             labelStan.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelStan.Location = new Point(223, 0);
+            labelStan.Location = new Point(357, 0);
             labelStan.Margin = new Padding(0);
             labelStan.Name = "labelStan";
-            labelStan.Size = new Size(105, 38);
+            labelStan.Size = new Size(172, 51);
             labelStan.TabIndex = 3;
             labelStan.Text = "Stanowisko";
             labelStan.TextAlign = ContentAlignment.MiddleCenter;
@@ -161,10 +139,10 @@
             labelNazw.BorderStyle = BorderStyle.FixedSingle;
             labelNazw.Dock = DockStyle.Left;
             labelNazw.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNazw.Location = new Point(119, 0);
+            labelNazw.Location = new Point(204, 0);
             labelNazw.Margin = new Padding(0);
             labelNazw.Name = "labelNazw";
-            labelNazw.Size = new Size(104, 38);
+            labelNazw.Size = new Size(153, 51);
             labelNazw.TabIndex = 2;
             labelNazw.Text = "Nazwisko";
             labelNazw.TextAlign = ContentAlignment.MiddleCenter;
@@ -175,10 +153,10 @@
             labelImie.BorderStyle = BorderStyle.FixedSingle;
             labelImie.Dock = DockStyle.Left;
             labelImie.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelImie.Location = new Point(33, 0);
+            labelImie.Location = new Point(57, 0);
             labelImie.Margin = new Padding(0);
             labelImie.Name = "labelImie";
-            labelImie.Size = new Size(86, 38);
+            labelImie.Size = new Size(147, 51);
             labelImie.TabIndex = 1;
             labelImie.Text = "Imię";
             labelImie.TextAlign = ContentAlignment.MiddleCenter;
@@ -192,483 +170,420 @@
             labelId.Location = new Point(0, 0);
             labelId.Margin = new Padding(0);
             labelId.Name = "labelId";
-            labelId.Size = new Size(33, 38);
+            labelId.Size = new Size(57, 51);
             labelId.TabIndex = 0;
-            labelId.Text = "ID";
             labelId.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelDane
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(0, 38);
-            flowLayoutPanel1.Margin = new Padding(0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(596, 324);
-            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanelDane.AutoScroll = true;
+            flowLayoutPanelDane.Location = new Point(0, 52);
+            flowLayoutPanelDane.Margin = new Padding(0);
+            flowLayoutPanelDane.Name = "flowLayoutPanelDane";
+            flowLayoutPanelDane.Size = new Size(923, 277);
+            flowLayoutPanelDane.TabIndex = 4;
             // 
-            // panelFiltrowanie
+            // panelObsluga
             // 
-            panelFiltrowanie.BackColor = Color.Gray;
-            panelFiltrowanie.Controls.Add(tabControlZarzadz);
-            panelFiltrowanie.Controls.Add(iconButtonRozwijanie);
-            panelFiltrowanie.Dock = DockStyle.Left;
-            panelFiltrowanie.Location = new Point(0, 0);
-            panelFiltrowanie.Margin = new Padding(0);
-            panelFiltrowanie.Name = "panelFiltrowanie";
-            panelFiltrowanie.Size = new Size(188, 362);
-            panelFiltrowanie.TabIndex = 2;
-            // 
-            // tabControlZarzadz
-            // 
-            tabControlZarzadz.Controls.Add(tabPage1);
-            tabControlZarzadz.Controls.Add(tabPage2);
-            tabControlZarzadz.Controls.Add(tabPage3);
-            tabControlZarzadz.Controls.Add(tabPage4);
-            tabControlZarzadz.Dock = DockStyle.Fill;
-            tabControlZarzadz.Location = new Point(0, 38);
-            tabControlZarzadz.Margin = new Padding(0);
-            tabControlZarzadz.Name = "tabControlZarzadz";
-            tabControlZarzadz.SelectedIndex = 0;
-            tabControlZarzadz.Size = new Size(188, 324);
-            tabControlZarzadz.TabIndex = 5;
-            // 
-            // tabPage1
-            // 
-            tabPage1.Controls.Add(panelChowaj);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Margin = new Padding(3, 2, 3, 2);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 2, 3, 2);
-            tabPage1.Size = new Size(180, 296);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Filtrowanie";
-            tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panelChowaj
-            // 
-            panelChowaj.BackColor = Color.Gray;
-            panelChowaj.Controls.Add(buttonSzukaj);
-            panelChowaj.Controls.Add(filtr2);
-            panelChowaj.Controls.Add(baner);
-            panelChowaj.Controls.Add(textBoxFiltr);
-            panelChowaj.Controls.Add(filtr1);
-            panelChowaj.Dock = DockStyle.Fill;
-            panelChowaj.Location = new Point(3, 2);
-            panelChowaj.Margin = new Padding(0);
-            panelChowaj.Name = "panelChowaj";
-            panelChowaj.Size = new Size(174, 292);
-            panelChowaj.TabIndex = 9;
-            // 
-            // buttonSzukaj
-            // 
-            buttonSzukaj.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSzukaj.Location = new Point(0, 156);
-            buttonSzukaj.Margin = new Padding(3, 2, 3, 2);
-            buttonSzukaj.Name = "buttonSzukaj";
-            buttonSzukaj.Size = new Size(176, 31);
-            buttonSzukaj.TabIndex = 7;
-            buttonSzukaj.Text = "Szukaj";
-            buttonSzukaj.TextAlign = ContentAlignment.TopCenter;
-            buttonSzukaj.UseVisualStyleBackColor = true;
-            // 
-            // filtr2
-            // 
-            filtr2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            filtr2.FormattingEnabled = true;
-            filtr2.Items.AddRange(new object[] { "równego", "zaczynającego się na" });
-            filtr2.Location = new Point(0, 68);
-            filtr2.Margin = new Padding(3, 2, 3, 2);
-            filtr2.Name = "filtr2";
-            filtr2.Size = new Size(177, 29);
-            filtr2.TabIndex = 5;
-            // 
-            // baner
-            // 
-            baner.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            baner.ForeColor = Color.White;
-            baner.Location = new Point(0, 0);
-            baner.Name = "baner";
-            baner.Size = new Size(167, 22);
-            baner.TabIndex = 3;
-            baner.Text = "Dla";
-            baner.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // textBoxFiltr
-            // 
-            textBoxFiltr.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxFiltr.Location = new Point(-3, 113);
-            textBoxFiltr.Margin = new Padding(3, 2, 3, 2);
-            textBoxFiltr.Name = "textBoxFiltr";
-            textBoxFiltr.Size = new Size(179, 29);
-            textBoxFiltr.TabIndex = 6;
-            // 
-            // filtr1
-            // 
-            filtr1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            filtr1.FormattingEnabled = true;
-            filtr1.Items.AddRange(new object[] { "imiona", "nazwiska", "stanowiska", "adresu" });
-            filtr1.Location = new Point(0, 25);
-            filtr1.Margin = new Padding(3, 2, 3, 2);
-            filtr1.Name = "filtr1";
-            filtr1.Size = new Size(177, 29);
-            filtr1.TabIndex = 2;
-            // 
-            // tabPage2
-            // 
-            tabPage2.BackColor = Color.Gray;
-            tabPage2.Controls.Add(buttonDodaj);
-            tabPage2.Controls.Add(textBoxMail);
-            tabPage2.Controls.Add(textBoxNr);
-            tabPage2.Controls.Add(textBoxStan);
-            tabPage2.Controls.Add(textBoxNazwisko);
-            tabPage2.Controls.Add(textBoxImie);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Margin = new Padding(0);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(180, 296);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Dodaj";
-            // 
-            // buttonDodaj
-            // 
-            buttonDodaj.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonDodaj.Location = new Point(-1, 267);
-            buttonDodaj.Margin = new Padding(3, 2, 3, 2);
-            buttonDodaj.Name = "buttonDodaj";
-            buttonDodaj.Size = new Size(184, 29);
-            buttonDodaj.TabIndex = 7;
-            buttonDodaj.Text = "Dodaj";
-            buttonDodaj.UseVisualStyleBackColor = true;
-            buttonDodaj.Click += buttonDodaj_Click;
-            // 
-            // textBoxMail
-            // 
-            textBoxMail.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxMail.Location = new Point(0, 189);
-            textBoxMail.Margin = new Padding(0, 15, 0, 0);
-            textBoxMail.Name = "textBoxMail";
-            textBoxMail.PlaceholderText = "Adres e-mail";
-            textBoxMail.Size = new Size(179, 27);
-            textBoxMail.TabIndex = 6;
-            // 
-            // textBoxNr
-            // 
-            textBoxNr.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNr.Location = new Point(0, 147);
-            textBoxNr.Margin = new Padding(0, 15, 0, 0);
-            textBoxNr.Name = "textBoxNr";
-            textBoxNr.PlaceholderText = "Nr. telefonu";
-            textBoxNr.Size = new Size(180, 27);
-            textBoxNr.TabIndex = 5;
-            // 
-            // textBoxStan
-            // 
-            textBoxStan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxStan.Location = new Point(0, 105);
-            textBoxStan.Margin = new Padding(0, 15, 0, 0);
-            textBoxStan.Name = "textBoxStan";
-            textBoxStan.PlaceholderText = "Stanowisko";
-            textBoxStan.Size = new Size(179, 27);
-            textBoxStan.TabIndex = 2;
-            // 
-            // textBoxNazwisko
-            // 
-            textBoxNazwisko.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNazwisko.Location = new Point(0, 63);
-            textBoxNazwisko.Margin = new Padding(0, 15, 0, 0);
-            textBoxNazwisko.Name = "textBoxNazwisko";
-            textBoxNazwisko.PlaceholderText = "Nazwisko";
-            textBoxNazwisko.Size = new Size(179, 27);
-            textBoxNazwisko.TabIndex = 1;
-            // 
-            // textBoxImie
-            // 
-            textBoxImie.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxImie.Location = new Point(0, 21);
-            textBoxImie.Margin = new Padding(0);
-            textBoxImie.Name = "textBoxImie";
-            textBoxImie.PlaceholderText = "Imię";
-            textBoxImie.Size = new Size(179, 27);
-            textBoxImie.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            tabPage3.Controls.Add(panel2);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Margin = new Padding(3, 2, 3, 2);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(180, 296);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Usuń";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(180, 296);
-            panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Gray;
-            panel3.Controls.Add(buttonUsun);
-            panel3.Controls.Add(textBoxUsun);
-            panel3.Controls.Add(filtr2Usun);
-            panel3.Controls.Add(filtr1Usun);
-            panel3.Controls.Add(label9);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(3, 2, 3, 2);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(180, 296);
-            panel3.TabIndex = 0;
-            // 
-            // buttonUsun
-            // 
-            buttonUsun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonUsun.Location = new Point(4, 143);
-            buttonUsun.Margin = new Padding(3, 2, 3, 2);
-            buttonUsun.Name = "buttonUsun";
-            buttonUsun.Size = new Size(175, 27);
-            buttonUsun.TabIndex = 8;
-            buttonUsun.Text = "Usuń";
-            buttonUsun.UseVisualStyleBackColor = true;
-            buttonUsun.Click += buttonUsun_Click;
-            // 
-            // textBoxUsun
-            // 
-            textBoxUsun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxUsun.Location = new Point(4, 105);
-            textBoxUsun.Margin = new Padding(3, 2, 3, 2);
-            textBoxUsun.Name = "textBoxUsun";
-            textBoxUsun.Size = new Size(176, 27);
-            textBoxUsun.TabIndex = 7;
-            // 
-            // filtr2Usun
-            // 
-            filtr2Usun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            filtr2Usun.FormattingEnabled = true;
-            filtr2Usun.Items.AddRange(new object[] { "równym", "zaczynającym się na" });
-            filtr2Usun.Location = new Point(3, 64);
-            filtr2Usun.Margin = new Padding(3, 2, 3, 2);
-            filtr2Usun.Name = "filtr2Usun";
-            filtr2Usun.Size = new Size(176, 27);
-            filtr2Usun.TabIndex = 6;
-            // 
-            // filtr1Usun
-            // 
-            filtr1Usun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            filtr1Usun.FormattingEnabled = true;
-            filtr1Usun.Items.AddRange(new object[] { "ID", "Imieniu", "Nazwisku", "Stanowisku" });
-            filtr1Usun.Location = new Point(3, 25);
-            filtr1Usun.Margin = new Padding(3, 2, 3, 2);
-            filtr1Usun.Name = "filtr1Usun";
-            filtr1Usun.Size = new Size(176, 27);
-            filtr1Usun.TabIndex = 5;
-            // 
-            // label9
-            // 
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(3, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(177, 22);
-            label9.TabIndex = 4;
-            label9.Text = "Usuń członka kadry o";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // tabPage4
-            // 
-            tabPage4.BackColor = Color.Gray;
-            tabPage4.Controls.Add(filtrMod);
-            tabPage4.Controls.Add(label3);
-            tabPage4.Controls.Add(dlaMod);
-            tabPage4.Controls.Add(label2);
-            tabPage4.Controls.Add(coMody);
-            tabPage4.Controls.Add(label1);
-            tabPage4.Location = new Point(4, 24);
-            tabPage4.Margin = new Padding(3, 2, 3, 2);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3, 2, 3, 2);
-            tabPage4.Size = new Size(180, 296);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Modyfikuj";
-            // 
-            // iconButtonRozwijanie
-            // 
-            iconButtonRozwijanie.BackColor = Color.Gray;
-            iconButtonRozwijanie.Dock = DockStyle.Top;
-            iconButtonRozwijanie.FlatStyle = FlatStyle.Flat;
-            iconButtonRozwijanie.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButtonRozwijanie.ForeColor = Color.White;
-            iconButtonRozwijanie.IconChar = FontAwesome.Sharp.IconChar.CircleArrowRight;
-            iconButtonRozwijanie.IconColor = Color.White;
-            iconButtonRozwijanie.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonRozwijanie.IconSize = 40;
-            iconButtonRozwijanie.ImageAlign = ContentAlignment.MiddleRight;
-            iconButtonRozwijanie.Location = new Point(0, 0);
-            iconButtonRozwijanie.Margin = new Padding(3, 2, 3, 2);
-            iconButtonRozwijanie.Name = "iconButtonRozwijanie";
-            iconButtonRozwijanie.Rotation = 180D;
-            iconButtonRozwijanie.Size = new Size(188, 38);
-            iconButtonRozwijanie.TabIndex = 4;
-            iconButtonRozwijanie.TextAlign = ContentAlignment.MiddleLeft;
-            iconButtonRozwijanie.UseVisualStyleBackColor = false;
-            iconButtonRozwijanie.Click += iconButtonRozwijanie_Click;
+            panelObsluga.Controls.Add(panel1);
+            panelObsluga.Controls.Add(iconButtonZwin);
+            panelObsluga.Dock = DockStyle.Bottom;
+            panelObsluga.Location = new Point(0, 330);
+            panelObsluga.Margin = new Padding(0);
+            panelObsluga.Name = "panelObsluga";
+            panelObsluga.Size = new Size(896, 153);
+            panelObsluga.TabIndex = 5;
             // 
             // panel1
             // 
-            panel1.Controls.Add(panelDane);
+            panel1.Controls.Add(tabControlZarz);
+            panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(188, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(0, 44);
             panel1.Name = "panel1";
-            panel1.Size = new Size(596, 362);
+            panel1.Size = new Size(896, 109);
             panel1.TabIndex = 3;
             // 
-            // timerMenu
+            // tabControlZarz
             // 
-            timerMenu.Interval = 10;
+            tabControlZarz.Controls.Add(tabPage4);
+            tabControlZarz.Controls.Add(tabPage1);
+            tabControlZarz.Controls.Add(tabPage2);
+            tabControlZarz.Controls.Add(tabPage3);
+            tabControlZarz.Dock = DockStyle.Fill;
+            tabControlZarz.ItemSize = new Size(10, 10);
+            tabControlZarz.Location = new Point(99, 0);
+            tabControlZarz.Margin = new Padding(0);
+            tabControlZarz.Name = "tabControlZarz";
+            tabControlZarz.Padding = new Point(0, 0);
+            tabControlZarz.SelectedIndex = 0;
+            tabControlZarz.Size = new Size(797, 109);
+            tabControlZarz.SizeMode = TabSizeMode.Fixed;
+            tabControlZarz.TabIndex = 3;
+            // 
+            // tabPage4
+            // 
+            tabPage4.BackColor = Color.Silver;
+            tabPage4.Location = new Point(4, 14);
+            tabPage4.Margin = new Padding(0);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(789, 91);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "tabPage4";
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.Silver;
+            tabPage1.Controls.Add(textBoxmail);
+            tabPage1.Controls.Add(textBoxStan);
+            tabPage1.Controls.Add(Dodaj);
+            tabPage1.Controls.Add(textboxNr);
+            tabPage1.Controls.Add(textBoxNazw);
+            tabPage1.Controls.Add(textBoxImie);
+            tabPage1.Location = new Point(4, 14);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(789, 91);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            // 
+            // textBoxmail
+            // 
+            textBoxmail.Anchor = AnchorStyles.None;
+            textBoxmail.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxmail.Location = new Point(595, 5);
+            textBoxmail.Margin = new Padding(5, 3, 3, 3);
+            textBoxmail.Name = "textBoxmail";
+            textBoxmail.PlaceholderText = "Adres e-mail";
+            textBoxmail.Size = new Size(123, 31);
+            textBoxmail.TabIndex = 8;
+            // 
+            // textBoxStan
+            // 
+            textBoxStan.Anchor = AnchorStyles.None;
+            textBoxStan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxStan.Location = new Point(325, 5);
+            textBoxStan.Margin = new Padding(5, 3, 3, 3);
+            textBoxStan.Name = "textBoxStan";
+            textBoxStan.PlaceholderText = "Stanowisko";
+            textBoxStan.Size = new Size(123, 31);
+            textBoxStan.TabIndex = 7;
+            // 
+            // Dodaj
+            // 
+            Dodaj.Anchor = AnchorStyles.None;
+            Dodaj.BackColor = Color.FromArgb(192, 255, 192);
+            Dodaj.FlatStyle = FlatStyle.Flat;
+            Dodaj.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            Dodaj.ForeColor = Color.FromArgb(0, 192, 0);
+            Dodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            Dodaj.IconColor = Color.FromArgb(0, 192, 0);
+            Dodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            Dodaj.IconSize = 30;
+            Dodaj.ImageAlign = ContentAlignment.MiddleRight;
+            Dodaj.Location = new Point(299, 52);
+            Dodaj.Margin = new Padding(0);
+            Dodaj.Name = "Dodaj";
+            Dodaj.Size = new Size(99, 36);
+            Dodaj.TabIndex = 6;
+            Dodaj.Text = "Dodaj";
+            Dodaj.TextAlign = ContentAlignment.MiddleLeft;
+            Dodaj.UseVisualStyleBackColor = false;
+            Dodaj.Click += Dodaj_Click;
+            // 
+            // textboxNr
+            // 
+            textboxNr.Anchor = AnchorStyles.None;
+            textboxNr.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textboxNr.Location = new Point(455, 5);
+            textboxNr.Margin = new Padding(5, 3, 3, 3);
+            textboxNr.Name = "textboxNr";
+            textboxNr.PlaceholderText = "Numer telefonu";
+            textboxNr.Size = new Size(132, 31);
+            textboxNr.TabIndex = 2;
+            // 
+            // textBoxNazw
+            // 
+            textBoxNazw.Anchor = AnchorStyles.None;
+            textBoxNazw.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNazw.Location = new Point(193, 5);
+            textBoxNazw.Margin = new Padding(5, 3, 3, 3);
+            textBoxNazw.Name = "textBoxNazw";
+            textBoxNazw.PlaceholderText = "Nazwisko";
+            textBoxNazw.Size = new Size(123, 31);
+            textBoxNazw.TabIndex = 1;
+            // 
+            // textBoxImie
+            // 
+            textBoxImie.Anchor = AnchorStyles.None;
+            textBoxImie.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxImie.Location = new Point(62, 5);
+            textBoxImie.Margin = new Padding(5, 3, 3, 3);
+            textBoxImie.Name = "textBoxImie";
+            textBoxImie.PlaceholderText = "Imię";
+            textBoxImie.Size = new Size(123, 31);
+            textBoxImie.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(usun);
+            tabPage2.Location = new Point(4, 14);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(789, 91);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            // 
+            // usun
+            // 
+            usun.Anchor = AnchorStyles.None;
+            usun.BackColor = Color.FromArgb(255, 128, 128);
+            usun.FlatStyle = FlatStyle.Flat;
+            usun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            usun.ForeColor = Color.Red;
+            usun.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            usun.IconColor = Color.Red;
+            usun.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            usun.IconSize = 30;
+            usun.ImageAlign = ContentAlignment.MiddleRight;
+            usun.Location = new Point(299, 21);
+            usun.Margin = new Padding(0);
+            usun.Name = "usun";
+            usun.Size = new Size(99, 36);
+            usun.TabIndex = 2;
+            usun.Text = "Usuń";
+            usun.TextAlign = ContentAlignment.MiddleLeft;
+            usun.UseVisualStyleBackColor = false;
+            usun.Click += usun_Click;
+            // 
+            // tabPage3
+            // 
+            tabPage3.BackColor = Color.Silver;
+            tabPage3.Controls.Add(Modyfikuj);
+            tabPage3.Controls.Add(textBoxNowaWart);
+            tabPage3.Controls.Add(label1);
+            tabPage3.Controls.Add(comboBoxMod);
+            tabPage3.Location = new Point(4, 14);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(789, 91);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "tabPage3";
+            // 
+            // Modyfikuj
+            // 
+            Modyfikuj.Anchor = AnchorStyles.None;
+            Modyfikuj.BackColor = Color.LightSkyBlue;
+            Modyfikuj.FlatStyle = FlatStyle.Flat;
+            Modyfikuj.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            Modyfikuj.ForeColor = Color.MidnightBlue;
+            Modyfikuj.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            Modyfikuj.IconColor = Color.MidnightBlue;
+            Modyfikuj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            Modyfikuj.IconSize = 30;
+            Modyfikuj.ImageAlign = ContentAlignment.MiddleRight;
+            Modyfikuj.Location = new Point(600, 27);
+            Modyfikuj.Margin = new Padding(0);
+            Modyfikuj.Name = "Modyfikuj";
+            Modyfikuj.Size = new Size(130, 35);
+            Modyfikuj.TabIndex = 3;
+            Modyfikuj.Text = "Modyfikuj";
+            Modyfikuj.TextAlign = ContentAlignment.MiddleLeft;
+            Modyfikuj.UseVisualStyleBackColor = false;
+            Modyfikuj.Click += Modyfikuj_Click;
+            // 
+            // textBoxNowaWart
+            // 
+            textBoxNowaWart.Anchor = AnchorStyles.None;
+            textBoxNowaWart.Enabled = false;
+            textBoxNowaWart.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNowaWart.Location = new Point(432, 29);
+            textBoxNowaWart.Margin = new Padding(21, 3, 3, 3);
+            textBoxNowaWart.Name = "textBoxNowaWart";
+            textBoxNowaWart.PlaceholderText = "Nowa wartość";
+            textBoxNowaWart.Size = new Size(151, 31);
+            textBoxNowaWart.TabIndex = 2;
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(1, 2);
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(23, 33);
+            label1.Margin = new Padding(21, 0, 3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(177, 22);
-            label1.TabIndex = 5;
-            label1.Text = "Modyfikuj";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Size = new Size(212, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Wybierz co modyfikować";
             // 
-            // coMody
+            // comboBoxMod
             // 
-            coMody.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            coMody.FormattingEnabled = true;
-            coMody.Items.AddRange(new object[] { "Imię", "Nazwisko", "Stanowisko", "Nr. tel.", "Adres e-mail" });
-            coMody.Location = new Point(6, 27);
-            coMody.Name = "coMody";
-            coMody.Size = new Size(168, 28);
-            coMody.TabIndex = 0;
+            comboBoxMod.Anchor = AnchorStyles.None;
+            comboBoxMod.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBoxMod.FormattingEnabled = true;
+            comboBoxMod.Items.AddRange(new object[] { "Imię", "Nazwisko", "Stanowisko", "Numer telefonu", "Adres e-mail" });
+            comboBoxMod.Location = new Point(258, 29);
+            comboBoxMod.Margin = new Padding(21, 3, 3, 3);
+            comboBoxMod.Name = "comboBoxMod";
+            comboBoxMod.Size = new Size(151, 33);
+            comboBoxMod.TabIndex = 0;
+            comboBoxMod.SelectedIndexChanged += comboBoxMod_SelectedIndexChanged;
             // 
-            // label2
+            // panel2
             // 
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(1, 58);
-            label2.Name = "label2";
-            label2.Size = new Size(177, 22);
-            label2.TabIndex = 6;
-            label2.Text = "dla rekordu o";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            panel2.Controls.Add(iconButtonMod);
+            panel2.Controls.Add(iconButtonUsun);
+            panel2.Controls.Add(iconButtonDodaj);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(99, 109);
+            panel2.TabIndex = 1;
             // 
-            // dlaMod
+            // iconButtonMod
             // 
-            dlaMod.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dlaMod.FormattingEnabled = true;
-            dlaMod.Items.AddRange(new object[] { "ID" });
-            dlaMod.Location = new Point(6, 83);
-            dlaMod.Name = "dlaMod";
-            dlaMod.Size = new Size(168, 28);
-            dlaMod.TabIndex = 7;
+            iconButtonMod.BackColor = Color.LightSkyBlue;
+            iconButtonMod.Dock = DockStyle.Top;
+            iconButtonMod.FlatStyle = FlatStyle.Flat;
+            iconButtonMod.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButtonMod.ForeColor = Color.MidnightBlue;
+            iconButtonMod.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            iconButtonMod.IconColor = Color.MidnightBlue;
+            iconButtonMod.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonMod.IconSize = 30;
+            iconButtonMod.ImageAlign = ContentAlignment.MiddleRight;
+            iconButtonMod.Location = new Point(0, 72);
+            iconButtonMod.Margin = new Padding(0);
+            iconButtonMod.Name = "iconButtonMod";
+            iconButtonMod.Size = new Size(99, 37);
+            iconButtonMod.TabIndex = 2;
+            iconButtonMod.Text = "Mod.";
+            iconButtonMod.TextAlign = ContentAlignment.MiddleLeft;
+            iconButtonMod.UseVisualStyleBackColor = false;
+            iconButtonMod.Click += iconButtonMod_Click;
             // 
-            // label3
+            // iconButtonUsun
             // 
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(1, 114);
-            label3.Name = "label3";
-            label3.Size = new Size(177, 22);
-            label3.TabIndex = 8;
-            label3.Text = "równym";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            iconButtonUsun.BackColor = Color.FromArgb(255, 128, 128);
+            iconButtonUsun.Dock = DockStyle.Top;
+            iconButtonUsun.FlatStyle = FlatStyle.Flat;
+            iconButtonUsun.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButtonUsun.ForeColor = Color.Red;
+            iconButtonUsun.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            iconButtonUsun.IconColor = Color.Red;
+            iconButtonUsun.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonUsun.IconSize = 30;
+            iconButtonUsun.ImageAlign = ContentAlignment.MiddleRight;
+            iconButtonUsun.Location = new Point(0, 36);
+            iconButtonUsun.Margin = new Padding(0);
+            iconButtonUsun.Name = "iconButtonUsun";
+            iconButtonUsun.Size = new Size(99, 36);
+            iconButtonUsun.TabIndex = 1;
+            iconButtonUsun.Text = "Usuń";
+            iconButtonUsun.TextAlign = ContentAlignment.MiddleLeft;
+            iconButtonUsun.UseVisualStyleBackColor = false;
+            iconButtonUsun.Click += iconButtonUsun_Click;
             // 
-            // filtrMod
+            // iconButtonDodaj
             // 
-            filtrMod.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            filtrMod.Location = new Point(6, 139);
-            filtrMod.Name = "filtrMod";
-            filtrMod.Size = new Size(168, 27);
-            filtrMod.TabIndex = 9;
+            iconButtonDodaj.BackColor = Color.FromArgb(192, 255, 192);
+            iconButtonDodaj.Dock = DockStyle.Top;
+            iconButtonDodaj.FlatStyle = FlatStyle.Flat;
+            iconButtonDodaj.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButtonDodaj.ForeColor = Color.FromArgb(0, 192, 0);
+            iconButtonDodaj.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            iconButtonDodaj.IconColor = Color.FromArgb(0, 192, 0);
+            iconButtonDodaj.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonDodaj.IconSize = 30;
+            iconButtonDodaj.ImageAlign = ContentAlignment.MiddleRight;
+            iconButtonDodaj.Location = new Point(0, 0);
+            iconButtonDodaj.Margin = new Padding(0);
+            iconButtonDodaj.Name = "iconButtonDodaj";
+            iconButtonDodaj.Size = new Size(99, 36);
+            iconButtonDodaj.TabIndex = 0;
+            iconButtonDodaj.Text = "Dodaj";
+            iconButtonDodaj.TextAlign = ContentAlignment.MiddleLeft;
+            iconButtonDodaj.UseVisualStyleBackColor = false;
+            iconButtonDodaj.Click += iconButtonDodaj_Click;
+            // 
+            // iconButtonZwin
+            // 
+            iconButtonZwin.BackColor = Color.Gray;
+            iconButtonZwin.Dock = DockStyle.Top;
+            iconButtonZwin.FlatStyle = FlatStyle.Flat;
+            iconButtonZwin.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleUp;
+            iconButtonZwin.IconColor = Color.White;
+            iconButtonZwin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButtonZwin.IconSize = 40;
+            iconButtonZwin.Location = new Point(0, 0);
+            iconButtonZwin.Margin = new Padding(0);
+            iconButtonZwin.Name = "iconButtonZwin";
+            iconButtonZwin.Size = new Size(896, 44);
+            iconButtonZwin.TabIndex = 2;
+            iconButtonZwin.UseVisualStyleBackColor = false;
+            iconButtonZwin.Click += iconButtonZwin_Click;
             // 
             // WyswDanychKadra
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
-            Controls.Add(panelFiltrowanie);
-            Margin = new Padding(3, 2, 3, 2);
+            Controls.Add(panelObsluga);
+            Controls.Add(flowLayoutPanelDane);
+            Controls.Add(panelNaglowki);
             Name = "WyswDanychKadra";
-            Size = new Size(784, 362);
+            Size = new Size(896, 483);
             Load += WyswDanych_Load;
-            panelDane.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panelFiltrowanie.ResumeLayout(false);
-            tabControlZarzadz.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            panelChowaj.ResumeLayout(false);
-            panelChowaj.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
-            tabPage3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
+            panelNaglowki.ResumeLayout(false);
+            panelObsluga.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            tabControlZarz.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panelDane;
-        private Panel panelFiltrowanie;
-        private TabControl tabControlZarzadz;
-        private TabPage tabPage1;
-        private Panel panelChowaj;
-        private Button buttonSzukaj;
-        private ComboBox filtr2;
-        private Label baner;
-        private TextBox textBoxFiltr;
-        private ComboBox filtr1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private FontAwesome.Sharp.IconButton iconButtonRozwijanie;
-        private TextBox textBoxImie;
-        private TextBox textBoxNazwisko;
-        private TextBox textBoxStan;
-        private TextBox textBoxMail;
-        private TextBox textBoxNr;
-        private Button buttonDodaj;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Label label9;
-        private ComboBox filtr1Usun;
-        private ComboBox filtr2Usun;
-        private Button buttonUsun;
-        private TextBox textBoxUsun;
-        private TabPage tabPage4;
         private System.Windows.Forms.Timer timerMenu;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel4;
-        private Label labelId;
-        private Label labelImie;
-        private Label labelNazw;
+        private Panel panelNaglowki;
+        private Label labelWydz;
         private Label labelMail;
         private Label labelTel;
         private Label labelStan;
-        private ComboBox dlaMod;
-        private Label label2;
-        private ComboBox coMody;
+        private Label labelNazw;
+        private Label labelImie;
+        private Label labelId;
+        private FlowLayoutPanel flowLayoutPanelDane;
+        private Panel panelObsluga;
+        private Panel panel1;
+        private TabControl tabControlZarz;
+        private TabPage tabPage4;
+        private TabPage tabPage1;
+        private ComboBox comboBoxKier;
+        private ComboBox comboBoxWydz;
+        private ComboBox comboBoxSem;
+        private FontAwesome.Sharp.IconButton Dodaj;
+        private TextBox textboxNr;
+        private TextBox textBoxNazw;
+        private TextBox textBoxImie;
+        private TabPage tabPage2;
+        private FontAwesome.Sharp.IconButton usun;
+        private TabPage tabPage3;
+        private FontAwesome.Sharp.IconButton Modyfikuj;
+        private TextBox textBoxNowaWart;
         private Label label1;
-        private TextBox filtrMod;
-        private Label label3;
+        private ComboBox comboBoxMod;
+        private Panel panel2;
+        private FontAwesome.Sharp.IconButton iconButtonMod;
+        private FontAwesome.Sharp.IconButton iconButtonUsun;
+        private FontAwesome.Sharp.IconButton iconButtonDodaj;
+        private FontAwesome.Sharp.IconButton iconButtonZwin;
+        private TextBox textBoxmail;
+        private TextBox textBoxStan;
     }
 }

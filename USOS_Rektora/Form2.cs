@@ -66,11 +66,28 @@ namespace USOS_Rektora
         //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychStudenci
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
         {
-            //pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
+            pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
+        }
+
+        private void listaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             zmianaTekstu(iconButtonUczniowie);
             WyswDanychStudenci studenci = new WyswDanychStudenci();
             wyswUserControli(studenci);
         }
+
+        private void ocenyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            labelTytulu.Text=ocenyToolStripMenuItem.Text;
+            Oceny oceny=new Oceny();
+            wyswUserControli(oceny);
+        }
+
+        private void frekwencjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            labelTytulu.Text = ocenyToolStripMenuItem.Text;
+        }
+
         //Wyświetlenie w panelu głównym kontrolki userControl Kalendarz
         private void iconButtonKalendarz_Click(object sender, EventArgs e)
         {
@@ -132,5 +149,7 @@ namespace USOS_Rektora
             StronaGlowna stronaGlowna = new StronaGlowna();
             wyswUserControli(stronaGlowna);
         }
+
+        
     }
 }
