@@ -18,7 +18,7 @@ namespace USOS_Rektora.userControls
     {
         // zmienna zawierająca łańcuch znaków połączenia do bazy danych
         string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
-        //Zmienne przekazywanie do elemntu userControl daneWiersz w celu ich wyswietlenia
+        //Zmienne przekazywanie do elemntu userControl daneWierszOceny w celu ich wyswietlenia
         public static int staticId;
         public static string staticIndeks;
         public static int staticMatma;
@@ -26,6 +26,10 @@ namespace USOS_Rektora.userControls
         public static int staticElektronika;
         public static int staticcyfrowa;
         public static float staticSrednia;
+        //zmienna potrzebna do wybrania kwerendy update
+        string coModyfikować;
+        //zmienna przechowująca kwerendę update
+        string queryUpdate;
         public Oceny()
         {
             InitializeComponent();
@@ -60,6 +64,7 @@ namespace USOS_Rektora.userControls
             double srednia = (matma + fizyka + elektr + cyfrowa) / 4;
             textBoxSred.Text = srednia.ToString();
         }
+        //funkcja wyswietlająca oceny po zaladowaniu user control z ocenami
         private void Oceny_Load(object sender, EventArgs e)
         {
             WyswDane();
@@ -78,7 +83,7 @@ namespace USOS_Rektora.userControls
             }
             conn.Close();
         }
-
+        //obsługa przycisku zwijającego i rozwijającego menu
         private void iconButtonZwin_Click(object sender, EventArgs e)
         {
             iconButtonZwin.Rotation += 180;
@@ -94,7 +99,7 @@ namespace USOS_Rektora.userControls
                 flowLayoutPanelDane.Height = 240;
             }
         }
-
+        //obsług przycisku dodającego dane do bazy danych
         private void Dodaj_Click(object sender, EventArgs e)
         {
             if (comboBoxIndeks.SelectedIndex != -1 && textBoxSred.Text != "")
@@ -144,7 +149,7 @@ namespace USOS_Rektora.userControls
             }
 
         }
-
+        //obsługa przycisku usuwającego dane z bazy danych 
         private void usun_Click(object sender, EventArgs e)
         {
             if (daneWierszOceny.id != 0)
@@ -173,36 +178,95 @@ namespace USOS_Rektora.userControls
 
         private void Modyfikuj_Click(object sender, EventArgs e)
         {
-
+            //sprawdzanie czy użytkownik zaznaczy rekord do modyfikacji
+            if (daneWierszOceny.id != 0)
+            {
+                switch (coModyfikować)
+                {
+                    case "Numer Indeksu":
+                        queryUpdate = "UPDATE grades SET nrIndex = @newvalue WHERE id= @id";
+                        break;
+                    case "Matematyka":
+                        queryUpdate = "UPDATE grades SET math = @newvalue WHERE id= @id";
+                        break;
+                    case "Fizyka":
+                        queryUpdate = "UPDATE grades SET physics = @newvalue WHERE id= @id";
+                        break;
+                    case "Elektronika":
+                        queryUpdate = "UPDATE grades SET electronic = @newvalue WHERE id= @id";
+                        break;
+                    case "Technika cyfrowa":
+                        queryUpdate = "UPDATE grades SET digital technology = @newvalue WHERE id= @id";
+                        break;
+                    case "Średnia":
+                        queryUpdate = "UPDATE grades SET average = @newvalue WHERE id= @id";
+                        break;
+                }
+                //sprawdzanie czy uzytkownik wybrał którą wartość modyfikować
+                if (coModyfikować != null)
+                {
+                    //sprawdzanie czy uzytkoonik wypełnił pole z nową wartością
+                    if (textBoxNowaWart.Text != "")
+                    {
+                        MySqlConnection conn = new MySqlConnection(connectionString);
+                        conn.Open();
+                        MySqlCommand cmd = conn.CreateCommand();
+                        cmd.CommandText = queryUpdate;
+                        cmd.Parameters.AddWithValue("@newvalue", textBoxNowaWart.Text);
+                        cmd.Parameters.AddWithValue("@id", daneWierszOceny.id);
+                        int result = cmd.ExecuteNonQuery();
+                        //sprawdzanie czy update się wykonał
+                        if (result == 1)
+                        {
+                            MessageBox.Show("Pomyślnie Zmodyfikowano rekord o id " + daneWierszOceny.id);
+                            WyswDane();
+                            conn.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Błąd przy modyfikowaniu rekordu o id " + daneWierszOceny.id);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Uzupełnij pole z nową wartością");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Uzupełnij pole z tym co zmodyfikować");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Zaznacz rekord który chcesz zmodyfikować");
+            }
         }
-
+        //przejscie do zakladki z dodawaniem
         private void iconButtonDodaj_Click(object sender, EventArgs e)
         {
             tabControlZarz.SelectedIndex = 1;
-
-
         }
-
+        //przejscie do zakladki z usuwaniem
         private void iconButtonUsun_Click(object sender, EventArgs e)
         {
             tabControlZarz.SelectedIndex = 2;
         }
-
+        //przejscie do zakladki z modyfikacja
         private void iconButtonMod_Click(object sender, EventArgs e)
         {
             tabControlZarz.SelectedIndex = 3;
         }
-
+        //przejscie do zakladki z zapisywaniem
         private void iconButtonZapisz_Click(object sender, EventArgs e)
         {
             tabControlZarz.SelectedIndex = 4;
         }
-
+        //aktualizacja wyswietlanej sredniej po kazdej zmianie oceny
         private void numericUpDownMatma_ValueChanged(object sender, EventArgs e)
         {
             aktualizujSrednia((int)numericUpDownMatma.Value, (int)numericUpDownFizyka.Value, (int)numericUpDownElektr.Value, (int)numericUpDownCyfrowa.Value);
         }
-        //aktualizacja wyswietlanej sredniej po kazdej zmianie oceny
         private void numericUpDownFizyka_ValueChanged(object sender, EventArgs e)
         {
             aktualizujSrednia((int)numericUpDownMatma.Value, (int)numericUpDownFizyka.Value, (int)numericUpDownElektr.Value, (int)numericUpDownCyfrowa.Value);
@@ -217,7 +281,7 @@ namespace USOS_Rektora.userControls
         {
             aktualizujSrednia((double)numericUpDownMatma.Value, (double)numericUpDownFizyka.Value, (double)numericUpDownElektr.Value, (double)numericUpDownCyfrowa.Value);
         }
-
+        //obsługa przycisku zapisującego oceny danego ucznia do pliku tekstowego
         private void Zapisz_Click(object sender, EventArgs e)
         {
             //wyciaganie id dla odpowiedniego indeksu z tabeli students potrzebnego do wykonania inserta
@@ -230,11 +294,12 @@ namespace USOS_Rektora.userControls
             cmd.Parameters.AddWithValue("@nrIndex", index[0]);
             MySqlDataReader reader = cmd.ExecuteReader();
             int pomId = 0;
+            //zapisuwanie id do zmiennej by wyciągnąc z bazy danych odp studenta
             while (reader.Read())
             {
                 pomId = (int)reader["id"];
             }
-            
+
             MySqlConnection conn1 = new MySqlConnection(connectionString);
             conn1.Open();
             string queryDoZapisu = "SELECT * FROM grades WHERE id=@id";
@@ -247,13 +312,12 @@ namespace USOS_Rektora.userControls
             while (reader1.Read())
             {
                 indeks = reader1["nrIndex"].ToString();
-                raport = 
+                raport =
                 $"|mat.|fizyka|elektr.|tech.cyfr|średnia|\r" +
                 "\n---------------------------------------" +
                 $"\n| {reader1["math"].ToString()}  | {reader1["physics"].ToString()}    | {reader1["electronic"].ToString()}     | {reader1["digital technology"].ToString()}       | {reader1["average"].ToString()}   |\r" +
                 "\n---------------------------------------"
                 + $"\n\nRaport dla studenta o indeksie: {indeks}";
-                
             }
             try
             {
@@ -269,10 +333,12 @@ namespace USOS_Rektora.userControls
             {
                 MessageBox.Show("Pomyślnie zapisano raport do pliku");
             }
-            
+        }
 
-
-
+        private void comboBoxMod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxNowaWart.Enabled = true;
+            coModyfikować = comboBoxMod.SelectedItem.ToString();
         }
     }
 }

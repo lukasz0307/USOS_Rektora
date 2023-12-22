@@ -237,7 +237,7 @@
             tabControlZarz.Controls.Add(tabPage3);
             tabControlZarz.Controls.Add(tabPage5);
             tabControlZarz.Dock = DockStyle.Fill;
-            tabControlZarz.ItemSize = new Size(20, 20);
+            tabControlZarz.ItemSize = new Size(0, 1);
             tabControlZarz.Location = new Point(99, 0);
             tabControlZarz.Margin = new Padding(0);
             tabControlZarz.Name = "tabControlZarz";
@@ -281,6 +281,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(622, 8);
@@ -301,6 +302,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(475, 7);
@@ -311,6 +313,7 @@
             // 
             // numericUpDownCyfrowa
             // 
+            numericUpDownCyfrowa.Anchor = AnchorStyles.None;
             numericUpDownCyfrowa.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDownCyfrowa.Location = new Point(475, 37);
             numericUpDownCyfrowa.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
@@ -323,6 +326,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(400, 7);
@@ -333,6 +337,7 @@
             // 
             // numericUpDownElektr
             // 
+            numericUpDownElektr.Anchor = AnchorStyles.None;
             numericUpDownElektr.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDownElektr.Location = new Point(389, 37);
             numericUpDownElektr.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
@@ -345,6 +350,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(311, 8);
@@ -355,6 +361,7 @@
             // 
             // numericUpDownFizyka
             // 
+            numericUpDownFizyka.Anchor = AnchorStyles.None;
             numericUpDownFizyka.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDownFizyka.Location = new Point(302, 36);
             numericUpDownFizyka.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
@@ -367,6 +374,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(226, 7);
@@ -377,6 +385,7 @@
             // 
             // numericUpDownMatma
             // 
+            numericUpDownMatma.Anchor = AnchorStyles.None;
             numericUpDownMatma.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             numericUpDownMatma.Location = new Point(212, 35);
             numericUpDownMatma.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
@@ -461,10 +470,10 @@
             tabPage3.Controls.Add(textBoxNowaWart);
             tabPage3.Controls.Add(label1);
             tabPage3.Controls.Add(comboBoxMod);
-            tabPage3.Location = new Point(4, 24);
+            tabPage3.Location = new Point(4, 5);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(789, 119);
+            tabPage3.Size = new Size(789, 138);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             // 
@@ -480,7 +489,7 @@
             Modyfikuj.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Modyfikuj.IconSize = 30;
             Modyfikuj.ImageAlign = ContentAlignment.MiddleRight;
-            Modyfikuj.Location = new Point(590, 40);
+            Modyfikuj.Location = new Point(590, 50);
             Modyfikuj.Margin = new Padding(0);
             Modyfikuj.Name = "Modyfikuj";
             Modyfikuj.Size = new Size(130, 34);
@@ -495,7 +504,7 @@
             textBoxNowaWart.Anchor = AnchorStyles.None;
             textBoxNowaWart.Enabled = false;
             textBoxNowaWart.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNowaWart.Location = new Point(422, 43);
+            textBoxNowaWart.Location = new Point(422, 53);
             textBoxNowaWart.Margin = new Padding(20, 3, 3, 3);
             textBoxNowaWart.Name = "textBoxNowaWart";
             textBoxNowaWart.PlaceholderText = "Nowa wartość";
@@ -507,7 +516,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(13, 46);
+            label1.Location = new Point(13, 56);
             label1.Margin = new Padding(20, 0, 3, 0);
             label1.Name = "label1";
             label1.Size = new Size(212, 25);
@@ -519,12 +528,13 @@
             comboBoxMod.Anchor = AnchorStyles.None;
             comboBoxMod.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxMod.FormattingEnabled = true;
-            comboBoxMod.Items.AddRange(new object[] { "Imię", "Nazwisko", "Nr. Indeksu", "Semestr", "Kierunek", "Wydział" });
-            comboBoxMod.Location = new Point(248, 43);
+            comboBoxMod.Items.AddRange(new object[] { "Numer Indeksu", "Matematyka", "Fizyka", "Elektronika", "Technika cyfrowa", "Średnia" });
+            comboBoxMod.Location = new Point(248, 53);
             comboBoxMod.Margin = new Padding(20, 3, 3, 3);
             comboBoxMod.Name = "comboBoxMod";
             comboBoxMod.Size = new Size(151, 33);
             comboBoxMod.TabIndex = 0;
+            comboBoxMod.SelectedIndexChanged += comboBoxMod_SelectedIndexChanged;
             // 
             // tabPage5
             // 
@@ -540,6 +550,7 @@
             // 
             // Zapisz
             // 
+            Zapisz.Anchor = AnchorStyles.None;
             Zapisz.BackColor = Color.FromArgb(255, 192, 255);
             Zapisz.FlatStyle = FlatStyle.Flat;
             Zapisz.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);

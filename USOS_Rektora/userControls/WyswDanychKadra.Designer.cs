@@ -211,7 +211,7 @@
             tabControlZarz.Controls.Add(tabPage2);
             tabControlZarz.Controls.Add(tabPage3);
             tabControlZarz.Dock = DockStyle.Fill;
-            tabControlZarz.ItemSize = new Size(10, 10);
+            tabControlZarz.ItemSize = new Size(0, 1);
             tabControlZarz.Location = new Point(99, 0);
             tabControlZarz.Margin = new Padding(0);
             tabControlZarz.Name = "tabControlZarz";
@@ -224,10 +224,10 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.Silver;
-            tabPage4.Location = new Point(4, 14);
+            tabPage4.Location = new Point(4, 5);
             tabPage4.Margin = new Padding(0);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(789, 91);
+            tabPage4.Size = new Size(789, 100);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             // 
