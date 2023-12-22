@@ -96,7 +96,7 @@ namespace USOS_Rektora.userControls
         //obsługa przycisku dodającego dane do bazy danych 
         private void Dodaj_Click(object sender, EventArgs e)
         {
-            
+
             //wyrazenie regularne sprawdzające poprawnosci dodawanego imienia i nazwiska
             string wzorImieNazwisko = @"^[A-Z]{1}\w+$";
             Regex regexImieNazwisko = new Regex(wzorImieNazwisko);

@@ -252,10 +252,10 @@
             tabPage1.Controls.Add(textBoxIndeks);
             tabPage1.Controls.Add(textBoxNazw);
             tabPage1.Controls.Add(textBoxImie);
-            tabPage1.Location = new Point(4, 14);
+            tabPage1.Location = new Point(4, 5);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(789, 91);
+            tabPage1.Size = new Size(789, 100);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
@@ -377,7 +377,7 @@
             usun.IconFont = FontAwesome.Sharp.IconFont.Auto;
             usun.IconSize = 30;
             usun.ImageAlign = ContentAlignment.MiddleRight;
-            usun.Location = new Point(298, 36);
+            usun.Location = new Point(298, 31);
             usun.Margin = new Padding(0);
             usun.Name = "usun";
             usun.Size = new Size(99, 36);
@@ -394,10 +394,10 @@
             tabPage3.Controls.Add(textBoxNowaWart);
             tabPage3.Controls.Add(label1);
             tabPage3.Controls.Add(comboBoxMod);
-            tabPage3.Location = new Point(4, 5);
+            tabPage3.Location = new Point(4, 14);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(789, 100);
+            tabPage3.Size = new Size(789, 91);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             // 

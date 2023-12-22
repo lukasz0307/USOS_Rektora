@@ -41,7 +41,7 @@
             iconButtonKadra = new FontAwesome.Sharp.IconButton();
             iconButtonWydzialy = new FontAwesome.Sharp.IconButton();
             menuWydzialy = new ContextMenuStrip(components);
-            MenuItemKierunki = new ToolStripMenuItem();
+            nawigacyjnyMenuItem = new ToolStripMenuItem();
             elektrycznyToolStripMenuItem = new ToolStripMenuItem();
             mechanicznyToolStripMenuItem1 = new ToolStripMenuItem();
             zarządzaniaINaukOJakościToolStripMenuItem1 = new ToolStripMenuItem();
@@ -264,19 +264,20 @@
             menuWydzialy.BackColor = Color.Gray;
             menuWydzialy.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             menuWydzialy.ImageScalingSize = new Size(20, 20);
-            menuWydzialy.Items.AddRange(new ToolStripItem[] { MenuItemKierunki, elektrycznyToolStripMenuItem, mechanicznyToolStripMenuItem1, zarządzaniaINaukOJakościToolStripMenuItem1 });
+            menuWydzialy.Items.AddRange(new ToolStripItem[] { nawigacyjnyMenuItem, elektrycznyToolStripMenuItem, mechanicznyToolStripMenuItem1, zarządzaniaINaukOJakościToolStripMenuItem1 });
             menuWydzialy.Name = "contextMenuStripWydzialy";
-            menuWydzialy.Size = new Size(464, 222);
+            menuWydzialy.Size = new Size(464, 194);
             // 
-            // MenuItemKierunki
+            // nawigacyjnyMenuItem
             // 
-            MenuItemKierunki.BackColor = Color.Gray;
-            MenuItemKierunki.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            MenuItemKierunki.ForeColor = Color.FromArgb(224, 224, 224);
-            MenuItemKierunki.Name = "MenuItemKierunki";
-            MenuItemKierunki.Padding = new Padding(0, 4, 0, 4);
-            MenuItemKierunki.Size = new Size(463, 52);
-            MenuItemKierunki.Text = "Nawigacyjny";
+            nawigacyjnyMenuItem.BackColor = Color.Gray;
+            nawigacyjnyMenuItem.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            nawigacyjnyMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
+            nawigacyjnyMenuItem.Name = "nawigacyjnyMenuItem";
+            nawigacyjnyMenuItem.Padding = new Padding(0, 4, 0, 4);
+            nawigacyjnyMenuItem.Size = new Size(463, 52);
+            nawigacyjnyMenuItem.Text = "Nawigacyjny";
+            nawigacyjnyMenuItem.Click += nawigacyjnyMenuItem_Click;
             // 
             // elektrycznyToolStripMenuItem
             // 
@@ -284,6 +285,7 @@
             elektrycznyToolStripMenuItem.Name = "elektrycznyToolStripMenuItem";
             elektrycznyToolStripMenuItem.Size = new Size(463, 46);
             elektrycznyToolStripMenuItem.Text = "Elektryczny";
+            elektrycznyToolStripMenuItem.Click += elektrycznyToolStripMenuItem_Click;
             // 
             // mechanicznyToolStripMenuItem1
             // 
@@ -291,6 +293,7 @@
             mechanicznyToolStripMenuItem1.Name = "mechanicznyToolStripMenuItem1";
             mechanicznyToolStripMenuItem1.Size = new Size(463, 46);
             mechanicznyToolStripMenuItem1.Text = "Mechaniczny";
+            mechanicznyToolStripMenuItem1.Click += mechanicznyToolStripMenuItem1_Click;
             // 
             // zarządzaniaINaukOJakościToolStripMenuItem1
             // 
@@ -298,6 +301,7 @@
             zarządzaniaINaukOJakościToolStripMenuItem1.Name = "zarządzaniaINaukOJakościToolStripMenuItem1";
             zarządzaniaINaukOJakościToolStripMenuItem1.Size = new Size(463, 46);
             zarządzaniaINaukOJakościToolStripMenuItem1.Text = "Zarządzania i nauk o jakości";
+            zarządzaniaINaukOJakościToolStripMenuItem1.Click += zarządzaniaINaukOJakościToolStripMenuItem1_Click;
             // 
             // logo
             // 
@@ -504,7 +508,7 @@
         private Label labelTytulu;
         private FontAwesome.Sharp.IconButton iconButtonKadra;
         private ContextMenuStrip menuWydzialy;
-        private ToolStripMenuItem MenuItemKierunki;
+        private ToolStripMenuItem nawigacyjnyMenuItem;
         private FontAwesome.Sharp.IconButton iconButtonWyloguj;
         private ContextMenuStrip menuKadra;
         private ToolStripMenuItem kontaktToolStripMenuItem;

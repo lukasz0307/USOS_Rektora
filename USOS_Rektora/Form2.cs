@@ -16,6 +16,7 @@ namespace USOS_Rektora
     public partial class Form2 : Form
     {
         public Logowanie logowanieForm;
+        public static string ktoryWydzial;
         public Form2()
         {
             InitializeComponent();
@@ -53,7 +54,7 @@ namespace USOS_Rektora
         private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
             pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
-            zmianaTekstu(iconButtonWydzialy);
+            
         }
         //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychKadra
         private void iconButtonKadra_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace USOS_Rektora
             WyswDanychKadra kadra = new WyswDanychKadra();
             wyswUserControli(kadra);
         }
-        //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychStudenci
+        //wyswietlenie menu rozwijanego
         private void iconButtonUczniowie_Click(object sender, EventArgs e)
         {
             pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
@@ -145,6 +146,43 @@ namespace USOS_Rektora
             StronaGlowna stronaGlowna = new StronaGlowna();
             wyswUserControli(stronaGlowna);
             labelTytulu.Text = "Strona główna";
+        }
+        //wyswietlanie userCOntrol wydzialy i przekazywanej zmiennej potrzbnej do
+        //wyswietlenia odpowiednich do wydziału informacji
+        private void nawigacyjnyMenuItem_Click(object sender, EventArgs e)
+        {
+            ktoryWydzial = "Nawigacyjny";
+            Wydziały wydzialy = new Wydziały();
+            wyswUserControli(wydzialy);
+            labelTytulu.Text = "Wydział " + nawigacyjnyMenuItem.Text;
+            
+        }
+
+        private void elektrycznyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ktoryWydzial = "Elektryczny";
+            Wydziały wydzialy = new Wydziały();
+            wyswUserControli(wydzialy);
+            labelTytulu.Text = "Wydział " + elektrycznyToolStripMenuItem.Text;
+            
+        }
+
+        private void mechanicznyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ktoryWydzial = "Mechaniczny";
+            Wydziały wydzialy = new Wydziały();
+            wyswUserControli(wydzialy);
+            labelTytulu.Text = "Wydział " + mechanicznyToolStripMenuItem1.Text;
+           
+        }
+
+        private void zarządzaniaINaukOJakościToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ktoryWydzial = "Zarządzania i nauk o jakości";
+            Wydziały wydzialy = new Wydziały();
+            wyswUserControli(wydzialy);
+            labelTytulu.Text = "Wydział "+zarządzaniaINaukOJakościToolStripMenuItem1.Text;
+            
         }
     }
 }

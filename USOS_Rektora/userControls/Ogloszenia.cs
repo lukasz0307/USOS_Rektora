@@ -37,6 +37,8 @@ namespace USOS_Rektora.userControls
                 {
                     MessageBox.Show("Pomyślnie dodano ogłoszenie");
                     conn.Close();
+                    textBoxNaglowek.Text = "";
+                    richTextBoxTresc.Text = "";
                 }
                 else
                 {
