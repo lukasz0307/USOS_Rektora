@@ -78,8 +78,8 @@ namespace USOS_Rektora
 
         private void ocenyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            labelTytulu.Text=ocenyToolStripMenuItem.Text;
-            Oceny oceny=new Oceny();
+            labelTytulu.Text = ocenyToolStripMenuItem.Text;
+            Oceny oceny = new Oceny();
             wyswUserControli(oceny);
         }
 
@@ -150,6 +150,6 @@ namespace USOS_Rektora
             wyswUserControli(stronaGlowna);
         }
 
-        
+
     }
 }

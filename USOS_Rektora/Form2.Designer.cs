@@ -37,8 +37,6 @@
             menuUczniowie = new ContextMenuStrip(components);
             listaToolStripMenuItem = new ToolStripMenuItem();
             ocenyToolStripMenuItem = new ToolStripMenuItem();
-            frekwencjaToolStripMenuItem = new ToolStripMenuItem();
-            płatnościToolStripMenuItem = new ToolStripMenuItem();
             iconButtonWyloguj = new FontAwesome.Sharp.IconButton();
             iconButtonKadra = new FontAwesome.Sharp.IconButton();
             iconButtonWydzialy = new FontAwesome.Sharp.IconButton();
@@ -179,16 +177,16 @@
             menuUczniowie.BackColor = Color.Gray;
             menuUczniowie.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             menuUczniowie.ImageScalingSize = new Size(20, 20);
-            menuUczniowie.Items.AddRange(new ToolStripItem[] { listaToolStripMenuItem, ocenyToolStripMenuItem, frekwencjaToolStripMenuItem, płatnościToolStripMenuItem });
+            menuUczniowie.Items.AddRange(new ToolStripItem[] { listaToolStripMenuItem, ocenyToolStripMenuItem });
             menuUczniowie.Name = "menuUczniowie";
-            menuUczniowie.Size = new Size(244, 240);
+            menuUczniowie.Size = new Size(182, 108);
             // 
             // listaToolStripMenuItem
             // 
             listaToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             listaToolStripMenuItem.Name = "listaToolStripMenuItem";
             listaToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            listaToolStripMenuItem.Size = new Size(243, 52);
+            listaToolStripMenuItem.Size = new Size(181, 52);
             listaToolStripMenuItem.Text = "Lista";
             listaToolStripMenuItem.Click += listaToolStripMenuItem_Click;
             // 
@@ -197,26 +195,9 @@
             ocenyToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
             ocenyToolStripMenuItem.Name = "ocenyToolStripMenuItem";
             ocenyToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            ocenyToolStripMenuItem.Size = new Size(243, 52);
+            ocenyToolStripMenuItem.Size = new Size(181, 52);
             ocenyToolStripMenuItem.Text = "Oceny";
             ocenyToolStripMenuItem.Click += ocenyToolStripMenuItem_Click;
-            // 
-            // frekwencjaToolStripMenuItem
-            // 
-            frekwencjaToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
-            frekwencjaToolStripMenuItem.Name = "frekwencjaToolStripMenuItem";
-            frekwencjaToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            frekwencjaToolStripMenuItem.Size = new Size(243, 52);
-            frekwencjaToolStripMenuItem.Text = "Frekwencja";
-            frekwencjaToolStripMenuItem.Click += frekwencjaToolStripMenuItem_Click;
-            // 
-            // płatnościToolStripMenuItem
-            // 
-            płatnościToolStripMenuItem.ForeColor = Color.FromArgb(224, 224, 224);
-            płatnościToolStripMenuItem.Name = "płatnościToolStripMenuItem";
-            płatnościToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
-            płatnościToolStripMenuItem.Size = new Size(243, 52);
-            płatnościToolStripMenuItem.Text = "Płatności";
             // 
             // iconButtonWyloguj
             // 
@@ -541,8 +522,6 @@
         private FontAwesome.Sharp.IconButton iconButtonKalendarz;
         private ContextMenuStrip menuUczniowie;
         private ToolStripMenuItem ocenyToolStripMenuItem;
-        private ToolStripMenuItem frekwencjaToolStripMenuItem;
-        private ToolStripMenuItem płatnościToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private Panel panelBar;
         private FontAwesome.Sharp.IconButton iconButtonMin;
