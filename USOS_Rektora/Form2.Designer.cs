@@ -45,7 +45,6 @@
             elektrycznyToolStripMenuItem = new ToolStripMenuItem();
             mechanicznyToolStripMenuItem1 = new ToolStripMenuItem();
             zarządzaniaINaukOJakościToolStripMenuItem1 = new ToolStripMenuItem();
-            działArmatorskiToolStripMenuItem1 = new ToolStripMenuItem();
             logo = new PictureBox();
             menuKadra = new ContextMenuStrip(components);
             kontaktToolStripMenuItem = new ToolStripMenuItem();
@@ -265,9 +264,9 @@
             menuWydzialy.BackColor = Color.Gray;
             menuWydzialy.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             menuWydzialy.ImageScalingSize = new Size(20, 20);
-            menuWydzialy.Items.AddRange(new ToolStripItem[] { MenuItemKierunki, elektrycznyToolStripMenuItem, mechanicznyToolStripMenuItem1, zarządzaniaINaukOJakościToolStripMenuItem1, działArmatorskiToolStripMenuItem1 });
+            menuWydzialy.Items.AddRange(new ToolStripItem[] { MenuItemKierunki, elektrycznyToolStripMenuItem, mechanicznyToolStripMenuItem1, zarządzaniaINaukOJakościToolStripMenuItem1 });
             menuWydzialy.Name = "contextMenuStripWydzialy";
-            menuWydzialy.Size = new Size(464, 240);
+            menuWydzialy.Size = new Size(464, 222);
             // 
             // MenuItemKierunki
             // 
@@ -299,13 +298,6 @@
             zarządzaniaINaukOJakościToolStripMenuItem1.Name = "zarządzaniaINaukOJakościToolStripMenuItem1";
             zarządzaniaINaukOJakościToolStripMenuItem1.Size = new Size(463, 46);
             zarządzaniaINaukOJakościToolStripMenuItem1.Text = "Zarządzania i nauk o jakości";
-            // 
-            // działArmatorskiToolStripMenuItem1
-            // 
-            działArmatorskiToolStripMenuItem1.ForeColor = Color.FromArgb(224, 224, 224);
-            działArmatorskiToolStripMenuItem1.Name = "działArmatorskiToolStripMenuItem1";
-            działArmatorskiToolStripMenuItem1.Size = new Size(463, 46);
-            działArmatorskiToolStripMenuItem1.Text = "Dział armatorski";
             // 
             // logo
             // 
@@ -536,7 +528,6 @@
         private ToolStripMenuItem elektrycznyToolStripMenuItem;
         private ToolStripMenuItem mechanicznyToolStripMenuItem1;
         private ToolStripMenuItem zarządzaniaINaukOJakościToolStripMenuItem1;
-        private ToolStripMenuItem działArmatorskiToolStripMenuItem1;
         private FontAwesome.Sharp.IconButton iconButtonPlany;
     }
 }

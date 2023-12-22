@@ -102,51 +102,81 @@ namespace USOS_Rektora.userControls
         //obsług przycisku dodającego dane do bazy danych
         private void Dodaj_Click(object sender, EventArgs e)
         {
-            if (comboBoxIndeks.SelectedIndex != -1 && textBoxSred.Text != "")
+            //sprawdzanie czy oceny danego studenta istnieją już w bazie danych
+            List<string> listIndex = new List<string>();
+            string[] index = comboBoxIndeks.Text.Split("-");
+            string indeksOceny = "SELECT nrIndex FROM grades";
+            MySqlConnection connIndeks = new MySqlConnection(connectionString);
+            connIndeks.Open();
+            MySqlCommand cmdIndeks = connIndeks.CreateCommand();
+            cmdIndeks.CommandText = indeksOceny;
+            MySqlDataReader readerIndeks = cmdIndeks.ExecuteReader();
+            while (readerIndeks.Read())
             {
-                //wyciaganie id dla odpowiedniego indeksu z tabeli students potrzebnego do wykonania inserta
-                string query = "SELECT `id` FROM `students` WHERE `nrIndex`=@nrIndex";
-                string[] index = comboBoxIndeks.Text.Split("-");
-                MySqlConnection conn = new MySqlConnection(connectionString);
-                conn.Open();
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@nrIndex", int.Parse(index[0]));
-                MySqlDataReader reader = cmd.ExecuteReader();
-                int pomId = 0;
-                while (reader.Read())
+                //pomId = (int)reader["id"];
+                listIndex.Add(readerIndeks["nrIndex"].ToString());
+            }
+            bool CzyjestIndeksWBazie=false;
+            foreach (string key in listIndex)
+            {
+                if (key == index[0])
                 {
-                    pomId = (int)reader["id"];
+                    CzyjestIndeksWBazie = true;
                 }
-                string queryInsert = "INSERT INTO `grades` (`id`, `nrIndex`, `math`, `physics`, `electronic`, `digital technology`, `average`) VALUES (@id, @nrIndex, @math, @physics, @electronic, @digitalTechnology, @average);";
-                MySqlConnection conn1 = new MySqlConnection(connectionString);
-                conn1.Open();
-                MySqlCommand cmd1 = conn1.CreateCommand();
-                cmd1.CommandText = queryInsert;
-                cmd1.Parameters.AddWithValue("@id", pomId);
-                cmd1.Parameters.AddWithValue("@nrIndex", (string)index[0]);
-                cmd1.Parameters.AddWithValue("@math", (int)numericUpDownMatma.Value);
-                cmd1.Parameters.AddWithValue("@physics", (int)numericUpDownFizyka.Value);
-                cmd1.Parameters.AddWithValue("@electronic", (int)numericUpDownElektr.Value);
-                cmd1.Parameters.AddWithValue("@digitalTechnology", (int)numericUpDownMatma.Value);
-                cmd1.Parameters.AddWithValue("@average", float.Parse(textBoxSred.Text));
-                int result = cmd1.ExecuteNonQuery();
-                // sprawdzanie czy insert się wykonał
-                if (result == 1)
+            }
+            if (CzyjestIndeksWBazie == false)
+            {
+                if (comboBoxIndeks.SelectedIndex != -1 && textBoxSred.Text != "")
                 {
-                    MessageBox.Show("Pomyślnie dodano oceny");
-                    WyswDane();
-                    conn1.Close();
+                    //wyciaganie id dla odpowiedniego indeksu z tabeli students potrzebnego do wykonania inserta
+                    string query = "SELECT `id` FROM `students` WHERE `nrIndex`=@nrIndex";
+
+                    MySqlConnection conn = new MySqlConnection(connectionString);
+                    conn.Open();
+                    MySqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@nrIndex", int.Parse(index[0]));
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    int pomId = 0;
+                    while (reader.Read())
+                    {
+                        pomId = (int)reader["id"];
+                    }
+                    string queryInsert = "INSERT INTO `grades` (`id`, `nrIndex`, `math`, `physics`, `electronic`, `digital technology`, `average`) VALUES (@id, @nrIndex, @math, @physics, @electronic, @digitalTechnology, @average);";
+                    MySqlConnection conn1 = new MySqlConnection(connectionString);
+                    conn1.Open();
+                    MySqlCommand cmd1 = conn1.CreateCommand();
+                    cmd1.CommandText = queryInsert;
+                    cmd1.Parameters.AddWithValue("@id", pomId);
+                    cmd1.Parameters.AddWithValue("@nrIndex", (string)index[0]);
+                    cmd1.Parameters.AddWithValue("@math", (int)numericUpDownMatma.Value);
+                    cmd1.Parameters.AddWithValue("@physics", (int)numericUpDownFizyka.Value);
+                    cmd1.Parameters.AddWithValue("@electronic", (int)numericUpDownElektr.Value);
+                    cmd1.Parameters.AddWithValue("@digitalTechnology", (int)numericUpDownMatma.Value);
+                    cmd1.Parameters.AddWithValue("@average", float.Parse(textBoxSred.Text));
+                    int result = cmd1.ExecuteNonQuery();
+                    // sprawdzanie czy insert się wykonał
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Pomyślnie dodano oceny");
+                        WyswDane();
+                        conn1.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Błąd przy dodawaniu oceny");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Błąd przy dodawaniu oceny");
+                    MessageBox.Show("Uzupełnij wszystkie pola");
                 }
             }
             else
             {
-                MessageBox.Show("Uzupełnij wszystkie pola");
+                MessageBox.Show("Oceny tego studenta już są w bazie danych");
             }
+            
 
         }
         //obsługa przycisku usuwającego dane z bazy danych 

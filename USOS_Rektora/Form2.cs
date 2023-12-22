@@ -68,14 +68,14 @@ namespace USOS_Rektora
         {
             pozycjonowanieContextMenuStrip(iconButtonUczniowie, menuUczniowie);
         }
-
+        //wyswietlanie listy studentow po kliknieciu z menu rozwijanego odpowiedniego przycisku
         private void listaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             zmianaTekstu(iconButtonUczniowie);
             WyswDanychStudenci studenci = new WyswDanychStudenci();
             wyswUserControli(studenci);
         }
-
+        //wyswietlanie listy ocen studentow po kliknieciu z menu rozwijanego odpowiedniego przycisku
         private void ocenyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             labelTytulu.Text = ocenyToolStripMenuItem.Text;
@@ -83,10 +83,7 @@ namespace USOS_Rektora
             wyswUserControli(oceny);
         }
 
-        private void frekwencjaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            labelTytulu.Text = ocenyToolStripMenuItem.Text;
-        }
+
 
         //Wyświetlenie w panelu głównym kontrolki userControl Kalendarz
         private void iconButtonKalendarz_Click(object sender, EventArgs e)
@@ -105,7 +102,6 @@ namespace USOS_Rektora
         //Wyświetlenie w panelu głównym kontrolki userControl PlanyLekcji
         private void iconButtonPlany_Click(object sender, EventArgs e)
         {
-
             zmianaTekstu(iconButtonPlany);
             PlanyLekcji plany = new PlanyLekcji();
             wyswUserControli(plany);
@@ -143,13 +139,12 @@ namespace USOS_Rektora
             StronaGlowna stronaGlowna = new StronaGlowna();
             wyswUserControli(stronaGlowna);
         }
-
+        //wyswietlanie kontrolki userControl StronaGlowna po kliknięciu loga
         private void logo_Click(object sender, EventArgs e)
         {
             StronaGlowna stronaGlowna = new StronaGlowna();
             wyswUserControli(stronaGlowna);
+            labelTytulu.Text = "Strona główna";
         }
-
-
     }
 }
