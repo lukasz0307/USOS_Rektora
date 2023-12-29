@@ -115,6 +115,7 @@
             labelsrednia.TabIndex = 7;
             labelsrednia.Text = "Średnia";
             labelsrednia.TextAlign = ContentAlignment.MiddleCenter;
+            labelsrednia.Click += labelsrednia_Click;
             // 
             // labelcyfrowa
             // 
@@ -129,6 +130,7 @@
             labelcyfrowa.TabIndex = 6;
             labelcyfrowa.Text = "Technika cyfrowa";
             labelcyfrowa.TextAlign = ContentAlignment.MiddleCenter;
+            labelcyfrowa.Click += labelcyfrowa_Click;
             // 
             // labelElektronika
             // 
@@ -143,6 +145,7 @@
             labelElektronika.TabIndex = 5;
             labelElektronika.Text = "Elektronika";
             labelElektronika.TextAlign = ContentAlignment.MiddleCenter;
+            labelElektronika.Click += labelElektronika_Click;
             // 
             // labelFizyka
             // 
@@ -157,6 +160,7 @@
             labelFizyka.TabIndex = 4;
             labelFizyka.Text = "Fizyka";
             labelFizyka.TextAlign = ContentAlignment.MiddleCenter;
+            labelFizyka.Click += labelFizyka_Click;
             // 
             // labelMatematyka
             // 
@@ -171,6 +175,7 @@
             labelMatematyka.TabIndex = 3;
             labelMatematyka.Text = "Matematyka";
             labelMatematyka.TextAlign = ContentAlignment.MiddleCenter;
+            labelMatematyka.Click += labelMatematyka_Click;
             // 
             // labelIndeks
             // 
@@ -185,6 +190,7 @@
             labelIndeks.TabIndex = 2;
             labelIndeks.Text = "Numer Indeksu";
             labelIndeks.TextAlign = ContentAlignment.MiddleCenter;
+            labelIndeks.Click += labelIndeks_Click;
             // 
             // labelId
             // 
@@ -250,10 +256,10 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.Silver;
-            tabPage4.Location = new Point(4, 24);
+            tabPage4.Location = new Point(4, 5);
             tabPage4.Margin = new Padding(0);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(789, 119);
+            tabPage4.Size = new Size(789, 138);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             // 
@@ -272,10 +278,10 @@
             tabPage1.Controls.Add(numericUpDownMatma);
             tabPage1.Controls.Add(comboBoxIndeks);
             tabPage1.Controls.Add(Dodaj);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 5);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(789, 119);
+            tabPage1.Size = new Size(789, 138);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
@@ -434,10 +440,10 @@
             // 
             tabPage2.BackColor = Color.Silver;
             tabPage2.Controls.Add(usun);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 5);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(789, 119);
+            tabPage2.Size = new Size(789, 138);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
@@ -542,9 +548,9 @@
             tabPage5.Controls.Add(Zapisz);
             tabPage5.Controls.Add(comboBoxindexZap);
             tabPage5.Controls.Add(label7);
-            tabPage5.Location = new Point(4, 24);
+            tabPage5.Location = new Point(4, 5);
             tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(789, 119);
+            tabPage5.Size = new Size(789, 138);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "tabPage5";
             // 

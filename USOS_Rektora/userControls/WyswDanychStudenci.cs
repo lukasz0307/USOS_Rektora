@@ -34,10 +34,10 @@ namespace USOS_Rektora.userControls
             InitializeComponent();
         }
         //funkcja służąca do odswieżania wyświetlone dane z bazy danych
-        public void WyswDane()
+        public void WyswDane(string defaultQuery = "SELECT * FROM students")
         {
             flowLayoutPanelDane.Controls.Clear();
-            string query = "SELECT * FROM students";
+            string query = defaultQuery;
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
@@ -266,6 +266,46 @@ namespace USOS_Rektora.userControls
                     MessageBox.Show("Błąd przy usuwaniu rekordu o id " + daneWierszStud.id);
                 }
             }
+        }
+        private void labelImie_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM students ORDER BY name";
+            WyswDane(query);
+        }
+
+        private void flowLayoutPanelDane_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelNazw_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM students ORDER BY surname";
+            WyswDane(query);
+        }
+
+        private void labelInd_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM students ORDER BY nrIndex";
+            WyswDane(query);
+        }
+
+        private void labelSem_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM students ORDER BY term";
+            WyswDane(query);
+        }
+
+        private void labelKierunek_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM students ORDER BY specialization";
+            WyswDane(query);
+        }
+
+        private void labelWydz_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM students ORDER BY department";
+            WyswDane(query);
         }
     }
 }

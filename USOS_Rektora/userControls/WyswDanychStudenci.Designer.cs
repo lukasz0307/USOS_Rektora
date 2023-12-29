@@ -79,6 +79,7 @@
             flowLayoutPanelDane.Name = "flowLayoutPanelDane";
             flowLayoutPanelDane.Size = new Size(924, 278);
             flowLayoutPanelDane.TabIndex = 0;
+            flowLayoutPanelDane.Paint += flowLayoutPanelDane_Paint;
             // 
             // panelNaglowki
             // 
@@ -110,6 +111,7 @@
             labelWydz.TabIndex = 6;
             labelWydz.Text = "Wydział";
             labelWydz.TextAlign = ContentAlignment.MiddleCenter;
+            labelWydz.Click += labelWydz_Click;
             // 
             // labelKierunek
             // 
@@ -124,6 +126,7 @@
             labelKierunek.TabIndex = 5;
             labelKierunek.Text = "Kierunek";
             labelKierunek.TextAlign = ContentAlignment.MiddleCenter;
+            labelKierunek.Click += labelKierunek_Click;
             // 
             // labelSem
             // 
@@ -138,6 +141,7 @@
             labelSem.TabIndex = 4;
             labelSem.Text = "Semestr";
             labelSem.TextAlign = ContentAlignment.MiddleCenter;
+            labelSem.Click += labelSem_Click;
             // 
             // labelInd
             // 
@@ -152,6 +156,7 @@
             labelInd.TabIndex = 3;
             labelInd.Text = "Nr. indeksu";
             labelInd.TextAlign = ContentAlignment.MiddleCenter;
+            labelInd.Click += labelInd_Click;
             // 
             // labelNazw
             // 
@@ -166,6 +171,7 @@
             labelNazw.TabIndex = 2;
             labelNazw.Text = "Nazwisko";
             labelNazw.TextAlign = ContentAlignment.MiddleCenter;
+            labelNazw.Click += labelNazw_Click;
             // 
             // labelImie
             // 
@@ -180,6 +186,7 @@
             labelImie.TabIndex = 1;
             labelImie.Text = "Imię";
             labelImie.TextAlign = ContentAlignment.MiddleCenter;
+            labelImie.Click += labelImie_Click;
             // 
             // labelId
             // 
@@ -235,10 +242,10 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.Silver;
-            tabPage4.Location = new Point(4, 14);
+            tabPage4.Location = new Point(4, 5);
             tabPage4.Margin = new Padding(0);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(789, 91);
+            tabPage4.Size = new Size(789, 100);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "tabPage4";
             // 
@@ -358,10 +365,10 @@
             // 
             tabPage2.BackColor = Color.Silver;
             tabPage2.Controls.Add(usun);
-            tabPage2.Location = new Point(4, 14);
+            tabPage2.Location = new Point(4, 5);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(789, 91);
+            tabPage2.Size = new Size(789, 100);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
@@ -394,10 +401,10 @@
             tabPage3.Controls.Add(textBoxNowaWart);
             tabPage3.Controls.Add(label1);
             tabPage3.Controls.Add(comboBoxMod);
-            tabPage3.Location = new Point(4, 14);
+            tabPage3.Location = new Point(4, 5);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(789, 91);
+            tabPage3.Size = new Size(789, 100);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             // 

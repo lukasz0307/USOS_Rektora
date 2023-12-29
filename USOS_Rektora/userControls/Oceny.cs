@@ -35,10 +35,10 @@ namespace USOS_Rektora.userControls
             InitializeComponent();
         }
         //funkcja służąca do odswieżania wyświetlone dane z bazy danych
-        public void WyswDane()
+        public void WyswDane(string defaultQuery = "SELECT * FROM grades")
         {
             flowLayoutPanelDane.Controls.Clear();
-            string query = "SELECT * FROM grades";
+            string query = defaultQuery;
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
@@ -116,7 +116,7 @@ namespace USOS_Rektora.userControls
                 //pomId = (int)reader["id"];
                 listIndex.Add(readerIndeks["nrIndex"].ToString());
             }
-            bool CzyjestIndeksWBazie=false;
+            bool CzyjestIndeksWBazie = false;
             foreach (string key in listIndex)
             {
                 if (key == index[0])
@@ -176,7 +176,7 @@ namespace USOS_Rektora.userControls
             {
                 MessageBox.Show("Oceny tego studenta już są w bazie danych");
             }
-            
+
 
         }
         //obsługa przycisku usuwającego dane z bazy danych 
@@ -369,6 +369,42 @@ namespace USOS_Rektora.userControls
         {
             textBoxNowaWart.Enabled = true;
             coModyfikować = comboBoxMod.SelectedItem.ToString();
+        }
+
+        private void labelIndeks_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM grades ORDER BY nrIndex";
+            WyswDane(query);
+        }
+
+        private void labelMatematyka_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM grades ORDER BY math";
+            WyswDane(query);
+        }
+
+        private void labelFizyka_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM grades ORDER BY physics";
+            WyswDane(query);
+        }
+
+        private void labelElektronika_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM grades ORDER BY electronic";
+            WyswDane(query);
+        }
+
+        private void labelcyfrowa_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM grades ORDER BY `digital technology`";
+            WyswDane(query);
+        }
+
+        private void labelsrednia_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM grades ORDER BY average";
+            WyswDane(query);
         }
     }
 }

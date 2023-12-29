@@ -47,7 +47,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(365, 36);
+            panel1.Size = new Size(417, 48);
             panel1.TabIndex = 0;
             // 
             // iconButtonZamknij
@@ -61,10 +61,10 @@
             iconButtonZamknij.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButtonZamknij.IconSize = 30;
             iconButtonZamknij.ImageAlign = ContentAlignment.TopCenter;
-            iconButtonZamknij.Location = new Point(313, 0);
+            iconButtonZamknij.Location = new Point(358, 0);
             iconButtonZamknij.Margin = new Padding(0);
             iconButtonZamknij.Name = "iconButtonZamknij";
-            iconButtonZamknij.Size = new Size(52, 36);
+            iconButtonZamknij.Size = new Size(59, 48);
             iconButtonZamknij.TabIndex = 1;
             iconButtonZamknij.UseVisualStyleBackColor = false;
             iconButtonZamknij.Click += iconButtonZamknij_Click;
@@ -77,30 +77,30 @@
             panel2.Controls.Add(textBoxWyd);
             panel2.Controls.Add(data);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 36);
+            panel2.Location = new Point(0, 48);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(365, 168);
+            panel2.Size = new Size(417, 224);
             panel2.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(64, 64, 64);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 132);
+            panel3.Location = new Point(0, 176);
             panel3.Margin = new Padding(0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(365, 36);
+            panel3.Size = new Size(417, 48);
             panel3.TabIndex = 3;
             // 
             // Zatw
             // 
             Zatw.Anchor = AnchorStyles.None;
             Zatw.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Zatw.Location = new Point(135, 84);
-            Zatw.Margin = new Padding(135, 3, 135, 3);
+            Zatw.Location = new Point(154, 112);
+            Zatw.Margin = new Padding(154, 4, 154, 4);
             Zatw.Name = "Zatw";
-            Zatw.Size = new Size(95, 29);
+            Zatw.Size = new Size(109, 39);
             Zatw.TabIndex = 2;
             Zatw.Text = "Zatwierdź";
             Zatw.UseVisualStyleBackColor = true;
@@ -109,31 +109,33 @@
             // textBoxWyd
             // 
             textBoxWyd.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxWyd.Location = new Point(49, 45);
-            textBoxWyd.Margin = new Padding(40, 3, 40, 3);
+            textBoxWyd.Location = new Point(56, 60);
+            textBoxWyd.Margin = new Padding(46, 4, 46, 4);
             textBoxWyd.Name = "textBoxWyd";
-            textBoxWyd.Size = new Size(267, 33);
+            textBoxWyd.Size = new Size(305, 39);
             textBoxWyd.TabIndex = 1;
+            textBoxWyd.TextChanged += textBoxWyd_TextChanged;
             // 
             // data
             // 
             data.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            data.Location = new Point(9, 14);
+            data.Location = new Point(10, 19);
             data.Margin = new Padding(0);
             data.Name = "data";
-            data.Size = new Size(347, 28);
+            data.Size = new Size(397, 37);
             data.TabIndex = 0;
             data.Text = "dd/mm/yyyy";
             data.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dodWydarz
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(365, 204);
+            ClientSize = new Size(417, 272);
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "dodWydarz";
             StartPosition = FormStartPosition.CenterScreen;
             Load += dodWydarz_Load;

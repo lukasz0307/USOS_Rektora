@@ -63,11 +63,16 @@ namespace USOS_Rektora.userControls
         //przewijanie do przodu ogłoszeń
         private void nast_Click(object sender, EventArgs e)
         {
-            id++;
+            next();
+        }
+        //przewijanie do tyłu ogłoszeń
+        private void poprz_Click(object sender, EventArgs e)
+        {
+            id--;
             //obsługa wyjątku z wyjściem poza zakres id
-            if (id > pobieranieMaxId())
+            if (id == 0)
             {
-                id = 1;
+                id = maxId;
                 przewijanieOgl(id);
             }
             else
@@ -75,14 +80,23 @@ namespace USOS_Rektora.userControls
                 przewijanieOgl(id);
             }
         }
-        //przewijanie do tyłu ogłoszeń
-        private void poprz_Click(object sender, EventArgs e)
+
+        private void trescOgl_Click(object sender, EventArgs e)
         {
-            id--;
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void next()
+        {
+            id++;
             //obsługa wyjątku z wyjściem poza zakres id
-            if (id ==0)
+            if (id > pobieranieMaxId())
             {
-                id = maxId;
+                id = 1;
                 przewijanieOgl(id);
             }
             else

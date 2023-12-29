@@ -37,10 +37,10 @@ namespace USOS_Rektora.userControls
         }
 
         //funkcja służąca do odswieżania wyświetlone dane z bazy danych
-        public void WyswDane()
+        public void WyswDane(string defaultQuery = "SELECT * FROM cadre")
         {
             flowLayoutPanelDane.Controls.Clear();
-            string query = "SELECT * FROM cadre";
+            string query = defaultQuery;
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
             MySqlCommand cmd = conn.CreateCommand();
@@ -242,5 +242,34 @@ namespace USOS_Rektora.userControls
             }
         }
 
+        private void labelImie_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM cadre ORDER BY name";
+            WyswDane(query);
+        }
+
+        private void labelNazw_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM cadre ORDER BY surname";
+            WyswDane(query);
+        }
+
+        private void labelStan_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM cadre ORDER BY position";
+            WyswDane(query);
+        }
+
+        private void labelTel_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM cadre ORDER BY PhoneNr";
+            WyswDane(query);
+        }
+
+        private void labelMail_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM cadre ORDER BY mail";
+            WyswDane(query);
+        }
     }
 }

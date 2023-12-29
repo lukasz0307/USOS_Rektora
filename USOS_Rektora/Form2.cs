@@ -54,7 +54,7 @@ namespace USOS_Rektora
         private void iconButtonWydzialy_Click(object sender, EventArgs e)
         {
             pozycjonowanieContextMenuStrip(iconButtonWydzialy, menuWydzialy);
-            
+
         }
         //Wyświetlenie w panelu głównym kontrolki userControl WyswDanychKadra
         private void iconButtonKadra_Click(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace USOS_Rektora
             Wydziały wydzialy = new Wydziały();
             wyswUserControli(wydzialy);
             labelTytulu.Text = "Wydział " + nawigacyjnyMenuItem.Text;
-            
+
         }
 
         private void elektrycznyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,7 +164,7 @@ namespace USOS_Rektora
             Wydziały wydzialy = new Wydziały();
             wyswUserControli(wydzialy);
             labelTytulu.Text = "Wydział " + elektrycznyToolStripMenuItem.Text;
-            
+
         }
 
         private void mechanicznyToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace USOS_Rektora
             Wydziały wydzialy = new Wydziały();
             wyswUserControli(wydzialy);
             labelTytulu.Text = "Wydział " + mechanicznyToolStripMenuItem1.Text;
-           
+
         }
 
         private void zarządzaniaINaukOJakościToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -181,8 +181,13 @@ namespace USOS_Rektora
             ktoryWydzial = "Zarządzania i nauk o jakości";
             Wydziały wydzialy = new Wydziały();
             wyswUserControli(wydzialy);
-            labelTytulu.Text = "Wydział "+zarządzaniaINaukOJakościToolStripMenuItem1.Text;
-            
+            labelTytulu.Text = "Wydział " + zarządzaniaINaukOJakościToolStripMenuItem1.Text;
+
+        }
+
+        private void panelUserControl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

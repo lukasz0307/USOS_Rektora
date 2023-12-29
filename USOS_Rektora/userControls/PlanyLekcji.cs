@@ -78,6 +78,7 @@ namespace USOS_Rektora.userControls
             if (comboBoxKierunek.SelectedItem != null && comboBoxStopien.SelectedItem != null && comboBoxTryb.SelectedItem != null && comboBoxWydzial.SelectedItem != null)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = "PlanLekcji";
                 Image plan = Resources.plan;
                 saveFileDialog.Filter = "Images|*.jpg";
                 ImageFormat format = ImageFormat.Jpeg;
@@ -100,6 +101,11 @@ namespace USOS_Rektora.userControls
         private void comboBoxStopien_SelectedIndexChanged(object sender, EventArgs e)
         {
             wyswKierunkow();
+        }
+
+        private void comboBoxKierunek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -451,6 +451,7 @@
             panelUserControl.Name = "panelUserControl";
             panelUserControl.Size = new Size(896, 482);
             panelUserControl.TabIndex = 5;
+            panelUserControl.Paint += panelUserControl_Paint;
             // 
             // tableLayoutPanel
             // 

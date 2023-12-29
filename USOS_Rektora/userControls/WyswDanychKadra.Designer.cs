@@ -104,6 +104,7 @@
             labelMail.TabIndex = 5;
             labelMail.Text = "Adres e-mail";
             labelMail.TextAlign = ContentAlignment.MiddleCenter;
+            labelMail.Click += labelMail_Click;
             // 
             // labelTel
             // 
@@ -118,6 +119,7 @@
             labelTel.TabIndex = 4;
             labelTel.Text = "Numer telefonu";
             labelTel.TextAlign = ContentAlignment.MiddleCenter;
+            labelTel.Click += labelTel_Click;
             // 
             // labelStan
             // 
@@ -132,6 +134,7 @@
             labelStan.TabIndex = 3;
             labelStan.Text = "Stanowisko";
             labelStan.TextAlign = ContentAlignment.MiddleCenter;
+            labelStan.Click += labelStan_Click;
             // 
             // labelNazw
             // 
@@ -146,6 +149,7 @@
             labelNazw.TabIndex = 2;
             labelNazw.Text = "Nazwisko";
             labelNazw.TextAlign = ContentAlignment.MiddleCenter;
+            labelNazw.Click += labelNazw_Click;
             // 
             // labelImie
             // 
@@ -160,6 +164,7 @@
             labelImie.TabIndex = 1;
             labelImie.Text = "Imię";
             labelImie.TextAlign = ContentAlignment.MiddleCenter;
+            labelImie.Click += labelImie_Click;
             // 
             // labelId
             // 
@@ -240,10 +245,10 @@
             tabPage1.Controls.Add(textboxNr);
             tabPage1.Controls.Add(textBoxNazw);
             tabPage1.Controls.Add(textBoxImie);
-            tabPage1.Location = new Point(4, 14);
+            tabPage1.Location = new Point(4, 5);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(789, 91);
+            tabPage1.Size = new Size(789, 100);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             // 
@@ -328,10 +333,10 @@
             // 
             tabPage2.BackColor = Color.Silver;
             tabPage2.Controls.Add(usun);
-            tabPage2.Location = new Point(4, 14);
+            tabPage2.Location = new Point(4, 5);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(789, 91);
+            tabPage2.Size = new Size(789, 100);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             // 
@@ -364,10 +369,10 @@
             tabPage3.Controls.Add(textBoxNowaWart);
             tabPage3.Controls.Add(label1);
             tabPage3.Controls.Add(comboBoxMod);
-            tabPage3.Location = new Point(4, 14);
+            tabPage3.Location = new Point(4, 5);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(789, 91);
+            tabPage3.Size = new Size(789, 100);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             // 

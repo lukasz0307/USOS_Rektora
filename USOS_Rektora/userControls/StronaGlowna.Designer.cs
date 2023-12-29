@@ -34,6 +34,7 @@
             poprz = new FontAwesome.Sharp.IconButton();
             nast = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
+            btnDelete = new Button();
             Slider.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             trescOgl.Size = new Size(778, 155);
             trescOgl.TabIndex = 3;
             trescOgl.Text = "treść";
+            trescOgl.Click += trescOgl_Click;
             // 
             // naglowekOgl
             // 
@@ -123,10 +125,21 @@
             label1.Text = "Ogłoszenia";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(312, 401);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(294, 30);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Usuń ogłoszenie";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
             // StronaGlowna
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnDelete);
             Controls.Add(label1);
             Controls.Add(Slider);
             Name = "StronaGlowna";
@@ -144,5 +157,6 @@
         private FontAwesome.Sharp.IconButton poprz;
         private FontAwesome.Sharp.IconButton nast;
         private Label label1;
+        private Button btnDelete;
     }
 }

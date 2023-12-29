@@ -29,7 +29,7 @@ namespace USOS_Rektora.userControls
         private void Zatw_Click(object sender, EventArgs e)
         {
             //sprawdzenie czy użytkownik podał nazwe wydarzenia
-            if (textBoxWyd.Text!= "")
+            if (textBoxWyd.Text != "")
             {
                 string queryInsert = "INSERT INTO `events` (`id`, `eventName`, `eventDate`) VALUES (NULL, @eventName, @eventDate);";
                 MySqlConnection conn = new MySqlConnection(connectionString);
@@ -52,7 +52,7 @@ namespace USOS_Rektora.userControls
             }
             else
             {
-                MessageBox.Show("Uzupełnij nazwę wydarzenia");
+                //MessageBox.Show("Uzupełnij nazwę wydarzenia");
             }
             //zamknięcie okienka po dodaniu nowego wydarzenia do bazy danych
             this.Close();
@@ -61,6 +61,11 @@ namespace USOS_Rektora.userControls
         private void dodWydarz_Load(object sender, EventArgs e)
         {
             data.Text = dzien.static_day + "/" + Kalendarz.static_month + "/" + Kalendarz.static_year;
+        }
+
+        private void textBoxWyd_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
