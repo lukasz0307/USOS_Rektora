@@ -271,5 +271,10 @@ namespace USOS_Rektora.userControls
             string query = "SELECT * FROM cadre ORDER BY mail";
             WyswDane(query);
         }
+
+        private void flowLayoutPanelDane_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

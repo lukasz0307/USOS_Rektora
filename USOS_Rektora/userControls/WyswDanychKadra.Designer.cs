@@ -187,6 +187,7 @@
             flowLayoutPanelDane.Name = "flowLayoutPanelDane";
             flowLayoutPanelDane.Size = new Size(923, 277);
             flowLayoutPanelDane.TabIndex = 4;
+            flowLayoutPanelDane.Paint += flowLayoutPanelDane_Paint;
             // 
             // panelObsluga
             // 

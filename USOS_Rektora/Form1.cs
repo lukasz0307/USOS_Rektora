@@ -9,7 +9,6 @@ namespace USOS_Rektora
 {
     public partial class Logowanie : Form
     {
-
         string connectionString = "server=localhost;user id=root;database=rektordb;sslmode=none";
         //zmienna przechowuj¹ca losowany kod wysy³any na maila potrzebny do zmiany has³a
         public string kod;
@@ -31,7 +30,7 @@ namespace USOS_Rektora
         //oraz zamykania formularza logowania i otwierania formularza g³ównego
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            /*
+            //Test czy pola nie sa puste
             if (textLogin.Text.Trim() == "" && textPass.Text.Trim() == "")
             {
                 MessageBox.Show("Uzupe³nij dane", "Logowanie nie powiod³o siê");
@@ -39,16 +38,23 @@ namespace USOS_Rektora
             else
             {
                 string query = "SELECT * FROM users WHERE username= @user AND password = @pass";
-                SQLiteConnection conn = new SQLiteConnection("Data Source=rektor.db;Version=3;");
-                conn.Open();
-                SQLiteCommand cmd = new SQLiteCommand(query, conn);
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                try
+                {
+                    conn.Open();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro" + erro);
+                    this.Close();
+                }
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@user", textLogin.Text);
                 cmd.Parameters.AddWithValue("@pass", textPass.Text);
-                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (dt.Rows.Count > 0)
+                if (reader.HasRows)
                 {
                     this.Hide();
                     glownyForm = new Form2();
@@ -58,12 +64,8 @@ namespace USOS_Rektora
                 else
                 {
                     MessageBox.Show("Login lub has³o siê nie zgadzaj¹", "Logowanie nie powiod³o siê");
-                }
+                }              
             }
-            */
-            this.Hide();
-            glownyForm = new Form2();
-            glownyForm.Show();
         }
         //Funkcja generuj¹ca captche
         private void generowanieCaptchy()
